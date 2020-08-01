@@ -1,5 +1,6 @@
 import os
-import mips_link_loc
+from mips_link_loc import *
+from pyptr import *
 
 class find_fet:
     gap = None
@@ -12,16 +13,36 @@ class find_fet:
         self.pos = start
         self.end = start + filesize
         self.gap_max = gap_max
+        self.start = start
+        self.filesize = filesize
+        self.wnd = wnd
+        self.bin = bin
         self.FET_list = FET()
+        self.func_addr_list = []
 
     def rule_match(self):
         max = 0
         min = 0xffffffff
         tbl_item_sz = (self.gap + 1) * 4
         real_off = self.pos + self.off * tbl_item_sz
-        for i in wnd:
+        for i in self.wnd:
             ptr = real_off + i * tbl_item_sz
-            func_addr_list = read()
+            func_addr_list[i] = ref_val(self.bin + ptr)
+            if ref_val(self.bin+ptr) < min:
+                min = ref_val(self.bin + ptr)
+            if ref_val(self.bin + ptr) > max:
+                max = ref_val(self.bin + ptr)
+        for i in self.wnd:
+            for j in self.wnd:
+                if func_addr_list[i] == func_addr_list[j] and i != j:
+                    return 0
+        range = max - min
+        if (range > F_GAP_MAX):
+            return 0
+        for i in self.wnd:
+            if (func_addr_list[i] % 4 != 0) and (func_addr_list[i] % 2 != 1):
+                return 0
+        return 1
 
     def do_find_fet(self):
         while self.pos >= start and self.pos < end:
@@ -60,6 +81,8 @@ class find_load_base:
     def set_file_fd(self):
         fd = open(self.filename, 'rb')
         filesize = os.path.getsize(self.filename)
+        find_fet(f_rough = 1, start = 0, filesize = self.filesize,
+                 wnd = self.wnd, gap_max = gap)
         return fd
 
     def get_file_fd(self):

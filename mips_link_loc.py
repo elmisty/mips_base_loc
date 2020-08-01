@@ -5,21 +5,23 @@ class FET_Node:
         self.table_size = table_size
         self.next = None
 
+class FET:
+    def __init__(self):
+        Node = FET_Node(haed = None, gap = None, table_size = None)
+        self.head = Node
+        self.tail = Node
+
         self.current = None
         self.before = None
 
         self.num_of_nodes = 0
 
-class FET:
-    def __init__(self):
-        Node = FET_Node(haed = None, gap = None, table_size = None)
-        self.head = None
-        self.tail = None
-
     def append(self, head = None, gap = None, table_size = None):
         new_FET_Node = FET_Node(head, gap, table_size)
         self.tail.next = new_FET_Node
         self.tail = new_FET_Node
+
+        self.num_of_nodes +=
 
     def delete(self):
         if self.current is self.tail:
