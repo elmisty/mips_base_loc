@@ -34,7 +34,7 @@ class find_fet:
             print('int : ', binascii.b2a_hex(self.bin[ptr:ptr+4]))
             print('mov_ptr : ', mov_ptr)
             print('ref_val', ref_val(mov_ptr))
-            #self.func_addr_list.append(ref_val(bin))
+            self.func_addr_list.append(ref_val(bin))
         '''
         for i in range(0, wnd):
             ptr = real_off + i * tbl_item_sz
