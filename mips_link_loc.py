@@ -7,7 +7,7 @@ class FET_Node:
 
 class FET:
     def __init__(self):
-        Node = FET_Node(haed = None, gap = None, table_size = None)
+        Node = FET_Node(head = None, gap = None, table_size = None)
         self.head = Node
         self.tail = Node
 
@@ -21,7 +21,7 @@ class FET:
         self.tail.next = new_FET_Node
         self.tail = new_FET_Node
 
-        self.num_of_nodes +=
+        self.num_of_nodes += 1
 
     def delete(self):
         if self.current is self.tail:
@@ -42,7 +42,7 @@ class FET:
         return ret_dic
 
     def next(self):
-        if self.current.next == None
+        if self.current.next == None:
             return None
         self.before = self.current
         self.current = self.current.next
