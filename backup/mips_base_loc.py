@@ -8,11 +8,17 @@ class search_abs_addr:
         self.end = end
         self.wnd_size = wnd_size
 
-    def do_find_aas(self, fd):
-        pos = self.start
-        count = 0
+    def conv_h2b(self, val):
+        return bin(int(hex(val), 16))[2:8]
 
-class find_mips_base:
+    def find_string(self):
+        count = 0
+        wnd_size = self.wnd_size
+
+        while pos in range(self.start, self.end-wnd_size):
+            if conv_h2b(pos)
+
+class mips_base_loc:
     fd = None
     filename = None
     filesize = None
@@ -20,20 +26,13 @@ class find_mips_base:
     def __init__(self, filename, wnd_size):
         self.filename = filename
         self.wnd_size = wnd_size
-
+    
     def set_file_fd(self):
         self.fd = open(self.filename, 'rb')
-        self.filesize = os.path.getsize(self.filename)
-        print("file size : %d" % self.filesize)
+        self.file_size = os.path.getsize(self.filename)
+        print("file size : %d" % self.file_size)
 
     def do_AAS(self):
         if self.fd == None:
             return -1
         test = ConstBitStream(self.fd.read())
-
-        for i in range(0, 100, 1):
-            readbit = BitArray(hex = test.read('hex:32'))
-            readbit_2 = readbit.bin[0:6]
-            print('bin data : {} {}'.format(readbit, readbit_2))
-
-        #search_abs_addr(fd, 0, self.filesize, self.wnd_size)
