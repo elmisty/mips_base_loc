@@ -108,11 +108,8 @@ class search_abs_addr:
         return match_rate
 
     def do_find_aas(self):
-        #pos = self.start
-        #count = 0
         tmp_fd = self.fd
         wnd_size = self.wnd_size
-        #trg_stream = ConstBitStream(tmp_fd.read())
         trg_stream = self.get_file_stream()
         lui_regnum = 0
         lui_imm = 0
@@ -121,10 +118,8 @@ class search_abs_addr:
         full_imm_addr = []
         full_str_addr = []
 
-        # readbit.bin[0:6], readbit.bin[6:11], readbit.bin[11:16], readbit.bin[16:32]
         for trg_line in trg_stream:
             readbit = self.read_bit(trg_stream)
-            #readbit = BitArray(hex = trg_stream.read('hex:32')
             if (readbit == None):
                 break
             trg_inst = self.search_lui_inst(readbit)
@@ -132,12 +127,10 @@ class search_abs_addr:
             if(trg_inst != 0):
                 lui_regnum = readbit.bin[11:16]
                 lui_imm = readbit.bin[16:32]
-                #print('1) lui data : {}'.format(trg_inst))
                 for i in range(self.start, wnd_size):
                     readbit = self.read_bit(trg_stream)
                     trg_inst_lui = self.search_lui_inst(readbit)
                     (pair_inst, pair_imm) = self.search_lui_pair_inst(readbit, lui_regnum)
-                    #print('2) regnum : {} {}'.format(lui_regnum, imm))
 
                     if(pair_inst != 0 and pair_inst != None):
                         trg_inst = readbit.bin[0:6]
@@ -181,7 +174,7 @@ class find_mips_base:
         del_list = {}
         imm_name_to_idx = []
         imm_sub_calc = {}
-        calc_with_size = []
+        sorted_sub_calc = {}
         self.set_file_fd()
         low_val = 0xFFFFFFFF
 
@@ -192,14 +185,9 @@ class find_mips_base:
         full_imm_addr, full_str_addr = test.do_find_aas()
         print('Num of indx : {}'.format(len(full_imm_addr)))
 
-        print('imm_addr : ', full_imm_addr)
         #print('str_addr :', full_str_addr)
 
         print(len(full_imm_addr))
-        """
-        for i in range(0, len(full_imm_addr)):
-            print('imm_addr : ', hex(full_imm_addr[i]))
-        """
         sorted_imm_addr = sorted(full_imm_addr)
 
         for i in range(0, len(sorted_imm_addr)-1):
@@ -212,8 +200,12 @@ class find_mips_base:
 
         print('low_val : ',low_val)
         print('low_val array : ', imm_sub_calc[low_val][0], imm_sub_calc[low_val][1])
-        
-        match_rate = test.match_string_ref(lower_addr = imm_sub_calc[low_val][0], upper_addr = imm_sub_calc[low_val][1], str_addr = full_str_addr)
 
-        for i in match_rate:
-            print('test : {} {}'.format(hex(i), match_rate[i]))
+        sorted_sub_calc = sorted(imm_sub_calc.keys())
+        
+        for i in sorted_sub_calc:
+            print('imm_addr : ', imm_sub_calc[i])
+            match_rate = test.match_string_ref(lower_addr = imm_sub_calc[i][0], upper_addr = imm_sub_calc[i][1], str_addr = full_str_addr)
+
+            for j in match_rate:
+                print('{} match_rate : {} {}'.format(i, hex(j), match_rate[j]))
