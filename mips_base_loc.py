@@ -1,4 +1,5 @@
 import os
+from os.path import join
 import struct
 from bitstring import BitArray, ConstBitStream
 
@@ -83,16 +84,13 @@ class search_abs_addr:
         read_byte = int.from_bytes(stream.read('bytes:1'), byteorder='big')
         return read_byte
 
-    def match_string_ref(self, imm_addr, str_addr, filesize):
+    def match_string_ref(self, lower_addr, upper_addr, str_addr):
         saved_offset = []
         match_rate = {}
         match_result = {}
         str_addr_sz = len(str_addr)
 
-        low_addr = imm_addr[0]
-        high_addr = imm_addr[-1]
-
-        for base in range(low_addr, high_addr):
+        for base in range(lower_addr, upper_addr):
             match_result[base] = 0
             for trg_addr in str_addr:
                 saved_offset.append(trg_addr-base)
@@ -118,6 +116,7 @@ class search_abs_addr:
         trg_stream = self.get_file_stream()
         lui_regnum = 0
         lui_imm = 0
+        j = 0
         imm_addr_cnt = {}
         full_imm_addr = []
         full_str_addr = []
@@ -145,18 +144,23 @@ class search_abs_addr:
                         imm_addr = self.calc_with_pair(pair_inst, lui_imm, pair_imm)
                         str_imm_addr = self.calc_with_str_pair(pair_inst, lui_imm, pair_imm)
 
+                        """
                         if imm_addr != None and imm_addr not in imm_addr_cnt.keys():
                             imm_addr_cnt[imm_addr] = 0
                         elif (imm_addr != None):
                             #full_imm_addr.append(imm_addr)
                             imm_addr_cnt[imm_addr] += 1
+                        """
                         
+                        if (imm_addr != 0 and imm_addr != None):
+                            full_imm_addr.append(imm_addr)
+
                         if(str_imm_addr != 0 or str_imm_addr != None):
                             full_str_addr.append(str_imm_addr)
                     elif(trg_inst_lui != 0):
                         trg_stream.pos -= 32
                         break
-        return imm_addr_cnt, full_str_addr
+        return full_imm_addr, full_str_addr
 
 class find_mips_base:
     fd = None
@@ -175,7 +179,11 @@ class find_mips_base:
 
     def do_AAS(self):
         del_list = {}
+        imm_name_to_idx = []
+        imm_sub_calc = {}
+        calc_with_size = []
         self.set_file_fd()
+        low_val = 0xFFFFFFFF
 
         if self.fd == None:
             return -1
@@ -187,23 +195,25 @@ class find_mips_base:
         print('imm_addr : ', full_imm_addr)
         #print('str_addr :', full_str_addr)
 
-        print(type(full_imm_addr))
+        print(len(full_imm_addr))
+        """
+        for i in range(0, len(full_imm_addr)):
+            print('imm_addr : ', hex(full_imm_addr[i]))
+        """
+        sorted_imm_addr = sorted(full_imm_addr)
 
-        for i in full_imm_addr:
-            print('{} : {}'.format(hex(i), hex(full_imm_addr[i])))
+        for i in range(0, len(sorted_imm_addr)-1):
+            #imm_sub_calc.append(abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize))
+            #calc_with_size.append(abs(imm_sub_calc[i] - self.filesize))
+            if (abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize) < low_val):
+                low_val = abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)
+            imm_sub_calc[abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)] = 0
+            imm_sub_calc[abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)] = [sorted_imm_addr[i], sorted_imm_addr[i+1]]
 
-        sorted_imm_addr = sorted(full_imm_addr.items())
-  
-        #print(sorted_imm_addr)
-
-        for key, value in sorted_imm_addr:
-            if(value != 0):
-                del_list[key] = value
+        print('low_val : ',low_val)
+        print('low_val array : ', imm_sub_calc[low_val][0], imm_sub_calc[low_val][1])
         
-        for i in del_list.keys():
-            print('{} : {}'.format(hex(i), del_list[i] + 1))
-
-        match_rate = test.match_string_ref(list(del_list.keys()), full_str_addr, self.filesize)
+        match_rate = test.match_string_ref(lower_addr = imm_sub_calc[low_val][0], upper_addr = imm_sub_calc[low_val][1], str_addr = full_str_addr)
 
         for i in match_rate:
-            print('test : {}'.format(i))
+            print('test : {} {}'.format(hex(i), match_rate[i]))
