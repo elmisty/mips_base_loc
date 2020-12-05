@@ -1,4 +1,5 @@
 import os
+import struct
 from bitstring import BitArray, ConstBitStream
 
 class search_abs_addr:
@@ -29,7 +30,6 @@ class search_abs_addr:
         if(trg_inst == '001101' or trg_inst == '100011' or trg_inst == '001001'):
             if(readbit.bin[6:11] == lui_regnum):
                 return (trg_inst, readbit.bin[16:32])
-            return int(0), int(0)
         return (None, None)
 
     def calc_with_pair(self, pair_inst, h_bit, l_bit):
@@ -40,6 +40,7 @@ class search_abs_addr:
                 h_bit = h_bit-1
             else:
                 return 0
+
             imm_addr = h_bit << 16
             imm_addr |= int(l_bit, 2)
             return imm_addr
@@ -65,7 +66,7 @@ class search_abs_addr:
         except:
             return None
 
-    def del_dup(self, trg_inst):
+    def del_dup(self, trg_list):
         ret_list = []
 
         for element in trg_list:
@@ -144,18 +145,17 @@ class search_abs_addr:
                         imm_addr = self.calc_with_pair(pair_inst, lui_imm, pair_imm)
                         str_imm_addr = self.calc_with_str_pair(pair_inst, lui_imm, pair_imm)
 
-                        if imm_addr not in imm_addr_cnt.keys():
+                        if imm_addr != None and imm_addr not in imm_addr_cnt.keys():
                             imm_addr_cnt[imm_addr] = 0
-                        elif (imm_addr != 0):
-                            full_imm_addr.append(imm_addr)
+                        elif (imm_addr != None):
+                            #full_imm_addr.append(imm_addr)
                             imm_addr_cnt[imm_addr] += 1
                         
-                        if(str_imm_addr != 0):
+                        if(str_imm_addr != 0 or str_imm_addr != None):
                             full_str_addr.append(str_imm_addr)
-
                     elif(trg_inst_lui != 0):
                         trg_stream.pos -= 32
-                        break 
+                        break
         return imm_addr_cnt, full_str_addr
 
 class find_mips_base:
@@ -182,10 +182,19 @@ class find_mips_base:
         
         test = search_abs_addr(self.fd, self.start_addr, self.filesize, self.wnd_size)
         full_imm_addr, full_str_addr = test.do_find_aas()
+        print('Num of indx : {}'.format(len(full_imm_addr)))
+
+        print('imm_addr : ', full_imm_addr)
+        #print('str_addr :', full_str_addr)
+
+        print(type(full_imm_addr))
+
+        for i in full_imm_addr:
+            print('{} : {}'.format(hex(i), hex(full_imm_addr[i])))
 
         sorted_imm_addr = sorted(full_imm_addr.items())
-
-        print(sorted_imm_addr)
+  
+        #print(sorted_imm_addr)
 
         for key, value in sorted_imm_addr:
             if(value != 0):
