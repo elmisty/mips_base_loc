@@ -2,6 +2,7 @@ import os
 from os.path import join
 import struct
 from bitstring import BitArray, ConstBitStream
+from threading import Thread
 
 class search_abs_addr:
     def __init__(self, fd, start, end, wnd_size):
@@ -202,7 +203,12 @@ class find_mips_base:
         print('low_val array : ', imm_sub_calc[low_val][0], imm_sub_calc[low_val][1])
 
         sorted_sub_calc = sorted(imm_sub_calc.keys())
-        
+        """
+        th1 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
+        th2 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
+        th3 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
+        th4 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
+        """
         for i in sorted_sub_calc:
             print('imm_addr : ', imm_sub_calc[i])
             match_rate = test.match_string_ref(lower_addr = imm_sub_calc[i][0], upper_addr = imm_sub_calc[i][1], str_addr = full_str_addr)
