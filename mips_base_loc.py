@@ -97,9 +97,9 @@ class search_abs_addr:
                 saved_offset.append(trg_addr-base)
                 idx = saved_offset.index(trg_addr-base)
 
-                prev = self.ref_chr(saved_offset[idx]-1)
+                prev = self.ref_chr(saved_offset[idx]-8)
                 current = self.ref_chr(saved_offset[idx])
-                nxt = self.ref_chr(saved_offset[idx]+1)
+                nxt = self.ref_chr(saved_offset[idx]+8)
 
                 if(prev == 0 and current >= 0x20 and current <= 0x7E and nxt >= 0x20 and nxt <= 0x7E):
                     match_result[base] += 1
@@ -191,27 +191,38 @@ class find_mips_base:
         print(len(full_imm_addr))
         sorted_imm_addr = sorted(full_imm_addr)
 
-        for i in range(0, len(sorted_imm_addr)-1):
+        for i in range(0, len(sorted_imm_addr)):
             #imm_sub_calc.append(abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize))
             #calc_with_size.append(abs(imm_sub_calc[i] - self.filesize))
-            if (abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize) < low_val):
-                low_val = abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)
-            imm_sub_calc[abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)] = 0
-            imm_sub_calc[abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)] = [sorted_imm_addr[i], sorted_imm_addr[i+1]]
+            #print('calc_val : ', (sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)
+            print('Sorted imm', hex(sorted_imm_addr[i]))
+
+            #if (abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize) < low_val):
+            #    low_val = abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)
+            #imm_sub_calc[abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)] = 0
+            #imm_sub_calc[abs((sorted_imm_addr[i+1] - sorted_imm_addr[i])-self.filesize)] = [sorted_imm_addr[i], sorted_imm_addr[i+1]]
 
         print('low_val : ',low_val)
-        print('low_val array : ', imm_sub_calc[low_val][0], imm_sub_calc[low_val][1])
-
-        sorted_sub_calc = sorted(imm_sub_calc.keys())
+        #print('low_val array : ', imm_sub_calc[low_val][0], imm_sub_calc[low_val][1])
+        
+        for i in sorted_imm_addr:
+            print('sorted_imm ', hex(i))
         """
+        for i in imm_sub_calc:
+            print('imm_sub_calc_val : ', hex(i))
+
+        #sorted_sub_calc = sorted(imm_sub_calc.keys())
+        
         th1 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
         th2 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
         th3 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
         th4 = Thread(target=test.match_string_ref, args=(imm_sub_calc[i][0], imm_sub_calc[i][1], full_str_addr))
         """
+
+        """
         for i in sorted_sub_calc:
             print('imm_addr : ', imm_sub_calc[i])
-            match_rate = test.match_string_ref(lower_addr = imm_sub_calc[i][0], upper_addr = imm_sub_calc[i][1], str_addr = full_str_addr)
-
-            for j in match_rate:
-                print('{} match_rate : {} {}'.format(i, hex(j), match_rate[j]))
+        """
+        match_rate = test.match_string_ref(lower_addr = 0x805aecd7, upper_addr = 0x8b85bd4d, str_addr = full_str_addr)
+        for j in match_rate:
+            print('{} match_rate : {}'.format(match_rate[j]))
