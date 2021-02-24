@@ -49,3 +49,32 @@ https://reverseengineering.stackexchange.com/questions/11096/reverse-engineering
 - 코드의 영역에서 BSS 영역으로 가는 코드를 찾고
 - 그 코드의 상위에 존재하는 주소 값들을 모두 뽑아서
 - 해당 코드와의 매칭 여부를 확인한다..?
+-
+
+## `21.02.24 (수)
+BSS 영역의 존재이유 = Zero-fill-on-demand 기법을 위해 해당 영역을 유지
+=> 이렇게 해줌으로써 얻는 이득..?
+
+- Zero-fill-On-Demand
+fork()시, Copy-On-Write(COW)가 일어남. 이 경우, 복사되는 데이터를 그대로 유지하고 있다가 해당 내용에 변경점이 있는 경우에만 메모리로 복사
+이렇게함으로써 Overhead가 많이 걸리는 메모리 Write 작업의 Resource를 아낄 수가 있다는 장점이 존재
+
+복사될때, Allocation되는 페이지를 0으로 초기화
+=> 복사될 영역의 물리 메모리를 0으로 초기화 해준다는 의미
+=> 보안문제 향상 <아니 그렇다고 사이클을 태워..?>
+
+/dev/null이 이 친구이구먼.. (/dev/zero)
+=> 역사를 알아야 되는 이유.. 해당 역사가 이루어진건 어떤 목적과 이유가 있어서였으며, 이를 통해 해결책을 배울 수가 있다.
+
+
+ Zero-fill-on-demand를 유지함으로써 해당 영역에 대한 보안성 유지..?
+ => ??? 멍게소리
+ => 그게 아니라 보안은 부수적인 이유고, BSS 영역의 메모리를 0으로 유지함으로써 static memory의 이전 데이터에 접근하지 못하게 하여, 같은 프로세스를 동작시키더라도 static memory에 의한 오동작을 방지할 수 있음.
+ => 추가적으로 해당 데이터가 없는 상태에서 프로그램을 하기 위해서 데이터 영역을 쓰는 것은 낭비
+    해당 영역을 0으로 초기화된 곳을 지정함으로써 데이터 영역에 대한 전체 크기를 줄일 수 있음
+
+- 참고할만한 사이트
+1) https://shinluckyarchive.tistory.com/159
+2) https://donghwada.tistory.com/entry/%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD-Code-Data-BSS-HEAP-Stack-Little-Endian-Stack%EC%9D%98-%EC%9D%B4%ED%95%B4
+3) https://kldp.org/node/122255
+
