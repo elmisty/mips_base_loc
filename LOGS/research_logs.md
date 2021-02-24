@@ -78,3 +78,5 @@ fork()시, Copy-On-Write(COW)가 일어남. 이 경우, 복사되는 데이터�
 2) https://donghwada.tistory.com/entry/%EB%A9%94%EB%AA%A8%EB%A6%AC-%EC%98%81%EC%97%AD-Code-Data-BSS-HEAP-Stack-Little-Endian-Stack%EC%9D%98-%EC%9D%B4%ED%95%B4
 3) https://kldp.org/node/122255
 
+해야할일..
+bss 영역.. 도대체 이놈이 필요한 이유..? 왜 스택의 시작위치를 정한다는걸까..?
