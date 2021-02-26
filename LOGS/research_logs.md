@@ -49,7 +49,7 @@ https://reverseengineering.stackexchange.com/questions/11096/reverse-engineering
 - 코드의 영역에서 BSS 영역으로 가는 코드를 찾고
 - 그 코드의 상위에 존재하는 주소 값들을 모두 뽑아서
 - 해당 코드와의 매칭 여부를 확인한다..?
--
+
 
 ## `21.02.24 (수)
 BSS 영역의 존재이유 = Zero-fill-on-demand 기법을 위해 해당 영역을 유지
@@ -80,3 +80,14 @@ fork()시, Copy-On-Write(COW)가 일어남. 이 경우, 복사되는 데이터�
 
 해야할일..
 bss 영역.. 도대체 이놈이 필요한 이유..? 왜 스택의 시작위치를 정한다는걸까..?
+
+
+## `21.02.25 (목)
+Linux 부팅할때 압축된 커널 zImage의 압축을 해제하는데 이 과정에서 BSS 영역 초기화를 수행..?
+=> 왜?
+
+부팅과정
+=> 부팅과정에서 사용하는 것은 압축.. 압축한 뒤, 해당 내용 중 .o파일만 뽑아 vmlinux 파일을 만듬
+링크 : http://www.iamroot.org/xe/index.php?mid=Kernel&document_srl=24595
+
+## `21.02.26 (금)
