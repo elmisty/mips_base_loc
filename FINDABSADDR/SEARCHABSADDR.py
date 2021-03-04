@@ -16,9 +16,13 @@ class SEARCHABSADDR:
     def set_raw_data(self):
         self.raw_data = open_raw_data(self.imgpath)
 
-    def search_lui_inst(self):
-        
+    def search_abs_addr(self):
+        ext_opcode(self.raw_data[0:4])
+        ext_imm(self.raw_data[0:4])
 
+    def do_analyze(self):
+        self.set_raw_data()
+        self.search_abs_addr()
 
-test = SEARCHABSADDR('../n604r_kr_8_88.bin', 0, 0, 4)
+test = SEARCHABSADDR('../B664.bin', 0, 0, 4)
 test.set_raw_data()
