@@ -9,6 +9,9 @@ def btoi_little(bytes):
     return int.from_bytes(bytes, byteorder='big', signed=True)
 
 def btoh(bytes):
+    return bytes.hex()
+
+def btos(bytes):
     return bytes.decode().strip('\x00')
 
 def ext_opcode(split_data):
@@ -38,5 +41,5 @@ def open_raw_data(imgpath):
         return e
     return raw_data
 
-def search_lui_inst(self, suspect):
+def search_lui_inst(suspect):
     print(suspect[0])

@@ -23,6 +23,8 @@ class SEARCHABSADDR:
     def do_analyze(self):
         self.set_raw_data()
         self.search_abs_addr()
+        print(len(self.raw_data)/4)
+        #search_lui_inst(self.raw_data)
 
-test = SEARCHABSADDR('../B664.bin', 0, 0, 4)
-test.set_raw_data()
+test = SEARCHABSADDR('../B664', 0, 0, 4)
+test.do_analyze()
