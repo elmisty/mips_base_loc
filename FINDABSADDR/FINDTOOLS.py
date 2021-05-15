@@ -152,7 +152,7 @@ def chk_lui_pair(bits):
     addiu = '001001'
     lw = '100011'
 
-    if chhk_inst(bits, ori) or chk_inst(bits, addiu) or chk_inst(bits, lw):
+    if chk_inst(bits, ori) or chk_inst(bits, addiu) or chk_inst(bits, lw):
         # if chk_rt(bits, pair_reg):
         return ext_imm(bits)
     return 0
