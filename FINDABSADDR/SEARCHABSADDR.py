@@ -1,4 +1,4 @@
-from FINDABSADDR.FINDTOOLS import calc_with_pair, chk_lui, chk_lui_pair, ext_imm, ext_opcode
+#from FINDABSADDR.FINDTOOLS import calc_with_pair, chk_lui, chk_lui_pair, ext_imm, ext_opcode
 import os
 import struct
 
@@ -30,7 +30,7 @@ class SEARCHABSADDR:
                 insp_bytes = ltob(insp_bytes)
             insp_bit = btob(insp_bytes)
             print(ext_rt(insp_bit))
-    
+   
     def search_pair_inst(self, imm_lui):
         ret_result = 0xffffffff
 
@@ -101,6 +101,12 @@ test.do_analyze()
 
 # lui instruction
 ex) lui $k1, 0x4000
-| opcode |  $rs  |  $rt  \  $rd  |    func     |
-| 001101 | 11010 | 11010 | 00000 | 00011100000 |
+| opcode |  $rs  |  $rt  |  $rd  |    func     |
+| 001111 | 11010 | 11010 | 00000 | 00011100000 |
+
+ex) lui $gp, *
+| opcode |  $rs  |  $rt  |  $rd  |    func     |
+                         |      immediate      |
+| 001111 | 00000 | 11100 | 10000 | 00001110011 |
+$rt = $gp = 11100
 """

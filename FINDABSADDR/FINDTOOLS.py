@@ -172,5 +172,13 @@ def calc_with_pair(pair_inst, imm_lui, imm_pair):
     imm_addr |= int(imm_pair, base=2)
     return imm_addr
 
+def chk_gp_lui(bits):
+    lui = '001111'
+    gp = '11100'
+
+    if chk_inst(bits, lui) and chk_rt(bits, '11100'):
+        return bits
+    return 0
+
 def search_lui_inst(suspect):
     print(suspect[0])
