@@ -1,5 +1,5 @@
-from mips_base_loc import *
+from FINDMIPSBASE import *
 
 if __name__ == "__main__":
-    do_AAS = find_mips_base("./n604r_kr_8_88.bin", 0, 4)
-    do_AAS.do_AAS()
+    do_find = FINDMIPSBASE('./B664', wnd_size=4, byte_order='little')
+    do_find.do_analyze()

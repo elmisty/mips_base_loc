@@ -6,11 +6,9 @@ from os.path import join, getsize
 from .FINDTOOLS import *
 from bitstring import BitArray, ConstBitStream
 
-class SEARCHABSADDR:
-    def __init__(self, imgpath, start, end, wnd_size, byte_order):
+class FINDMIPSBASE:
+    def __init__(self, imgpath, wnd_size, byte_order):
         self.imgpath = imgpath
-        self.start = start
-        self.end = end
         self.wnd_size = wnd_size
         self.byte_order = byte_order
 
