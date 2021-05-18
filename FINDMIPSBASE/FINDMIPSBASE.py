@@ -35,11 +35,12 @@ class FINDMIPSBASE:
 
                 if alpha or special:
                     diff_word += btos(suspect)
-                    #print(btos(suspect), end='')
                 else:
                     break
-            if diff_word.isalnum() or diff_word.isalpha():
-                if diff_word == trg_str:
+                i+=1
+
+            if diff_word.isalnum() or diff_word.isalpha() and (btoh(raw_data[trg_addr-4:trg_addr]) == '00000000'):
+                if trg_str in diff_word:
                     print("[!] BASE ADDRESS FOUNDED!!... ", hex(candi_base))
                     sys.exit(0)
     
@@ -106,13 +107,14 @@ class FINDMIPSBASE:
                         candi_base = gp_reg - real_img_sz
                     else:
                         candi_base = gp_reg - getsize(self.imgpath)
+                    print("CANDIDATE : ", hex(candi_base), hex(getsize(self.imgpath)))
                     candi_base &= 0xFFFF0000
                     print("   → Candidate Base addr : {}\n".format(hex(candi_base)))
                 else:
                     str_addr = self.search_pair_inst(str_rt, ext_imm(insp_bit))
 
                     if str_addr != None and str_addr >= candi_base:
-                        founded_addr = self.chk_off_str(str_addr, candi_base, 'DRV')
+                        founded_addr = self.chk_off_str(str_addr, candi_base, '**TF')
             idx += 1
 
     def do_analyze(self):
