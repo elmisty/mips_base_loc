@@ -7,15 +7,18 @@ from .FINDTOOLS import *
 from bitstring import BitArray, ConstBitStream
 
 class FINDMIPSBASE:
-    def __init__(self, imgpath, wnd_size, byte_order):
+    def __init__(self, imgpath, wnd_size, byte_order, decoy):
         self.imgpath = imgpath
         self.wnd_size = wnd_size
         self.byte_order = byte_order
+        self.decoy = decoy
+        self.flag = 0
 
         self.raw_data = 0
         self.fp = ''
 
     def set_raw_data(self):
+        print("[#] Target image : ", self.imgpath)
         self.raw_data = open_raw_data(self.imgpath)
         self.fp = open(self.imgpath, 'rb')
         self.raw_data = open(self.imgpath, 'rb').read()
@@ -32,16 +35,19 @@ class FINDMIPSBASE:
                 suspect = raw_data[trg_addr+i:trg_addr+(i+1)]
                 alpha = suspect.isalpha()
                 special = suspect.isalnum()
+                num = suspect.isdigit()
 
-                if alpha or special:
+                if alpha or special or num:
                     diff_word += btos(suspect)
                 else:
                     break
                 i+=1
 
-            if diff_word.isalnum() or diff_word.isalpha() and (btoh(raw_data[trg_addr-4:trg_addr]) == '00000000'):
+            if diff_word.isalnum() or diff_word.isalpha() or diff_word.isdigit() and (btoh(raw_data[trg_addr-4:trg_addr]) == '00000000'):
+                print(diff_word)
                 if trg_str in diff_word:
-                    print("[!] BASE ADDRESS FOUNDED!!... ", hex(candi_base))
+                    print("[=] String matched! : ", diff_word)
+                    print("[=] BASE ADDRESS FOUNDED!!... ", hex(candi_base))
                     sys.exit(0)
     
     def find_real_img(self, int_gp):
@@ -81,11 +87,12 @@ class FINDMIPSBASE:
         if ret_result != int(0xffffffff):
             #calc_result = (ret_result - getsize(self.imgpath)) & 0xffff0000
             return ret_result
+        return 0
         
     def search_gp_addr(self):
         fp = self.fp
         borl = self.byte_order
-        candi_base = 0
+        candi_base = 0xFFFFFFFF
         idx = 0
 
         while True:
@@ -97,32 +104,41 @@ class FINDMIPSBASE:
 
             if chk_lui(insp_bit):
                 str_rt = ext_rt(insp_bit)
-                if chk_gp(insp_bit):
+                if chk_gp(insp_bit) and self.flag != 1:
                     gp_reg = self.search_pair_inst(str_rt, ext_imm(insp_bit))
                     print("[#] Finding $gp register value... ")
-                    print("   → $gp : {}".format(hex(gp_reg)))
+                    #print("   → $gp : {}".format(hex(gp_reg)))
 
-                    if gp_reg < getsize(self.imgpath):
-                        real_img_sz = self.find_real_img(gp_reg)
-                        candi_base = gp_reg - real_img_sz
-                    else:
-                        candi_base = gp_reg - getsize(self.imgpath)
-                    print("CANDIDATE : ", hex(candi_base), hex(getsize(self.imgpath)))
-                    candi_base &= 0xFFFF0000
-                    print("   → Candidate Base addr : {}\n".format(hex(candi_base)))
+                    if gp_reg != None:
+                        print("   → $gp : {}".format(hex(gp_reg)))
+                        if gp_reg < getsize(self.imgpath):
+                            real_img_sz = self.find_real_img(gp_reg)
+                            candi_base = gp_reg - real_img_sz
+                        else:
+                            candi_base = gp_reg - getsize(self.imgpath)
+                            print(hex(candi_base),getsize(self.imgpath))
+
+                        calc_gp_reg  = candi_base
+                        candi_base &= 0xFFFF0000
+                        print(hex(calc_gp_reg), hex(candi_base))
+                        print("   → Candidate Base addr : {}\n".format(hex(candi_base)))
+                        self.flag = 1
                 else:
                     str_addr = self.search_pair_inst(str_rt, ext_imm(insp_bit))
-
-                    if str_addr != None and str_addr >= candi_base:
-                        founded_addr = self.chk_off_str(str_addr, candi_base, '**TF')
-            idx += 1
+                    if str_addr >= candi_base:
+                        i = 0x80000000
+                        while i < calc_gp_reg:
+                            #print(hex(i))
+                            self.chk_off_str(str_addr, candi_base, self.decoy)
+                            i += 0x1000 # 4KB
+                    
+                    #if str_addr >= candi_base:
+                    #    founded_addr = self.chk_off_str(str_addr, candi_base, self.decoy)
+                idx += 1        
 
     def do_analyze(self):
         self.set_raw_data()
         self.search_gp_addr()
-
-#test = SEARCHABSADDR('../B664', 0, 0, 4)
-#test.do_analyze()
 
 """
 | opcode |  $rs  |  $rt  |  $rd  |     func    |
