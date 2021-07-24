@@ -113,8 +113,15 @@ class FINDMIPSBASE:
         ret_base = dict(sorted(base_list.items(), key=lambda x:x[1], reverse=True))
 
         print('[=] Matching rate')
+        #for i in ret_base.keys():
+        idx = 0
         for i in ret_base.keys():
+            if idx == 5:
+                break
             print("   → {} : {}".format(i, ret_base[i]))
+            idx += 1
+
+
         return ret_base
     
     def manual_gp_addr(self, gp_reg):
