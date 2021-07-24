@@ -1,23 +1,42 @@
 import os
-
+from genericpath import getsize
 from bitstring import BitArray, ConstBitStream
 
+
+"""
+    Change Byte Order Series
+    - btoi_little() : Byte-To-Integer to little endian
+    - btoi_big() : Byte-To-Integer to big endian
+    - ltob() : Little Endian-To-Big Endian
+"""
+# byte to integer to little endian
 def btoi_little(bytes):
     return int.from_bytes(bytes, byteorder='little', signed=False)
 
+# byte to integer to bit endian
 def btoi_big(bytes):
     return int.from_bytes(bytes, byteorder='big', signed=False)
 
+# little endian to big endian
 def ltob(bytes):
     tmp = bytes
     return tmp[::-1]
 
+"""
+    Change Byte format
+    - btoh() : Byte-To-Hex
+    - btos() : Byte-To-String
+    - btob() : Byte-To-Bit
+"""
+# byte to hex
 def btoh(bytes):
     return bytes.hex()
 
+# byte to string
 def btos(bytes):
     return bytes.decode().strip('\x00')
 
+# byte to bit
 def btob(bytes):
     return ConstBitStream(bytes).bin
 
@@ -32,14 +51,18 @@ def ext_imm(split_data):
     ext_imm = conv_bytes[16:32]
     return ext_imm
 """
+
+# extract opcode
 def ext_opcode(bits):
     ext_op = bits[0:6]
     return ext_op
 
+# extract immediate value at an instruction
 def ext_imm(bits):
     ext_imm = bits[16:32]
     return ext_imm
 
+# Checking opcode according to instruction's opcode section
 def chk_opcode(split_data, opcode):
     if split_data == opcode:
         return split_data
@@ -166,12 +189,35 @@ def chk_lui_pair(bits):
         return ext_imm(bits)
     return 0
 
+def chk_gp(bits):
+    gp = '11100'
+
+    if chk_rt(bits, gp):
+        return bits
+    return 0
+
 def chk_addi_pair(bits):
     addiu = '001001'
 
     if chk_inst(bits, addiu):
         return ext_imm(bits)
     return 0
+
+def calc_gp_addr(gp_reg, real_img_sz):
+    calc_gp_off = gp_reg & 0x0000FFFF
+    """
+    if (calc_gp_off * 2) >= 0x10000:
+        calc_with_off = (gp_reg & 0xFFFF0000) + 0xffff
+        #calc_with_off = (gp_reg & 0xFFFF0000)
+    else:
+        calc_with_off = (gp_reg + calc_gp_off)
+    """
+    calc_with_off = (gp_reg & 0xFFFF0000)
+    candi_base = calc_with_off - real_img_sz
+    calc_gp_reg = calc_with_off
+    #calc_gp_reg = calc_with_off - real_img_sz
+    #candi_base = ((calc_with_off & 0xFFFF0000) - real_img_sz) & 0xFFFF0000
+    return calc_gp_reg, candi_base
 
 def calc_with_pair(pair_inst, imm_lui, imm_pair):
     ori = '001101'
@@ -188,9 +234,9 @@ def calc_with_pair(pair_inst, imm_lui, imm_pair):
     imm_addr |= int(imm_pair, base=2)
     return imm_addr
 
-def chk_gp(bits):
-    gp = '11100'
-
-    if chk_rt(bits, gp):
-        return bits
-    return 0
+def calc_size(imgpath):
+    tmp_sz = getsize(imgpath) % 4
+    if tmp_sz:
+        print('NONE : ', tmp_sz)
+    else:
+        print('ELSE : ', tmp_sz)
