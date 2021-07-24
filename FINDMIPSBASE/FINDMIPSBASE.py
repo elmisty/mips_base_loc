@@ -7,9 +7,10 @@ from .FINDTOOLS import *
 from bitstring import BitArray, ConstBitStream
 
 class FINDMIPSBASE:
-    def __init__(self, imgpath, wnd_size, byte_order, decoy):
+    def __init__(self, imgpath, wnd_size, match_size, byte_order):
         self.imgpath = imgpath
         self.wnd_size = wnd_size
+        self.match_size = match_size
         self.byte_order = byte_order
 
         self.flag = 0
@@ -26,7 +27,7 @@ class FINDMIPSBASE:
         self.fp = open(self.imgpath, 'rb')
         self.raw_data = open(self.imgpath, 'rb').read()
 
-    def chk_off_str(self, str_addr, candi_base, trg_str):
+    def chk_off_str(self, str_addr, candi_base):
         raw_data = self.raw_data
         diff_word = ''
 
@@ -53,7 +54,7 @@ class FINDMIPSBASE:
                 i+=1
                 if len(diff_word) >= 2:
                     if diff_word.isalnum() or diff_word.isalpha() or diff_word.isdigit() and (btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad):
-                        print(diff_word)
+                        #print(diff_word)
                         self.rate_base_addr[hex(candi_base)] += 1
                         """
                         if trg_str in diff_word:
@@ -189,12 +190,10 @@ class FINDMIPSBASE:
                         print("   → $gp : {}".format(hex(gp_reg)))
                         if gp_reg < getsize(self.imgpath):
                             real_img_sz = self.find_real_img(gp_reg)
-                            #candi_base = gp_reg - real_img_sz
                         else:
-                            candi_base = gp_reg - getsize(self.imgpath)
-                            #print(hex(candi_base),getsize(self.imgpath))
+                            real_img_sz = getsize(self.imgpath)
 
-                        calc_gp_reg, candi_base = calc_gp_addr(gp_reg, real_img_sz)
+                        candi_base, calc_gp_reg = calc_gp_addr(gp_reg, real_img_sz)
                         print("   → Range of candidate Base address : {} ~ {}\n".format(hex(candi_base), hex(calc_gp_reg)))
 
                         self.flag = 1
@@ -206,7 +205,7 @@ class FINDMIPSBASE:
 
                         while i < calc_gp_reg:
                             #print(hex(i))
-                            self.chk_off_str(str_addr, candi_base, self.decoy)
+                            self.chk_off_str(str_addr, i)
                             i += 0x1000 # 4KB
                     
                     #if str_addr >= candi_base:
@@ -214,7 +213,7 @@ class FINDMIPSBASE:
                 idx += 1
             chk_sz += 1        
 
-    def do_analyze(self, mode, gp_reg=0):
+    def do_analyze(self, mode='auto', gp_reg=0):
         self.set_raw_data()
         if mode == 'manual':
             self.manual_gp_addr(gp_reg)

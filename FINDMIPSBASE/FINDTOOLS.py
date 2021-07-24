@@ -213,11 +213,12 @@ def calc_gp_addr(gp_reg, real_img_sz):
         calc_with_off = (gp_reg + calc_gp_off)
     """
     calc_with_off = (gp_reg & 0xFFFF0000)
-    candi_base = calc_with_off - real_img_sz
+
+    candi_base = (calc_with_off - real_img_sz) & 0xFFFF0000
     calc_gp_reg = calc_with_off
     #calc_gp_reg = calc_with_off - real_img_sz
     #candi_base = ((calc_with_off & 0xFFFF0000) - real_img_sz) & 0xFFFF0000
-    return calc_gp_reg, candi_base
+    return candi_base, calc_gp_reg
 
 def calc_with_pair(pair_inst, imm_lui, imm_pair):
     ori = '001101'
