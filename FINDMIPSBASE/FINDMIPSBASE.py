@@ -141,6 +141,12 @@ class FINDMIPSBASE:
             real_img_sz = getsize(self.imgpath)
 
         calc_gp_reg, candi_base = calc_gp_addr(gp_reg, real_img_sz)
+        """
+        if calc_gp_reg < candi_base:
+            tmp_val = calc_gp_reg
+            calc_gp_reg = candi_base
+            candi_base = tmp_val
+        """
 
         print("   → Range of candidate base address : {} ~ {}\n".format(hex(candi_base), hex(calc_gp_reg)))
 
@@ -223,6 +229,9 @@ class FINDMIPSBASE:
     def do_analyze(self, mode='auto', gp_reg=0):
         self.set_raw_data()
         if mode == 'manual':
+            if gp_reg == 0:
+                print('[!] Must set $gp value!')
+                sys.exit(1)
             self.manual_gp_addr(gp_reg)
         else:
             self.search_gp_addr()

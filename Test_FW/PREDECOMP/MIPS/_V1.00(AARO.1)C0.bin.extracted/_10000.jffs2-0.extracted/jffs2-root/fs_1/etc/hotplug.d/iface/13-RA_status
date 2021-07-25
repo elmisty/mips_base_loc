@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. /etc/functions.sh
+include /lib/config
+
+ipv6Enable=$(uci_get network ${INTERFACE} ipv6)
+
+[ "$ipv6Enable" == "1" ] && [ "$ACTION" = "ifup" -a "${INTERFACE:0:3}" = "wan" ] && /etc/init.d/RA_status restart
+

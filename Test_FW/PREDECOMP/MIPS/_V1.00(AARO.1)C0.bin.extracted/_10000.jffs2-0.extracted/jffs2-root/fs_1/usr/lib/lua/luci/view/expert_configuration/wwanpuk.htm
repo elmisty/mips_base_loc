@@ -1,0 +1,158 @@
+<%#
+LuCI - Lua Configuration Interface
+Copyright 2008 Steven Barth <steven@midlink.org>
+Copyright 2008 Jo-Philipp Wich <xm@leipzig.freifunk.net>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+$Id: header.htm 4891 2009-06-22 10:23:21Z jow $
+
+-%>
+<%
+require("luci.sys")
+uci = require("luci.model.uci").cursor()
+--require("luci.i18n").loadc("default")
+local i18n = require("luci.i18n")
+require("luci.http").prepare_content("text/html")
+local lang = uci:get("system","main","language")
+i18n.load("admin-core",lang)
+i18n.setlanguage(lang)
+
+-%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" title="Standard" href="../mode/easy/images/css.css" type="text/css" media="screen" />
+<title>.::Welcome to ZyXEL NBG6616::.</title>
+<link href="/luci-static/zyxel/css/expert.css" rel="stylesheet"type="text/css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<script type="text/JavaScript">
+<% local PIN_3G = uci:get("network","3g","PIN") %>
+function CheckValue()
+{
+  	if(document.WWANPIN.PIN.value=="")
+    	{
+           	alert("Your <PIN code> is empty!");
+                return false;
+   	}
+
+ 	else
+		showWebMessage( 1 , '<%:Message%>' , '<%:msg_config%>' );
+ 	return true;	
+}
+
+function unLoad()
+{
+    window.opener.location.href = window.opener.location.href;
+	window.close();
+}
+
+
+</script>
+
+
+<body onunload="unLoad();">
+<form method="post" name="WWANPUK" action="<%=controller%>/expert/configuration/network/wan/wwanpuk" onSubmit="return CheckValue();"> 
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td><table width="100%" height="37" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="19" height="37" valign="top"><img src="/luci-static/zyxel/admin/images/popup_top_left.gif" width="19" height="45" /></td>
+          <td background="/luci-static/zyxel/admin/images/popup_top_center.gif" class="about_title"><%:Warning_3G_Status%></td>
+          <td width="15" background="/luci-static/zyxel/admin/images/popup_top_center.gif">&nbsp;</td>
+          <td width="19" height="45" valign="top"><img src="/luci-static/zyxel/admin/images/popup_top_right.gif" width="19" height="45" /></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr>
+    <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="19" background="/luci-static/zyxel/admin/images/popup_main_left.gif">&nbsp;</td>
+          <td bgcolor="#FFFFFF"><span class="popupcontent">
+            </span>
+
+			<% local NEWPIN_3G = uci:get("network","3g","NEWPIN") %>
+			<% local PUK_3G = uci:get("network","3g","PUK") %>
+			<%
+			local pin_init=luci.sys.exec("cat /tmp/3g_PIN_init")
+			local pin_init_add=string.match(pin_init,"+CPIN:ADD")
+			if pin_init_add then --no support SIM times
+				auth_times="N/A"
+			else		
+				local auth_pin=luci.sys.exec("cat /tmp/3g_PIN_end | grep 'SIM PUK' | sed -n '1p' | cut -d ',' -f3")				
+				if auth_pin then
+					auth_times=auth_pin
+				else
+					auth_times="N/A"
+				end	
+			end
+			%>
+            <div class="w_text">
+				<ul>
+				<li style=" font-size:12px; text-align:left; color:#FF0000;"><span class="bold"><%:SIM_locked%></span></li>
+				</ul>
+			</div>
+			<div class="w_text">
+				<ul>
+				<li style=" font-size:12px; text-align:left;"><%:Enter_PUK_unlock%>
+				</ul>
+			</div>
+			<div class="w_text">
+				<ul>
+				<li class="left_table" style=" font-size:12px; text-align:left;"><%:PUK_code%>: </li>
+				<li class="right_table"><input type="text" name="PUK" id="PUK" <% if PUK_3G then %>value="<%=PUK_3G%>"<% else %>value=""<% end %>/></li>
+				</ul>
+			</div>
+			<div class="w_text">
+				<ul>			
+				<li class="left_table" style=" font-size:12px; text-align:left;"><%:New_PIN_code%>: </li>
+				<li class="right_table"><input type="text" name="NEWPIN" id="NEWPIN" <% if NEWPIN_3G then %>value="<%=NEWPIN_3G%>"<% else %>value=""<% end %>/></li>
+				</ul>
+			</div>			
+			<div class="w_text">
+				<ul>
+				<li style=" font-size:12px; text-align:left;"><%:PUK_remaining_auth%>: <%=auth_times%></span></li>
+				<input type="hidden" name="authtimes" value="<%=auth_times%>">
+				</ul>
+			</div>	
+			<div class="spaceair"></div>
+			<div class="w_text"><span class="i_note"><%:note%>:</span> </div>
+			<div class="w_text"><span class="i_note_a"><%:note_PUK1%></span></div>
+			<div class="w_text"><span class="i_note_a"><%:note_PUK2%></span></div>
+			<div class="w_text"><span class="i_note_a">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%:note_PUK3%></span></div>
+			<div class="spaceair"></div> 	
+
+		  </td>
+          <td width="19" background="/luci-static/zyxel/admin/images/popup_main_right.gif">&nbsp;</td>
+        </tr>
+      </table></td>
+  </tr>
+<tr>
+<td>
+	<table width="100%" height="37" border="0" cellpadding="0" cellspacing="0">
+		<tr>
+		<td width="19" height="48"><img src="<%=media%>/easy/images/popup_down_left.gif" width="19" height="48" /></td>
+		<td background="<%=media%>/easy/images/popup_down_center.gif">
+			<div class="button2"><ul>
+			<li><center>
+				<input name="apply" value="<%:apply%>" type="submit" />
+				&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+				<input name="cancel" value="<%:cancel%>" type="button" onclick="window.close()"/>
+			</center></li>
+			</ul></div>
+		</td>
+		<td width="19" height="37"><img src="<%=media%>/easy/images/popup_down_right.gif" width="19" height="48" /></td>
+		</tr>
+	</table>
+</td>
+</tr>
+
+</table>
+</body>
+</html>
+

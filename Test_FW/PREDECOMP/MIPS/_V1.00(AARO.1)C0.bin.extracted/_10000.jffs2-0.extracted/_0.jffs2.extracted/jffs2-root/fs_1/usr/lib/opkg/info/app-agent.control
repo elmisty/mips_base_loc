@@ -1,0 +1,8 @@
+Package: app-agent
+Version: 1
+Depends: libc, libjson, libuci
+Source: package/private/zyxel/app-agent
+Section: net
+Architecture: ar71xx
+Installed-Size: 28562
+Description:  mobile APP agent

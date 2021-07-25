@@ -1,0 +1,341 @@
+<%#
+LuCI - Lua Configuration Interface
+Copyright 2008 Steven Barth <steven@midlink.org>
+Copyright 2008 Jo-Philipp Wich <xm@leipzig.freifunk.net>
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+	http://www.apache.org/licenses/LICENSE-2.0
+
+$Id: header.htm 4891 2009-06-22 10:23:21Z jow $
+
+-%>
+<%
+require("luci.http").prepare_content("text/html")
+local uci = require("luci.model.uci").cursor()
+local http = require("luci.http")
+local i18n = require("luci.i18n")
+local lang = uci:get("system","main","language") 
+i18n.load("admin-core",lang)
+i18n.setlanguage(lang)
+-%>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"  />
+<title>.::Welcome to the Web-Based Configurator::.</title>
+<link href="<%=media%>/css/expert.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<%=media%>/js/baseJS.js" ></script>
+<script type="text/javascript">
+
+<%
+	local http_port=uci:get("uhttpd", "main", "listen_http")
+	local host=http.getenv("HTTP_HOST")
+	local host_ip = host:match("(%d+.%d+.%d+.%d+)")
+%>
+var objXMLHTTP;
+
+function atoi(str, num)
+{
+	i = 1;
+	if (num != 1) {
+		while (i != num && str.length != 0) {
+			if (str.charAt(0) == '.') {
+				i++;
+			}
+			str = str.substring(1);
+		}
+		if (i != num)
+			return -1;
+	}
+
+	for (i=0; i<str.length; i++) {
+		if (str.charAt(i) == '.') {
+			str = str.substring(0, i);
+			break;
+		}
+	}
+	if (str.length == 0)
+		return -1;
+	return parseInt(str, 10);
+}
+
+function checkRange(str, num, min, max)
+{
+	d = atoi(str, num);
+	if (d > max || d < min)
+		return false;
+	return true;
+}
+
+function isAllNum(str)
+{
+	for (var i=0; i<str.length; i++) {
+		if ((str.charAt(i) >= '0' && str.charAt(i) <= '9') || (str.charAt(i) == '.' ))
+			continue;
+		return 0;
+	}
+	return 1;
+}
+
+function checkIpAddr(field, ismask)
+{
+	if (field.value == "") {
+		alert("<%:IP_Error_1%>");
+		field.value = field.defaultValue;
+		field.focus();
+		return false;
+	}
+
+	if (isAllNum(field.value) == 0) {
+		alert("<%:IP_Error_2%>");
+		field.value = field.defaultValue;
+		field.focus();
+		return false;
+	}
+
+	if (ismask) {
+		if ((!checkRange(field.value, 1, 0, 255)) ||
+				(!checkRange(field.value, 2, 0, 255)) ||
+				(!checkRange(field.value, 3, 0, 255)) ||
+				(!checkRange(field.value, 4, 0, 255)))
+		{
+			alert("<%:IP_Error_3%>");
+			field.value = field.defaultValue;
+			field.focus();
+			return false;
+		}
+	}
+	else {
+		if ((!checkRange(field.value, 1, 0, 255)) ||
+				(!checkRange(field.value, 2, 0, 255)) ||
+				(!checkRange(field.value, 3, 0, 255)) ||
+				(!checkRange(field.value, 4, 1, 254)))
+		{
+			alert("<%:IP_Error_3%>");
+			field.value = field.defaultValue;
+			field.focus();
+			return false;
+		}
+	}
+	return true;
+}
+
+function frmload()
+{
+	document.getElementById("popup_wait").style.visibility='hidden';
+}
+function relogin()
+{	
+	with ( document.forms[0] ){
+		var submit_url = 'http://<%=host_ip%>:' + remoteWWWPort.value;
+		top.window.location.href = submit_url; 
+	}
+}
+
+function checkSubmit()
+{
+	with ( document.forms[0] ){
+		if(remoteWWWPort.value > 65535 || remoteWWWPort.value < 1){
+			alert("Please set port between 1~65535");
+			return false;
+		}
+
+		var submit_url = '<%=luci.dispatcher.build_url("expert","configuration","management","remote")%>';
+		var loc = submit_url + '?apply=Apply';
+		
+		loc += '&RemoteWWWPort=' + remoteWWWPort.value;
+		loc += '&RemoteWWWInterface=' + remoteWWWInterface.options[remoteWWWInterface.selectedIndex].value;
+		if(remoteWWWClientCheck0.checked == true){
+			loc += '&RemoteWWWClientCheck=' + 0;
+		}
+		else{
+			loc += '&RemoteWWWClientCheck=' + 1;
+		}
+		
+		if(remoteWWWClientCheck1.checked == true){
+
+			if ( !checkIpAddr(document.RMGMTWWWForm.remoteWWWClientAddr, false) )
+			{
+			    return false;
+			}
+			else
+			{
+				loc += '&RemoteWWWClientAddr=' + remoteWWWClientAddr.value;			
+			}		
+		
+		}
+		else{
+
+			loc += '&RemoteWWWClientAddr=' + "";
+			
+		}
+		
+		if(remoteWWWPort.value == "<%=http_port%>"){
+			var code = 'location="' + loc + '"';
+     		eval(code);
+		}
+		else{
+			document.getElementById("popup_wait").style.visibility='visible';
+			
+			
+			if (window.XMLHttpRequest) {
+			     objXMLHTTP=new XMLHttpRequest();
+			}// code for IE
+			else if (window.ActiveXObject)  {
+			     objXMLHTTP=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			
+			objXMLHTTP.open("GET",loc,true);
+
+		    /*let IE refresh page */
+		    //objXMLHTTP.setRequestHeader("If-Modified-Since",new Date(0)); /*It will fail in Chrome*/
+		    objXMLHTTP.setRequestHeader("Content-Type", "text/plain");
+		    
+		    objXMLHTTP.send(null);
+
+		    setTimeout("relogin()", 5000);
+		}
+	}
+}
+function changeClient(btn)
+{
+	with (document.forms[0]){
+		if(btn == 0){
+			remoteWWWClientCheck0.checked = true;
+			remoteWWWClientCheck1.checked = false;
+		}
+		else{
+			remoteWWWClientCheck0.checked = false;
+			remoteWWWClientCheck1.checked = true;
+		}
+	}
+}
+</script>
+</head>
+<body onload="frmload()">
+<%
+   local infIdx = tonumber( uci:get( "firewall", "remote_www", "interface" ) )
+   local clientCheck = uci:get( "firewall", "remote_www", "client_check" )
+%>
+<form name="RMGMTWWWForm">
+<div id="tabs">
+   <ul>
+      <li class="hightline"><a title="<%:WWW%>"><span><%:WWW%></span></a></li>
+      <li><a href="<%=controller%>/expert/configuration/management/remote/telnet" title="<%:Telnet%>"><span><%:Telnet%></span></a></li>
+      <li><a href="<%=controller%>/expert/configuration/management/remote/wol" title="<%:Wake_On_LAN%>"><span><%:Wake_On_LAN%></span></a></li>
+   </ul>
+   <br class="clearfloat" />
+</div>
+<div id="table">
+   <ul>
+      <li class="table_top"></li>
+      <li class="table_content">
+         <div class="data">
+            <ul>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:Port%> : </li>
+                     <li class="right_table">
+                        <input name="remoteWWWPort" size="5" maxlength="5" value="<%= uci:get( "firewall", "remote_www", "port" )%>" type="text" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:Access_Status%> : </li>
+                     <li class="right_table">
+                        <select name="remoteWWWInterface" size="1" >
+                           <option value="00000001" <% if 1 == infIdx then %>selected="selected"<% end %> ><%:LAN_WAN%> </option>
+                           <option value="00000002" <% if 2 == infIdx then %>selected="selected"<% end %> ><%:LAN%> </option>
+                           <option value="00000003" <% if 3 == infIdx then %>selected="selected"<% end %> ><%:WAN%> </option>
+                        </select>
+                     </li>
+                  </ul>
+               </div>
+               <div class="w_text">
+                  <ul>
+                     <li class="left_table"><%:Secured_Client_IP_Address%>   :</li>
+                     <li class="right_table">
+                        <input name="remoteWWWClientCheck0" value="0" type="radio" <% if "0" == clientCheck then%>checked="checked"<% end %> onclick="changeClient(0)"/>
+                           <%:All%>&nbsp;&nbsp;&nbsp;
+                        <input name="remoteWWWClientCheck1" value="1" type="radio" <% if not ( "0" == clientCheck ) then%>checked="checked"<% end %> onclick="changeClient(1)"/>
+                           <%:Selected%>&nbsp;
+                        <input name="remoteWWWClientAddr" size="20" maxlength="15" value="<%= uci:get( "firewall", "remote_www", "client_addr" )%>" type="text" />
+                     </li>
+                  </ul>
+               </div>
+               <div class="spaceair"></div>
+               <div class="w_text"> <span class="i_note"><%:Note%>:</span>
+               </div>
+               <div class="w_text"><%:Remote_MGMT_Note_1%>
+               </div>
+               <div class="spaceair"></div>
+            </ul>
+         </div>
+      </li>
+      <li class="table_button">
+         <div class="button" align="center">
+            <input name="apply" value="<%:Apply%>" type="button" onclick="checkSubmit()"/>
+               &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+            <input name="Cancel" value="<%:Cancel%>" type="reset" />
+         </div>
+      </li>
+   </ul>
+</div>
+<div id="popup_wait">
+	<table width="60%" border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td><table width="100%" height="37" border="0" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="19" height="37"><img src="<%=media%>/admin/images/popup_top_left.gif" width="19" height="45" /></td>
+				<td background="<%=media%>/admin/images/popup_top_center.gif" class="table_title2"><%:NBG6616%></td>
+				<td width="15" background="<%=media%>/admin/images/popup_top_center.gif"></td>
+				<td width="19" height="45"><img src="<%=media%>/admin/images/popup_top_right.gif" width="19" height="45" /></td>
+			</tr>
+		</table></td>
+	</tr>
+	<tr>
+	<td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td width="19" background="<%=media%>/admin/images/popup_main_left.gif">&nbsp;</td>
+	<td bgcolor="#FFFFFF"><span class="popupcontent"> 
+	<table width="95%" border="0" align="center" cellpadding="0" cellspacing="0">
+	<tr>
+	<td width="27%"><center>
+	<img src="<%=media%>/easy/images/loading.gif" />
+	</center>
+	</td>
+	<td width="73%" id=id_ScanningyourNetwork><%:Relogin%> . . .</td>
+	</tr>
+	</table>
+	</span></td>
+	<td width="19" background="<%=media%>/admin/images/popup_main_right.gif">&nbsp;</td>
+	</tr>
+	</table></td>
+	</tr>
+	<tr>
+	<td><table width="100%" height="37" border="0" cellpadding="0" cellspacing="0">
+	<tr>
+	<td width="19" height="48"><img src="<%=media%>/admin/images/popup_down_left.gif" width="19" height="48" /></td>
+	<td background="<%=media%>/admin/images/popup_down_center.gif">
+	<div class="button2"><ul>   
+	<li></li>
+	<li></li>
+	</ul></div></td>
+	<td width="19" height="37"><img src="<%=media%>/admin/images/popup_down_right.gif" width="19" height="48" /></td>
+	</tr>
+	</table></td>
+	</tr>
+	</table>
+</div>
+</form>
+</body>
+<script language="JavaScript">
+   showFullPath(' <%:Management%> > <%:Remote_MGMT%> > <%:WWW%>');
+   showWebMessage( 0, '<%:Message%>', '<%:Ready%>' );
+</script>
+</html>
