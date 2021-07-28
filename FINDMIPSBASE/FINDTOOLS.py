@@ -212,6 +212,7 @@ def calc_gp_addr(gp_reg, real_img_sz):
     else:
         calc_with_off = (gp_reg + calc_gp_off)
     """
+    #calc_with_off = (gp_reg & 0xFFFF0000) + 0x10000
     calc_with_off = (gp_reg & 0xFFFF0000)
 
     candi_base = (calc_with_off - real_img_sz) & 0xFFFF0000
