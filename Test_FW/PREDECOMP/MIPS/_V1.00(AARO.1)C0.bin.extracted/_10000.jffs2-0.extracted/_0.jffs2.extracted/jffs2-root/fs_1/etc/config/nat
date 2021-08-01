@@ -1,7 +1,0 @@
-config nat general
-        option rules_count	0
-        option nat	enable
-	option NextRulePos	1
-	option sessions_user 16000
-	option last_changeToSerIP 192.168.1.222
-	option changeToSer      0

@@ -1,2 +1,0 @@
-/etc/modules.d/50-ledtrig-timer
-/lib/modules/3.3.8/ledtrig-timer.ko

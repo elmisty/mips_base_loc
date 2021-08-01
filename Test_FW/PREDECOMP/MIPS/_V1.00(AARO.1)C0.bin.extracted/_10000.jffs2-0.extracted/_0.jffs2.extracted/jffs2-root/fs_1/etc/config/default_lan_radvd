@@ -1,2 +1,0 @@
-config 'default_lan_radvd' 'basic'
-	option 'prefix' ''

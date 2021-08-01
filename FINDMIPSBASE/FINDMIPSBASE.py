@@ -54,12 +54,12 @@ class FINDMIPSBASE:
                     break
                 i+=1
             if len(diff_word) > 2 and btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad:
-                print(raw_data[trg_addr+i:trg_addr+(i+1)])
+                #print(raw_data[trg_addr+i:trg_addr+(i+1)])
                 """
                 if diff_word.isalnum() or diff_word.isalpha() or diff_word.isdigit() \
                     and (btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad):
                 """
-                print(diff_word)
+                #print(diff_word)
                 self.rate_base_addr[hex(candi_base)] += 1
                 """
                 if trg_str in diff_word:
@@ -145,7 +145,7 @@ class FINDMIPSBASE:
         else:
             real_img_sz = getsize(self.imgpath)
 
-        calc_gp_reg, candi_base = calc_gp_addr(gp_reg, real_img_sz)
+        candi_base, calc_gp_reg = calc_gp_addr(gp_reg, real_img_sz)
 
         print("   → Range of candidate base address : {} ~ {}\n".format(hex(candi_base), hex(calc_gp_reg)))
 

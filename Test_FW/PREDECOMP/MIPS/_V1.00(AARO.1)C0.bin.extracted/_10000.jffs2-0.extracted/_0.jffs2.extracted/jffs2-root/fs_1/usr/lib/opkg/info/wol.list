@@ -1,6 +1,0 @@
-/etc/config/wol
-/etc/hotplug.d/iface/19-wol
-/sbin/startWol
-/usr/bin/wolipq
-/etc/init.d/wol
-/usr/bin/wol

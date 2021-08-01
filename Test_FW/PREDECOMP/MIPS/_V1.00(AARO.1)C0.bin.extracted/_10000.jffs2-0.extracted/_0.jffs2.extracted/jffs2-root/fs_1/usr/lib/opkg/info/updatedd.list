@@ -1,4 +1,0 @@
-/etc/config/updatedd
-/etc/hotplug.d/iface/30-updatedd
-/etc/init.d/updatedd
-/usr/bin/updatedd

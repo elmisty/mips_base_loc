@@ -1,4 +1,0 @@
-/etc/hotplug.d/iface/13-RA_status
-/bin/RA_status
-/etc/config/RA_status
-/etc/init.d/RA_status
