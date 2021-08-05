@@ -54,19 +54,11 @@ class FINDMIPSBASE:
                     break
                 i+=1
             if len(diff_word) > 2 and btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad:
-                #print(raw_data[trg_addr+i:trg_addr+(i+1)])
                 """
                 if diff_word.isalnum() or diff_word.isalpha() or diff_word.isdigit() \
                     and (btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad):
                 """
-                #print(diff_word)
                 self.rate_base_addr[hex(candi_base)] += 1
-                """
-                if trg_str in diff_word:
-                    print("[=] String matched! : ", diff_word)
-                    print("[=] BASE ADDRESS FOUNDED!!... ", hex(candi_base))
-                    sys.exit(0)
-                """
 
     def find_real_img(self, int_gp):
         #real_img = open(self.imgpath, 'rb)
