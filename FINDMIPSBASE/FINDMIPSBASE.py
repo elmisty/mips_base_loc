@@ -14,6 +14,8 @@ class FINDMIPSBASE:
         self.byte_order = byte_order
 
         self.flag = 0
+        self.min_str_addr = 0xffffffff
+        self.min_addr_list = []
         self.rate_base_addr = {}
 
         self.raw_data = 0
@@ -29,6 +31,7 @@ class FINDMIPSBASE:
 
     def chk_off_str(self, str_addr, candi_base):
         raw_data = self.raw_data
+
         diff_word = ''
 
         trg_addr = str_addr - candi_base
@@ -54,11 +57,11 @@ class FINDMIPSBASE:
                     break
                 i+=1
             if len(diff_word) > 2 and btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad:
-                """
-                if diff_word.isalnum() or diff_word.isalpha() or diff_word.isdigit() \
-                    and (btoh(raw_data[trg_addr+i:trg_addr+(i+1)]) == null_pad):
-                """
+                #if self.min_str_addr > str_addr:
+                #    self.min_str_addr = str_addr
+                self.min_addr_list.append(str_addr)
                 self.rate_base_addr[hex(candi_base)] += 1
+        
 
     def find_real_img(self, int_gp):
         #real_img = open(self.imgpath, 'rb)
@@ -176,6 +179,11 @@ class FINDMIPSBASE:
             insp_bytes = self.fp.read(4)
             if idx == self.match_size or chk_sz >= getsize(self.imgpath):
                 self.print_result(self.rate_base_addr)
+                self.min_addr_list = list(set(self.min_addr_list))
+                self.min_addr_list = sorted(self.min_addr_list)
+
+                for i in self.min_addr_list:
+                    print('STRING ADDR : ', hex(i))
                 sys.exit(0)
 
             if borl == 'little':
@@ -206,16 +214,15 @@ class FINDMIPSBASE:
 
                     if str_addr >= candi_base:
                         i = candi_base
-
+                        if self.min_str_addr > str_addr:
+                            self.min_str_addr = str_addr
+                            self.min_addr_list.append(str_addr)
                         while i < calc_gp_reg:
-                            #print(hex(i))
                             self.chk_off_str(str_addr, i)
                             i += 0x1000 # 4KB
-                    
-                    #if str_addr >= candi_base:
-                    #    founded_addr = self.chk_off_str(str_addr, candi_base, self.decoy)
                 idx += 1
-            chk_sz += 1        
+            chk_sz += 1 
+        
 
     def do_analyze(self, mode='auto', gp_reg=0):
         self.set_raw_data()
