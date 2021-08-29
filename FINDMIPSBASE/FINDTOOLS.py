@@ -1,4 +1,5 @@
 import os
+
 from genericpath import getsize
 from bitstring import BitArray, ConstBitStream
 
@@ -242,3 +243,15 @@ def calc_size(imgpath):
         print('NONE : ', tmp_sz)
     else:
         print('ELSE : ', tmp_sz)
+
+def graph_dataset(dict_data):
+    freq_data = {}
+
+    for addr in dict_data.keys():
+        #for idx in range(0, dict_data[addr]):
+        #    conv_addr = int(addr, 16)
+        #    freq_data.append(conv_addr)
+        conv_addr = int(addr, 16)
+        freq_data[conv_addr] = dict_data[addr]
+    
+    return freq_data

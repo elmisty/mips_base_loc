@@ -1,6 +1,7 @@
 import os
 import struct
 import sys
+import matplotlib.pyplot as plt
 
 from os.path import join, getsize
 from .FINDTOOLS import *
@@ -105,6 +106,9 @@ class FINDMIPSBASE:
         
     def print_result(self, rate_base_addr):
         base_list = {}
+        graph_data = {}
+        freq_data = {}
+        freq_list = []
 
         for candi_base in rate_base_addr.keys():
             if rate_base_addr[candi_base] == 0:
@@ -118,10 +122,22 @@ class FINDMIPSBASE:
         for i in ret_base.keys():
             if idx == 5:
                 break
-            
             print("   → {} : {}".format(i, ret_base[i]))
             idx += 1
         idx = 0
+
+        freq_data = graph_dataset(base_list)
+        
+
+        #plt.title("Address")
+        """
+        plt.figure(figsize=(10, 6))
+        plt.plot(freq_data.keys(), freq_data.values())
+        plt.xlabel("Address")
+        plt.ylabel("Match Rate")
+        plt.grid()
+        plt.savefig('./test.png')
+        """
 
         return ret_base
     
@@ -169,6 +185,47 @@ class FINDMIPSBASE:
                 idx += 1
             chk_sz += 1
 
+    """
+    def search_data_section(self, candi_base, calc_gp_reg):
+        fp = self.fp
+        borl = self.byte_order
+        str_addr = []
+
+        idx = 0
+        chk_sz = 0
+
+        while i < (calc_gp_reg-0x1000):
+            if idx == self.match_size or chk_sz >= getsize(self.imgpath):
+                self.min_addr_list = list(set(self.min_addr_list))
+                self.min_addr_list = sorted(self.min_addr_list)
+
+                self.print_result(self.rate_base_addr)
+                break
+            insp_bytes = self.fp.read(4)
+            if borl == 'little':
+                insp_bytes = ltob(insp_bytes)
+            
+            insp_bit = btob(insp_bytes)
+
+            if chk_lui(insp_bit):
+                str_rt = ext_rt(insp_bit)
+                str_addr = self.search_pair_inst(str_rt, ext_imm(insp_bit))
+            
+                if str_addr >= candi_base:
+                    self.str_list.append(str_addr)
+                    i = candi_base
+                    if self.min_str_addr > str_addr:
+                        self.min_str_addr = str_addr
+                        self.min_addr_list.append(str_addr)
+
+                    while i < calc_gp_reg:
+                        self.chk_off_str(str_addr, i)
+                        i += 0x1000
+                idx += 1
+            chk_sz += 4
+    """
+
+
     def string_match(self, candi_base, calc_gp_reg):
         fp = self.fp
         borl = self.byte_order
@@ -214,6 +271,7 @@ class FINDMIPSBASE:
         idx = 0
         chk_sz = 0
 
+        print("[#] Finding $gp register value... ")
         while True:
             if chk_sz >= getsize(self.imgpath):
                 print("[#] Cannot Find $gp register value!")
@@ -230,7 +288,6 @@ class FINDMIPSBASE:
                 str_rt = ext_rt(insp_bit)
                 if chk_gp(insp_bit):
                     gp_reg = self.search_pair_inst(str_rt, ext_imm(insp_bit))
-                    print("[#] Finding $gp register value... ")
                     #print("   → $gp : {}".format(hex(gp_reg)))
 
                     if gp_reg != None and gp_reg != 0:
