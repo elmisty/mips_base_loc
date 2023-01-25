@@ -192,7 +192,7 @@ class PREVFINDMIPSBASE:
                 str_rt = ext_rt(insp_bit)
                 str_addr = self.search_pair_inst(str_rt, ext_imm(insp_bit))
                 
-                if 0x80000000 <= str_addr and str_addr <= start_addr:
+                if 0x7FFEB940 <= str_addr and str_addr <= start_addr:
                     start_addr = str_addr
                 if str_addr >= start_addr:
                     end_addr = str_addr
