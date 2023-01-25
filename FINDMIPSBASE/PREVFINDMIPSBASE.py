@@ -161,7 +161,6 @@ class PREVFINDMIPSBASE:
 
                     while i < end_addr:
                         self.chk_off_str(str_addr, i)
-                        print(hex(i))
                         i += 0x1
                 idx += 1
             chk_sz += 4
