@@ -1,7 +1,6 @@
 import os
 import struct
 import sys
-import matplotlib.pyplot as plt
 
 from os.path import join, getsize
 from .FINDTOOLS import *
