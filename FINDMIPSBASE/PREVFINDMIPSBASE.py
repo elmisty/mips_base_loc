@@ -128,14 +128,24 @@ class PREVFINDMIPSBASE:
     def string_match(self, start_addr, end_addr):
         fp = self.fp.seek(0, 0)
         borl = self.byte_order
+        matching_steps = 0
         str_addr = []
 
         idx = 0
         chk_sz = 0
         
-        print("[#] Num of String : ", len(self.str_list))
-        self.match_size = int(len(self.str_list) / 500 * (getsize(self.imgpath) / 10000))
+        
+        
+        if getsize(self.imgpath) > 1000000:            
+            matching_steps = 500 * (getsize(self.imgpath) / 10000)
+            matching_steps = len(self.str_list) / matching_steps
+            self.match_size = int(len(self.str_list) / matching_steps)
+        else:
+            self.match_size = 500
+            
         print("[#] Num of Matching : ", self.match_size)
+        print("[#] Num of String : ", len(self.str_list))
+        print("[#] Matching Steps : ", matching_steps)
 
         while True:
             if idx == self.match_size or chk_sz >= getsize(self.imgpath):
