@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>Cloud Setting</title>
+		<style type="text/css">
+			#content-cloud_setting li {
+				clear: left;
+			}
+
+			#cloud-new-register {
+				margin: 10px 0 0 10px;
+			}
+
+			#li-cloud-acceptTips input{
+			    margin: 23px 7px 10px 0;
+			}
+			.a-tplink {
+				float: left;
+				clear: left;
+				margin : 0 0 10px 40px;
+			}
+			#content-cloud_setting .checkbox {
+				bottom: -19px;
+			}
+			#li-cloud-acceptTips a span{
+				text-decoration: underline;
+			}
+			.a-tplink{
+				text-decoration: underline;
+			}
+			.a-tplink:hover{
+				color:#999;
+			}
+			.a-tplink-comma{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-cloud_setting">
+			<div>
+				<p i18n="legend-cloudSetting" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset" id="cloud-field">
+				<legend class="lang-text" i18n="legend-cloudSetting" style="display: none"><!-- Cloud Setting --></legend>
+				<div id="cloud-error-tips"style="display:none;line-height: 30px; margin:10px 0 0 40px;">
+				</div>
+				<div id="cloud-login-part" class="cloud-part" >
+					<ul class="content-usr-list">
+						<li>
+							<span class="text-tips lang-text" i18n="add-tips">
+								<!-- Add your camera to Cloud account  -->
+							</span>
+							<a href="javascript:void(0)" id="cloud-new-register" class="lang-text" 
+							i18n="noAccount-tips" style="display:none;"><!-- Don't have an account? --></a>
+							<span class="text-tips lang-text" i18n="input-tips">
+								<!-- Please enter your Cloud account and password: -->
+							</span>
+						</li>
+					</ul>
+					<ul>
+						<li class="li-model3">
+							<span class="lang-text" i18n="account"><!-- Account: --></span>
+							<input type="text" id="cloud-login-name" class="input-text" value="E-mail/Username" >
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="passwd"><!-- Password: --></span>
+							<input type="password" id="cloud-login-pwd" class="input-text">
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="cameraName" ><!-- Camera Name: --></span>
+							<input type="text" class="input-text" id="cloud-login-cameraname" >
+						</li>
+						<li>
+							<span class="text-tips lang-text" i18n="link-tips" >
+								<!-- With Cloud service, you can view your cloud cameras anytime and anywhere over the Internet. Go to --> 
+							</span>
+							<a target="_blank" href="http://www.tplinkcloud.com" class="a-tplink">www.tplinkcloud.com</a>
+							<span class="a-tplink-comma">.</span>
+						</li>
+					</ul>
+				</div>
+				<div id="cloud-registered-part" class="cloud-part" style="display:none;">
+					<ul>
+						<li>
+							<span class="text-tips lang-text" id="cloud-registered-status" i18n="registered-tips">
+								<!-- The camera has been added to the TP-Link Cloud account. -->
+							</span>
+						</li>
+						<li class="li-model1">
+							<span class="lang-text" class="input-text" i18n="cloudAccount"><!-- Cloud Account: --></span>
+							<span id="cloud-account-registered-name"></span>
+						</li>
+						<li id="cloud-linktips">
+							<span class="text-tips lang-text" i18n="link-tips">
+								<!-- With Cloud service, you can view your cloud cameras anytime and anywhere over the Internet. Go to --> 
+							</span>
+							<a target="_blank" href="http://www.tplinkcloud.com" class="a-tplink">www.tplinkcloud.com</a>
+							<span class="a-tplink-comma">.</span>	
+						</li>
+					</ul>
+				</div>
+				<div id="cloud-register-part"  class="cloud-part" style="display:none;">
+					<ul>
+						<li class="li-model3">
+							<span class="lang-text input-text" i18n="email" ><!-- Email: --></span>
+							<input type="text" class="input-text" id="cloud-register-email" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text input-text" i18n="username"><!-- Username: --></span>
+							<input type="text" class="input-text" id="cloud-register-username" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text input-text" i18n="passwd"><!-- Password: --></span>
+							<input type="password" class="input-text" id="cloud-register-pwd" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text input-text" i18n="confirm-passwd"><!-- Confirm Password: --></span>
+							<input type="password" class="input-text" id="cloud-register-confirm-pwd" />
+						</li>
+						<li id="li-cloud-acceptTips" class="li-model6" style="margin-left:40px;">
+							<input type="checkbox" class="input-checkbox" id="cloud-register-accept" >
+							<span> 
+								<span class="lang-text" i18n="accept-tips"><!-- I accept the TP-Link Cloud --></span>
+								<a target="_blank" href="https://www.tplinkcloud.com/PrivacyPolicy.php" style="color: #21a5dd !important; text-decoration: none;" ><span class="lang-text" i18n="privacyPolicy"><!-- Privacy Policy --></span></a>
+								<span>and</span>
+								<a target="_blank" href="https://www.tplinkcloud.com/TermsofUse.php" style="color: #21a5dd !important; text-decoration: none;"><span  class="lang-text" i18n="termsOfUse" ><!-- Terms of Use --></span></a>
+								<span clas="a-tplink-comma">.</span>
+							</span>
+						</li>
+					</ul>
+				</div>	
+			</fieldset>
+			<div id="cloud-normal-bottom" class="content-list-bottom">
+				<div class="button-list-right">
+					<input type="button" class="input-button cloud-button lang-value" id="cloud-register" value="Register" i18n="register" />
+					<input type="button" class="input-button cloud-button lang-value" id="cloud-refresh" value="Refresh" style="display:none;" i18n="refresh"/>
+					<input type="button" class="input-button cloud-button lang-value" id="cloud-rebind" value="Reregister" style="display:none;" i18n="reRegister" />
+					<input type="button" class="input-button cloud-button lang-value" id="cloud-deregister" value="Deregister" style="display:none;" i18n="deRegister" />
+				</div>
+			</div>
+			<div id="cloud-register-part-bottom" class="content-list-bottom" style="display:none;">
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" id="cloud-new-register-back" value="Back" i18n="back" />
+					<input type="button" class="input-button lang-value" id="cloud-new-register-signup" value="Sign up" 
+					i18n="signup"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Cloud.init();
+		$("#index-img-loading").hide();
+	</script>
+</html>

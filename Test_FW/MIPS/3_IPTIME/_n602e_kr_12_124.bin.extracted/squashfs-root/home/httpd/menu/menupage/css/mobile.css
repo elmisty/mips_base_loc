@@ -1,0 +1,136 @@
+@charset "utf-8";
+body { -webkit-touch-callout: none !important; }
+a { -webkit-user-select: none !important; }
+#service_page :not(INPUT):not(TEXTAREA) {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.ui-overlay-a, .ui-page-theme-a { background-color: #FFF; }
+hr {
+        border:none;
+        background-color: #48533c;
+        text-align:left;
+        clear: both;
+}
+#header {
+        background-color: #48533c;
+        border: 1px solid #ccc;
+	border: none;
+
+}
+#header hr {
+        border: 1px solid #48533c;
+        clear: both;
+}
+.listview { clear: both; }
+.listview a { padding: 0px; background-color: #F6F6F6; }
+.listview p {
+        display: block !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-shadow: none;
+        font-style: normal;
+        font-family: "굴림", "Helvetica Neue";
+        color: #444;
+        font-size: inherit !important;
+}
+.ui-page-theme-a .ui-btn.ui-btn-active { background-color: #F6F6F6; border-color: #DDD;}
+.ui-page-theme-a .ui-btn:focus { box-shadow: none; }
+
+.listview .line_title { float: left; display:inline-block; }
+.listview .line_title p {
+        padding-left: 0.5em;
+        line-height: 2em;
+	margin-bottom:0em;
+}
+.listview .line_status { float: left; display: table; }
+.listview .line_status p { line-height: 2em; }
+.listview .line_status span { display: table-cell;      vertical-align: middle; }
+.listview .line_status img {
+        height: 1em;
+        width: 1em;
+        padding-top: 0.3em;
+        padding-right: 0.3em;
+}
+.listview .line_value { clear: both; height: 2em; }
+.listview .line_value p { padding-left: 0.5em; color: #888; }
+
+
+.custom_css_button {
+        width: 6em;
+        height: 2.3em;
+        margin:.3em;
+	margin-top:0.1em;
+	font-size:1.1em;
+	margin-bottom:1em;
+}
+
+/*local css*/
+#maincontent >div { overflow:hidden;}
+
+#maincontent .lc_grayfont_text{color:#777; text-overflow:ellipsis; white-space:nowrap;}
+#maincontent .lc_line_div {line-height:1.7em; height:1.7em; width:100%;}
+#maincontent .lc_leftbox_div {width:auto; float:left;}
+#maincontent .lc_leftbox_div p { margin-left : 0.5em;}
+#maincontent .lc_rightbox_div {float:right; width:auto; margin-right:1em; text-align:right;}
+
+#maincontent ul li.internettype img { padding-top : 0.7em;}
+
+.lc_onoffline_left{
+	display:inline-block !important;
+	width:49%;
+	float:left;
+}
+.lc_onoffline_right{display:inline-block !important; padding:.7em 0em 0 0;}
+
+#listview li >a { border: 0; }
+#maincontent{
+	font-size:1.1em;
+	background-color:#FFFFFF;
+	width:100%;
+	float:left;
+}
+.setup_page{float:right !important;}
+.cc_iconbar{
+	height:2em;
+	margin-top:0.35em;
+	width:2px;
+	background-color:#444;
+	float:left;
+	margin-right:.7em;
+	margin-left:.7em;
+}
+.ui-slider{float:left;}
+.custom_css_button span{width:7em; font-family:"굴림", "Helvetica Neue";}
+
+
+/** menu css **/
+.menu_title{background-color:#F8F8EF; height:2.5em; margin-bottom:.5em; margin-top:.7em;}
+#header #logo{float:left; padding-top:0; padding-left:1em;}
+#logo p{margin-left:0 !important; font-size:1em !important;}
+#header .cc_leftheader_div{width:55%;}
+#product_code{padding-left:.3em;}
+#menu_content{font-size:1.15em; padding-bottom:.5em;}
+
+.menu_title p{line-height:2.5em; padding-left:.7em;}
+
+#menu_content dl{height:3.4em; border-style:none; padding:.2em; width:47%;}
+#system_info .icon{background-image: url(/common/images/menu_icon/systeminfo.png);}
+dt.icon{width:3.3em; height:3.3em; float:left;}
+.label p{line-height:3.3em;}
+.label p, .label_div p{padding-left:.5em;}
+.animation_blink{border-radius:.4em;}
+dd.label_div{padding-top:.4em;}
+#content{background-color:#F8F8EF;}
+.custom_css_button{margin-left:.7em; margin-top:.8em;}
+#menu_content li:nth-child(even) dl{/*padding-left:.5em;*/ margin-left: 0.3em;}
+li{padding-left:.1em;}
+.first_div{margin-top:0em;}
+.left_footer_div {
+	float: left;
+	width: 49%;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>Nav-left</title>
+		<link rel="stylesheet" type="text/css" href="css/live_view.css?ver=ECC739">
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-live_view">
+			<div id="video-plug">
+				<p>此处是视频</p>
+				<object id="tpplugin" width="640" height="480" type="application/x-tp-camera-h264" style="width: 640px; height: 480px;"><param name="wmode" value="transparent">
+					<param name="wmode" value="transparent">
+				</object>
+			</div>
+			<div id="video-control_bar">
+				<ul id="controlpanelul">
+					<li class="videocorl">
+						<span id="videocut" class="videoimg" title="Snapshot"></span>
+					</li>
+					<li class="videocorl">
+						<span id="videovid" class="videoimg" title="Record"></span>
+						<span id="videovidon" class="videoimg" title="End Record"></span>
+					</li>
+					<li class="videocorl">
+						<span id="videoflip" class="videoimg" title="Flip"></span>
+					</li>
+					<li class="videocorl">
+						<span id="videomirror" class="videoimg" title="Mirror"></span>
+					</li>
+					<li class="videocorl">
+						<span id="daynight" class="videoimg" title="Day&amp;Night"></span>
+						<div id="dayandnightcover"></div>
+					</li>
+					<li class="videocorl">
+						<span id="videozoom" class="videoimg" title="Zoom"></span>
+					</li>
+					<li class="control-bar">
+						<div id="zoombar-all" class="slider">
+						</div>
+					</li>
+					<li class="videocorl">
+						<span id="video_volume" class="videoimg" title="Volume"></span>
+					</li>
+					<li class="control-bar">
+						<div id="volumebar-all" class="slider">
+						</div>
+					</li>
+					<li class="videocorl">
+						<span id="video_fullscreen" class="videoimg" title="Fullscreen"></span>
+					</li>
+				</ul>
+				<ul id="daylist" style="display: none;">
+					<li  class="dayctrl">
+						<span class="videoimg" id="automode" title="Auto"></span>
+					</li>
+					<li class="dayctrl">
+						<span class="videoimg" id="daymode" title="Day"></span>
+					</li>
+					<li class="dayctrl">
+						<span class="videoimg" id="nightmode" title="Night"></span>
+					</li>
+				</ul>
+				<ul class="video-control_state" >
+					<li>
+						<span class="text-title-little">Brightness:</span>
+						<div id="video-brightness" class="slider"></div>
+					</li>
+					<li>
+						<span class="text-title-little">Contrast:</span>
+						<div id="video-contrast" class="slider"></div>
+					</li>
+					<li>
+						<span class="text-title-little">Saturation:</span>
+						<div id="video-saturation" class="slider"></div>
+					</li>
+					
+				</ul>
+				<ul>
+					<li class="li-model5">
+						<span>Resolution:</span>
+						<select>
+						<option>640*480</option>
+						<option>320*240</option>
+						</select>
+					</li>
+					<li>
+						<input type="button" class="input-button" id="video-preset" value="Preset" />
+					</li>
+				</ul>
+				
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/live_view.js?ver=ECC739"></script>
+</html>

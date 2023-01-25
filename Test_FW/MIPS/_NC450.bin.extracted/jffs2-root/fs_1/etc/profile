@@ -1,0 +1,31 @@
+# /etc/profile
+# System wide environment and startup programs
+#
+
+# envs...
+PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PATH
+
+# lib searching path
+LD_LIBRARY_PATH=/usr/local/lib
+export LD_LIBRARY_PATH
+
+# modify free size
+sysctl  -w vm.min_free_kbytes=4096
+
+# read MIC information
+MIC_DIR=/usr/local/config/ipcamera
+ls -la ${MIC_DIR}/TpHeader || filecut -i /dev/mtdblock2 -o ${MIC_DIR}/TpHeader -s 0xf000 -l 0x200
+ls -la ${MIC_DIR}/ApMac    || filecut -i /dev/mtdblock3 -o ${MIC_DIR}/ApMac -s 0x4 -l 6
+
+# initialize wireless EEPROM
+cp -f /usr/local/etc/wlan/* /etc_ro/wlan/
+
+ifconfig lo up
+syslogd
+
+if ! [ -d "/var/run/lighttpd" ]; then
+	sh -C /etc_ro/profile
+fi
+
+echo "======= Welcome To NC450 ======"

@@ -1,0 +1,172 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+START=46
+
+set_iptables_rule(){
+
+    iptables -N IntfGrp
+    iptables -N IntfGrp_INPUT
+
+    iptables -F IntfGrp
+    iptables -F IntfGrp_INPUT
+
+    local WAN_PROTO=$(uci get network.wan.proto)
+    if [ "$WAN_PROTO" == "pppoe" ]; then
+      DEFAULT_WAN="pppoe-wan"
+    else
+      DEFAULT_WAN="vlan10"
+    fi
+
+    local LAN_ip=$(uci get network.lan.ipaddr)   
+    
+    # Set iptables rules from Group2 to Group5(if exist)
+    for i in `seq 2 1 5`
+    do 
+        local grouped_wan=$(uci get intfGrp.Group$i.wanint)
+        local group_vid=$(uci get intfGrp.Group$i.vlanid)
+
+        if [ ! -z "$grouped_wan" ]; then  
+           #echo "the Group$i grouped wan is $grouped_wan" >> /tmp/bbb 
+           local ifname=$(uci get network.$grouped_wan.ifname)
+           #echo "the wan ifname is $ifname" >> /tmp/bbb
+           iptables -D IntfGrp -i br-vlanth$group_vid -j DROP 2>/dev/null
+           iptables -D IntfGrp -i br-vlanth$group_vid -o $ifname -j ACCEPT 2>/dev/null
+           iptables -D IntfGrp -i br-lan -j DROP 2>/dev/null
+           iptables -D IntfGrp -i br-lan -o $DEFAULT_WAN -j ACCEPT 2>/dev/null
+           
+           iptables -I IntfGrp -i br-vlanth$group_vid -j DROP 2>/dev/null
+           iptables -I IntfGrp -i br-vlanth$group_vid -o $ifname -j ACCEPT 2>/dev/null
+           iptables -I IntfGrp -i br-lan -j DROP 2>/dev/null
+           iptables -I IntfGrp -i br-lan -o $DEFAULT_WAN -j ACCEPT 2>/dev/null        
+       
+           iptables -D IntfGrp_INPUT -s 192.168.$i.0/24 -d $LAN_ip/24 -j DROP 2>/dev/null
+           iptables -I IntfGrp_INPUT -s 192.168.$i.0/24 -d $LAN_ip/24 -j DROP 2>/dev/null
+
+           iptables -D IntfGrp_INPUT -s $LAN_ip/24 -d 192.168.$i.0/24 -j DROP 2>/dev/null
+           iptables -I IntfGrp_INPUT -s $LAN_ip/24 -d 192.168.$i.0/24 -j DROP 2>/dev/null
+
+        fi
+    done
+}
+
+setup_intfGrp(){
+
+        local group_name="$1"
+        local wanint
+        local vlan_vid
+        local lanport
+        local wlan
+        local avalable
+        local vlan_tag
+
+    # If Group neam is Default, skip interface Grouping
+    if [ $group_name != "Default" ]; then
+
+        config_get wanint $group_name wanint
+        config_get vlan_vid $group_name vlanid
+        config_get lanport $group_name lanport
+        config_get wlan $group_name wlan
+        config_get vlan_tag $group_name vlan_tag
+
+        local wan_proto=$(uci get network.$wanint.proto)
+        local available=$(uci get network.general.available)
+
+      if [ "$wan_proto" == "bridge" ]; then
+
+          local wan_vid=$(uci get network.$wanint.vid) 
+          # Handle Grouping ethernet ports
+              if [ ! -z "$lanport" ]; then
+
+                  # Ignore tag from lan or not. 
+                  if [ "$vlan_tag" == "1" ]; then
+                     /bin/configure_vlan vlan_port $wan_vid $lanport 1 1
+                  else
+                     /bin/configure_vlan vlan_port $wan_vid $lanport 1 0
+                  fi
+
+                  if [ ! -z "$available" ]; then
+                    /bin/configure_vlan vlan_port 20 $available 0 1
+                  fi
+                  
+              fi
+
+           # Handle Grouping wlan interface
+             if [ ! -z "$wlan" ]; then
+                 /bin/configure_vlan wlan br-lan $lanport
+             fi
+     else
+        
+        # Setup the vlan interface
+        local vlan_int="vlan$vlan_vid"
+        /bin/configure_vlan add $vlan_vid $vlan_int
+
+        # setup br-vlan interface
+        /sbin/ifup vlan$vlan_vid
+        /sbin/ifup vlanth$vlan_vid
+
+        # Handle Grouping ethernet ports
+        if [ ! -z "$lanport" ]; then
+           /bin/configure_vlan vlan_port $vlan_vid $lanport 0 1
+        fi
+
+        if [ ! -z "$available" ]; then
+           /bin/configure_vlan vlan_port 20 $available 0 1
+        fi
+
+
+        # Handle Grouping wlan interface
+        if [ ! -z "$wlan" ]; then
+            /bin/configure_vlan wlan br-vlanth$vlan_vid $wlan
+        fi
+
+
+        #GroupING wan and vlan interface
+        local default_gw_ip=$(uci get network.$wanint.isp_gw)
+        local wan_ifname=$(uci get network.$wanint.ifname)
+        /bin/configure_vlan del_int_group $vlan_vid $wanint 192.168.$vlan_vid.0
+        /bin/configure_vlan int_group $vlan_vid $wan_ifname 192.168.$vlan_vid.0 $default_gw_ip
+
+
+        #check the vlan bridge interface
+        brctl addif br-vlanth$vlan_vid vlan$vlan_vid
+
+        #IPv6
+        uci set dhcp6c.basic.intfGrp_write_prefix="1"
+      if [ -n "$wanint" ]; then
+        uci set dhcp6c.basic.interface=$wanint
+      fi 
+        uci commit dhcp6c
+
+      IP_version=$(uci get network.$wanint.IP_version)
+      if [ "$IP_version" != "IPv4_Only" ]; then
+        /etc/init.d/dhcp6c restart  
+      fi
+
+      /etc/init.d/default_lan_radvd boot	
+
+        # Avoid the special case:
+        # Modified default wan to bridge mode and add new routing mode multi-wan 
+        ifconfig vlan20 up
+
+        # re-arrange the route table, only keep this routing rule in group table
+        ip route del 192.168.$vlan_vid.0/24 dev br-vlanth$vlan_vid
+
+    fi
+
+  fi
+}
+
+
+start() {
+
+        config_load intfGrp
+        config_foreach setup_intfGrp interface
+        set_iptables_rule
+}
+
+
+reload() {
+        start
+}
+

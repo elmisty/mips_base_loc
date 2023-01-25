@@ -1,0 +1,77 @@
+/*--------header---------------*/
+.main .header {
+	height: 90px;
+	position: relative;
+	width: 100%;
+	/*width: 100%;*/
+	min-width: 1200px;
+	background-color: #4acbd6;
+
+}
+
+.header .header-logo {
+	background: url("/images/tp-link_logo.png") no-repeat;
+	height: 46px;
+	width: 120px;
+	float: left;
+	margin: 22px 25px;
+}
+
+.header .header-descr {
+	float: right;
+	margin: 20px 5px 4px 0;
+}
+
+.header .header-descr span {
+	display: block;
+	font-weight:bold;
+	font-family:Arial;
+	font-size: 14px;
+	color:#FFFFFF;
+	text-align: right;
+}
+
+.header .header-logout {
+	background:url("/images/img.png") no-repeat scroll transparent;
+	background-position:-183px -15px;
+	width:40px;
+	height:50px;
+	cursor:pointer;
+	display: block;
+	float: right;
+	
+}
+
+.header-logout:hover{
+	background-position:-223px -15px;
+}.header-logout:active{
+	background-position:-260px -15px;
+}
+
+#langch-cell {
+	float: right;
+	clear: right;
+	margin-right: 50px;
+}
+
+.lang-icon {
+	cursor: pointer;
+	color:#FFFFFF;
+}
+.lang-icon:hover {
+	color:black;
+}
+
+#lang-select {
+	cursor: pointer;
+	width: 0;
+	float: right;
+	overflow: hidden;
+	height: 18px;
+}
+
+#header-langchange {
+	float: right;
+	color:#FFFFFF;
+}
+

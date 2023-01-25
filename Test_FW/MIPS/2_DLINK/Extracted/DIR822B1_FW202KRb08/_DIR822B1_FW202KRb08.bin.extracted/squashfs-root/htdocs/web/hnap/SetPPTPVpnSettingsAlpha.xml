@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+<SetPPTPVpnSettingsAlpha> 
+	<pptp></pptp>
+	<authtype>
+		<chap></chap>
+		<mschap></mschap>
+	</authtype>
+	<encrtype></encrtype>
+	<isolation></isolation>
+		<account>
+			<entry>
+				<name></name>
+				<password></password>
+				<hostid></hostid>
+				<enable></enable>
+			</entry>
+		</account>
+</SetPPTPVpnSettingsAlpha>
+</soap:Body>
+</soap:Envelope>

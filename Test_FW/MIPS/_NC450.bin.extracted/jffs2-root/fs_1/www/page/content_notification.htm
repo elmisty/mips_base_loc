@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/notification.css?ver=ECC739">
+	<title>Nofitication Delivery</title>
+
+</head>
+<body>
+	<!--nofitication delivery-->
+	<div class="content-right-cell" id="content-notification">
+		<div>
+			<p i18n="legend-Notification" class="lang-text fieldset-title legend-p"></p>
+		</div>	
+		<fieldset class="m-fieldset" id="notification-field">
+			<legend class="lang-text" i18n="legend-Notification" style="display: none"><!-- Notification Delivery --></legend>
+			<!--<div class="f-vm-box">
+				<div class="f-vm-ctn">-->
+					<ul class="content-model">
+						<ul>
+							<span class="nd-title"><strong class="lang-text" i18n="target"><!-- Target: --></strong></span>
+						</ul>
+						<li>
+							<ul class="li-model6 f-hide" id="ftp-check">
+								<input type="checkbox" class="input-checkbox" id="notification-model-ftp"/>
+								<span class="lang-text" i18n="ftp" ></span>
+							</ul>
+							<ul id="notification-cell-ftp" style="display:none;">
+								<li class="li-model3">
+									<span class="lang-text" i18n="ftp-serverPort" ><!-- FTP Server/Port: --></span>
+									<input type="text" class="input-text" id="notification-ftp-server" />
+									<span class="text-little">:</span>
+									<input type="text" class="input-text" id="notification-ftp-port" maxlength="5" />
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="username"><!-- Username: --></span>
+									<input type="text" class="input-text" id="notification-ftp-username" />
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="passwd" ><!-- Password: --></span>
+									<input type="password" class="input-text" id="notification-ftp-passwd" />
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="path" ><!-- Path: --></span>
+									<input type="text" class="input-text" id="notification-ftp-path" value="/" />
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="passiveMode" ><!-- Passive Mode: --></span>
+									<input type="checkbox" class="input-checkbox" id="notification-ftp-pasive_mode" />
+								</li>
+								<li class="li-model3">
+									<input type="button" class="input-button lang-value" i18n="test" id="notification-ftp-test" value="Test" style="margin:0;"/>
+									<span id="ftp-test-loadingshow"></span>
+								</li>
+							</ul>	
+							<ul class="li-model6 f-hide" id="smtp-check">
+								<input type="checkbox" class="input-checkbox" id="notification-model-email" />
+								<span class="lang-text" i18n="email" ><!-- Email --></span>
+							</ul>						
+							<ul id="notification-cell-email" style="display:none;">
+								<li class="li-model3" id="recipient-creat-1" >
+									<span class="lang-text" i18n="recipientAddr" ><!-- Recipient E-mail Address: --></span>
+									<input type="text" class="input-text" id="notification-email-recipient_addr1" />
+									<a href="#" id="ftp-add_recipient" >
+										<span class="lang-text" i18n="addRecipient" ><!-- Add recipient --></span>
+									</a>
+								</li>
+								<li class="li-model3 notification-email-extra_addr" id="recipient-creat-2" style="display:none;">
+									<span class="lang-text" i18n="recipientAddr" ><!-- Recipient E-mail Address: --></span>
+									<input type="text" class="input-text " id="notification-email-recipient_addr2" />
+									<a href="#" class="ftp-del_recipient">
+										<span class="lang-text" i18n="delete" ><!-- Delete --></span>
+									</a>
+								</li>
+								<li class="li-model3 notification-email-extra_addr" id="recipient-creat-3" style="display:none;">
+									<span class="lang-text" i18n="recipientAddr"  ><!-- Recipient E-mail Address: --></span>
+									<input type="text" class="input-text " id="notification-email-recipient_addr3" />
+									<a href="#" class="ftp-del_recipient">
+										<span class="lang-text" i18n="delete" ><!-- Delete --></span>
+									</a>
+								</li>
+								<li class="li-model3 notification-email-extra_addr" id="recipient-creat-4" style="display:none;">
+									<span class="lang-text" i18n="recipientAddr" ><!-- Recipient E-mail Address: --></span>
+									<input type="text" class="input-text " id="notification-email-recipient_addr4" />
+									<a href="#" class="ftp-del_recipient">
+										<span class="lang-text" i18n="delete" ><!-- Delete --></span>
+									</a>
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="sendAddr" ><!-- Sender E-mail Address: --></span>
+									<input type="text" class="input-text" id="notification-email-sender_addr" />
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="passwd" ><!-- Password: --></span>
+									<input type="password" class="input-text" id="notification-email-passwd" />
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="smtp-serverPort" ><!-- SMTP Server/Port: --></span>
+									<input type="text" class="input-text" id="notification-email-smtp_server" />
+									<span class="text-little">:</span>
+									<input type="text" class="input-text" id="notification-email-smtp_port" />
+								</li>
+								<li class="li-model5">
+									<span  class="lang-text" i18n="sslEncryption" ><!-- SSL Encryption: --></span>
+									<select id="notification-email-sslencry" style="width: 155px;">
+										<option value="0">Close</option>
+										<option value="1">TLS</option>
+										<option value="2">STARTTLS</option>
+									</select>
+								</li>
+								<li class="li-model5">
+									<span class="lang-text" i18n="sendInterval" ><!-- Sending Interval: --></span>
+									<select id="notification-email-interval" style="width: 155px;">
+										<option value="20" >20S</option>
+										<option value="30" >30S</option>
+										<option value="60" >1m</option>
+										<option value="120" >2m</option>
+										<option value="300" >5m</option> 
+										<option value="600" >10m</option>
+										<option value="900" >15m</option>
+										<option value="1800" >30m</option>
+										<option value="3600" >1h</option>
+										<option value="7200" >2h</option>
+										<option value="14400" >4h</option>
+										<option value="21600" >6h</option>
+										<option value="43200" >12h</option>
+										<option value="86400" >24h</option>
+									</select>
+								</li>
+								<li class="li-model3">
+									<input type="button" class="input-button lang-value" id="notification-email-test" value="Test" i18n="test" style="margin:0;"/>
+									<span id="email-test-loadingshow"></span>
+								</li>
+								<li style="clear:left">
+									<span class="text-tips" id="smtp_note" >
+										<span class="lang-text" i18n="smtp-note" ><!-- Note:If you want to set Hotmail as sender E-mail Address, you need to set SMTP Server/Port as smtp-mail.outlook.com:25 (Or 587), and SSL Encryption as STARTTLS. If you want to set Gmail as sender E-mail Address, please refer to this link: --> </span>
+										<a id="notification-tplink-faq" href="http://www.tp-link.com/en/faq-900.html" alt="fuck" target="_blank">http://www.tp-link.com/en/faq-900.html</a>
+									</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				<!--</div>
+			</div>-->
+		</fieldset>
+		<div class="content-list-bottom">
+			<div class="button-list-right">
+				<input type="button" class="input-button lang-value" id="notification-save" value="Save" 
+			i18n="save"/>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Notification.init();
+		$("#index-img-loading").hide();
+	</script>
+</body>
+</html>

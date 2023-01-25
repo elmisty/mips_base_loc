@@ -1,0 +1,10 @@
+Package: kmod-ip6tables
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-c7416cfa16dc3a16ccc3103c55a65435), kmod-ipv6
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 30689
+Description:  Netfilter IPv6 firewalling support

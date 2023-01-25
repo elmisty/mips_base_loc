@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="css/wirelessEx.css?ver=ECC739">
+		<title>Wireless Extender</title>
+
+	</head>
+	<body>			
+		<div class="content-right-cell" id="content-wireless_extender">
+			<fieldset class="m-fieldset" id="wirelessextend-field">
+				<legend class="lang-text" i18n="legend-wirelessEx"><!-- Wireless Extender --></legend>
+				<ul id="wireless_extend_model" style="margin: 10px 0 0 40px;">
+					<li class="li-model2">
+						<input type="radio" id="wireless_extender-enable" class="content-input-radio" name="wireless_extender-model" value="1" />
+						<span class="lang-text" i18n="radio-enable"><!-- Enable --></span>
+					</li>
+					<li class="li-model2">
+						<input type="radio" id="wireless_extender-disable" class="content-input-radio" name="wireless_extender-model" value="0" />
+						<span class="lang-text" i18n="radio-disable"><!-- Disable --></span>
+					</li>
+				</ul>
+				<div id="wireless_extender-patch" style="display:none;">
+					<div>
+						<ul>
+							<li class="li-model1">
+								<span class="lang-text" i18n="hostname"><!-- Host Wireless Network Name: --></span>
+								<span id="extender-host-ssid"></span>
+							</li>
+							<span class="text-title lang-text" i18n="exname" style="margin-bottom:0px"><!-- Extended Wireless Network Name: --></span>
+							<li class="li-model2">
+								<input type="radio" id="extend_ssid-radio-sameashost" class="content-input-radio wirelessex-host-selected" name="extend-wireless-ssid" value="1" checked/>
+								<span class="lang-text" i18n="sameAsHost"><!-- Same as Host --></span>
+							</li>
+							<li class="li-model2" style="clear:left;margin-left:240px">
+								<input type="radio" id="extend_ssid-radio-other" class="content-input-radio" name="extend-wireless-ssid" value="0" />
+								<input type="text" id="extend_ssid-text-other" class="input-text" disabled="disabled" maxlength="32"/>
+							</li>
+						</ul>
+					</div>
+
+					<div id="wireless_extender-otherssid-part" style="display:none;">
+						<ul>
+							<li class="li-model5" id="wireless_extender-auth-list" >
+								<span class="lang-text" i18n="security"><!-- Security: --></span>
+								<select id="wireless_extender-auth" style="width:155px;">
+									<option id="wireless_extender-auth_none" value="None">None</option>
+									<option id="wireless_extender-auth_wep" value="WEP">WEP</option>
+									<option id="wireless_extender-auth_wpa" value="WPA-PSK">WPA-PSK</option>
+									<option id="wireless_extender-auth_wpa2" value="WPA2-PSK">WPA2-PSK</option>
+									<option id="wireless_extender-auth_wpa12" value="WPA/WPA2-PSK">WPA/WPA2-PSK</option>
+								</select>
+							</li>
+							<li class="li-model5 wireless_extender-wep" style="display:none;">
+								<span class="lang-text" i18n="wep-key-index" ><!-- Wep Key Index: --></span>
+								<select id="wireless_extender-wep-index" style="width:155px;">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
+							</li>
+							<li class="li-model4 wireless_extender-wep" style="display:none;">
+								<span class="lang-text" i18n="passwd"><!-- Password: --></span>
+								<input type="password" class="input-pwd" id="wireless_extender-wepkey">
+								<input type="text" class="input-text pwd-text" id="wireless_extender-wepkey-decode" style="display: none;">
+								<span class="checkbox-img"></span>
+								<input type="checkbox" class="input-checkbox showpwd" id="wireless_extender-wepkey-showkey">
+								<span class="lang-text" i18n="show-passwd"><!-- show password --></span>
+							</li>
+							<li class="li-model5 wireless_extender-wpa" style="display:none;">
+								<span class="lang-text" i18n="encryption" ><!-- Encryption: --></span>
+								<select id="wireless_extender-wpa-encp" style="width:155px;">
+									<option value="TKIPAES">Automatic</option>
+									<option value="AES">AES</option>
+									<option value="TKIP">TKIP</option>
+								</select>
+							</li>
+							<li class="li-model4 wireless_extender-wpa" style="display:none;">
+								<span class="lang-text" i18n="passwd"><!-- Password: --></span>
+								<input type="password" class="input-pwd" id="wireless_extender-wpakey" maxlength="64">
+								<input type="text" class="input-text pwd-text" id="wireless_extender-wpakey-decode" style="display: none;" maxlength="64">
+								<span class="checkbox-img"></span>
+								<input type="checkbox" class="input-checkbox showpwd" id="wireless_extender-wpakey-showkey">
+								<span class="lang-text" i18n="show-passwd"><!-- show password --></span>
+							</li>
+						</ul>
+					</div>
+					<ul>
+						<li class="li-model5">
+							<span class="lang-text" i18n="maxCli"><!-- Max Clients: --></span>
+							<select id="extender-maxcli" style="width:155px;">
+								<option value="32">Unlimited</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+							</select>
+						</li>
+					</ul>
+				</div>
+			</fieldset>
+			<div class="content-list-bottom">
+				<input type="button" class="input-button lang-value" i18n="save" id="wireless_extender-save" value="Save">
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		$(".content-right-cell").fadeIn(800);
+		$("#index-img-loading").fadeOut(800);
+	</script>
+	<script type="text/javascript" src="js/wireless_extender.js?ver=ECC739"></script>
+</html>

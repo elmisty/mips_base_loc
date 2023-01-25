@@ -1,0 +1,57 @@
+#wireless-table-cell {
+	float: left;
+	clear: left;
+	margin-top: 10px;
+}
+
+
+
+#content-wireless_connection p {
+	/*float: left;*/
+    clear: left;
+    height: 30px;
+    line-height: 40px;
+}
+
+#content-wireless_connection #wireless_connection-scan {
+	float: left;
+}
+
+#content-wireless_connection select{
+	width: 155px;
+
+}
+
+#content-wireless_connection .text-title {
+	clear:none;
+	font-weight: bold;
+}
+
+/*#wireless-table-cell div{
+	float: left;
+	clear: left;
+	text-align: center;
+}*/
+		
+
+
+.connectedselect{
+	background:url("/images/img.png");
+	background-position:-161px -187px;
+	position:absolute;
+	width:17px;
+	left:8px;
+	top:8px;
+	height:17px;
+}
+
+#wireless-table-cell .datagrid-body {
+  width: 100%;
+}
+
+#wireless-table-cell.datagrid-header {
+  width: 100%;
+}
+#wireless_connection-switch-button{
+	float:right;
+}

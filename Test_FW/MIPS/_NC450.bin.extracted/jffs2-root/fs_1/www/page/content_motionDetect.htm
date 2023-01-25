@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="css/motion.css?ver=ECC739">
+		<style type="text/css">
+			#motiondetection-vedioctrl {
+				margin-left: 40px;
+			}
+			.li-motionsensti{
+				float:left;
+				clear:left;
+				margin:10px 0px 10px 0px;
+			}
+			.li-motionsensti span{
+				float:left;
+				width:200px;
+				min-height: 20px;
+			}
+		</style>
+		<title>Motion Detection</title>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-motion_detection">
+			<div>
+				<p i18n="legend-motionDetect" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset" id="motiondetec-field">
+				<legend class="lang-text" i18n="legend-motionDetect" style="display: none"><!-- Motion Detection --></legend>
+				<div style="width:900px">
+					<ul class="content-model">
+						<li>
+							<span class="sd-title lang-text" i18n="title-motionDetect" ><!-- Motion Detection: --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" class="content-input-radio motiondec-radio" name="motion_detection-model" id="motion_detection-model-enble" value="1"/>
+							<span class="lang-text" i18n="radio-enable" ><!-- Enable --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" class="content-input-radio motiondec-radio" name="motion_detection-model" id="motion_detection-model-disable" value="0"/>
+							<span class="lang-text" i18n="radio-disable"><!-- Disable --></span>
+						</li>
+					</ul>
+					<div id="motiondetection-vedioctrl" class="content-motiondecctrl" style="margin-left: 40px;">
+						<div id="mdplayer">
+							<div id="myTable"></div>
+							<img id="mdlivegetimage" alt="live view" style="width:768px;height:432px;background-color:black">
+						</div>
+						<div class="liveview-error-container" style="float:left;margin-bottom:10px;">
+							<div class="liveview-error" style="display:none;width:700px;margin: 40px auto;position:relative;">
+								<div style="float:left;">
+									<img class="live-view-tips" src="#" style="float:left;width:150px;">
+								</div>
+								<div class="browserErrorInfo" style="position:absolute;left:200px;top:20px;">
+									<p class="lang-text" i18n="browserErrorTitle" style="font-size:18px;margin:20px 0 40px 0;"></p>			
+									<span class="lang-text" i18n="browserTips" style="float:left;font-size:16px;"><!-- Currently we couldn't support IE browser very well, If  you want to view the camera video,please try another browser that is not IE. --></span>
+								</div>
+							</div>
+						</div>				
+						<ul class="content-usr-list">
+													
+							<li class="li-motionsensti">
+								<span class="lang-text" i18n="sensitivity" ><!-- Sensitivity: --></span>
+								<select id="motion-detection-sensitivity" style="width:100px;">
+									<option class="lang-text" i18n="high" value="3"><!-- High --></option>
+									<option class="lang-text" i18n="medium" value="2"><!-- Medium --></option>
+									<option class="lang-text" i18n="low" value="1"><!-- Low --></option>
+								</select>
+							</li>
+						</ul>								
+					</div>
+				</div>
+			</fieldset>
+			<div class="content-list-bottom" style="display:none;">
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" id="motion_detection-save" value="Save" i18n="save"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		MotionDetection.Init();
+		$("#index-img-loading").hide();
+		if(conf.ProductType == 'NC220')
+		{
+			$("#mdlivegetimage").css({"height":"480px","width":"647px"});
+			$("#mdplayer").css({"height":"480px","width":"647px"});
+			$("#myTable").css({"width":"647px"});
+		}
+	</script>	
+</html>

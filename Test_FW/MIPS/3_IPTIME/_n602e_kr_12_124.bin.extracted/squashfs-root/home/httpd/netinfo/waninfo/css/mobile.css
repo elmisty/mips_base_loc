@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* Swipe works with mouse as well but often causes text selection. */
+/* We'll deny text selecton on everything but INPUTs and TEXTAREAs. */
+
+#service_page :not(INPUT):not(TEXTAREA) {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+/*페이지 기본정의
+/*전체 배경색*/
+.ui-overlay-a, .ui-page-theme-a { background-color: #FFF; }
+hr {
+	background-color:#48533c;
+}
+/*헤더*/
+#header {
+	/*//height: 20px;*/
+	background-color: #48533c;
+	border: 1px solid #ccc;
+	border:none;
+}
+/*헤더 경계라인*/
+#header hr {
+	border: 1px solid #48533c;
+	clear: both;
+	/*font-size: 0px;*/
+}
+
+.ui-checkbox label {
+	margin-left: -0.7em !important;
+	padding-right: 0em;
+}
+
+.ui-radio { clear:both; width: 100%; margin-left: 0em; font-size:1.25em;}
+.ui-page-theme-a .ui-btn { background-color: #EEF1E6; }
+.lc_wrap_radiobutton {
+	overflow: auto;	
+	border-top-width: 0;
+	padding: 0.6em;
+	background-color: #EEF1E6;
+}
+.lc_wrap_radiobutton label{ border:0px}
+.lc_wrap_mainobject{overflow:auto;}
+.lc_row { 
+	clear:both;
+	overflow:hidden;
+	height: 4em;
+	min-width: 20em;
+	font-size: 1.04em;
+	padding-top:0.2em;
+	padding-bottom:0.2em;
+}
+.lc_left, .lc_middle ,.lc_right {float: left; overflow: hidden;}
+.lc_left { width:26%; height:3em;}
+.lc_left p { margin-left: 1em; line-height: 4em; font-size:1.02em;}
+.lc_middle { width:50%; margin-top: 1em; font-size:1.08em;}
+.lc_middle div{ float: left; }
+
+.lc_right {
+	width:21%;
+	float: right;
+	margin-top: 1em;
+	overflow: hidden;
+	padding-right:0.9em;
+}
+.hyphen p {
+	font-weight: bold;
+	text-align: center;
+	margin-left: -0.05em;
+}
+.hyphen { width:0.3em; }
+.cc_input_ip { width: 100%; }
+.cc_input_ip .hyphen{ margin-top: 1em;}
+.cc_input_mac .hyphen{ margin-top: 0.4em; }
+.lc_inputbox_ip { width:#2.7em;}
+.lc_inputbox_ip input{ text-align: center; } 
+.lc_inputbox_mac { width: 14.8%; } 
+.lc_inputbox_mac input{ text-align: center; padding:0em;} 
+.lc_manual_check {
+	margin-left: 2px;
+	width: #66%;
+	width: 4em;
+	float: left;
+	margin-top:0.5em;
+}
+.lc_manual_macsearch {
+	float: left;
+	width:35%;
+}
+.lc_manual_macsearch img {
+	margin-top: 0.3em;
+	width: 2.3em;
+	height: 2.3em;
+}
+.lc_input_mtu, .lc_input_user{ width: 93%; }
+.lc_input_mtu div, .lc_input_user div{ width: 100%; }
+
+.lc_input_lcpcount, .lc_input_lcpsecond { width: 20%;}
+.lc_text_lcpcycle { width: 33%; }
+.lc_text_lcpcycle p { text-align: center; margin-right: 0.2em;}
+.lc_text_lcpsecond { width: 10%; margin-right:0.5em;}
+.lc_text_lcpcount { width: 8%; }
+.lc_text_lcpcycle p, .lc_text_lcpsecond p, .lc_text_lcpcount p { line-height: 2em }
+
+.lc_apply_button { width: 6em; height: 2.3em; border-radius:0.3em; font-size:1.05em;}
+.lc_select_datafolder { width: 85.5%; }
+.lc_select_datafolder div { width: 100%; }
+.lc_select_datafolder div div { width: 100%; }
+
+.lc_fullwidth { width: 100%; }
+
+
+/*right*/
+#maclist ul { overflow: #hidden; font-size:1.22em;}
+#maclist li { overflow: hidden; }
+#maclist li:nth-child(even) { background-color: #F6F6F6; padding:0.5em 0em 1em 0em;}
+#maclist li:nth-child(odd) { background-color: #FFFFFF; padding:0.5em 0em 1em 0em;}
+#maclist .maclist_li { cursor: pointer; }
+#maclist .maclist_left { width: 45% !important; }
+#maclist .maclist_left p { text-overflow: ellipsis !important; font-size: inherit; line-height: inherit; }
+#maclist .maclist_right { width: 55% !important; margin-left: 0 !important; margin-top: 0; height:3em;}
+#maclist .maclist_right p
+{
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+	font-size: inherit;
+	line-height: 3em;
+}
+#maclist .right_refresh_button
+{
+        margin-top: 1em !important;
+        margin-right: 1.3em !important;
+}
+.lc_content_addbutton
+{
+        float: right;
+        width: 6em;
+        height: 2.3em;
+        border: 0;
+        background-color: #8DAF25;
+        cursor: pointer;
+	font-size:1.05em;
+	border-radius:0.3em;
+}
+.lc_content_addbutton .icon { float: left; margin-right: 0.5em;}
+.lc_content_addbutton .icon img
+{
+        height: 1.2em !important;
+        width: 1.2em !important;
+        margin-top: 0.4em;
+        margin-left: 0.4em;
+}
+.lc_content_addbutton .text p { line-height: 2em; }
+.lc_content_remotepclist_titlebar
+{
+        height: 2.5em;
+        border: 1px solid #CCCCCC;
+        border-left-width:0;
+        border-right-width:0;
+}
+
+.lc_inputbox_ip{
+	padding-left:0.25em;
+	padding-right:0.25em;
+}
+#status_msg{margin-top:1.3em;}
+#right_panel{width:28em; background-color:#FFFFFF; overflow:auto; position:fixed;}
+.ui-input-text{width:2.5em;}
+.lc_inputbox_mac .ui-input-text{width:2em;}
+#status_msg{width:48%;}
+.lc_right.conn{margin-top:0.6em; margin-right:0.1em;}
+#mac_field{width:94%;}

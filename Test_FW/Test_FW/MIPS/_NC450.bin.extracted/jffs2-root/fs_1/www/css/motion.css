@@ -1,0 +1,36 @@
+#motion_detection-cell {
+	float: left;
+	clear: left;
+}
+#motiondetection-vedioctrl {
+	margin-left: 40px;
+	width:768px;
+	height: auto;
+}
+.md-tips{
+	margin:10px 0 10px 0;
+}
+
+.motion-rec {
+  	border-bottom: 1px dashed white;
+  	border-right: 1px dashed white;
+  	float: left;
+  	height: 35.4px;
+  	width: 47.3px;
+}
+#mdplayer {
+  height: 432px;
+  overflow: hidden;
+  position: relative;
+  width: 768px;
+}
+#myTable {
+  border-left: 1px dashed white;
+  border-top: 1px dashed white;
+  position: absolute;
+  width: 790px;
+}
+.motion-rec-selected {
+  	background-color: #33CCFF;
+  	opacity: 0.5;
+}

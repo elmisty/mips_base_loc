@@ -1,0 +1,99 @@
+<div id="header" class="header" data-role="header" data-position="fixed" data-tap-toggle="false"></div>
+	<div id="content" class="content" data-role="content">
+		<form id="iux_form">
+			<div class="row_pptp">
+				<div class="lc_row" sid="ROW_PPTP_RUN">
+					<div class="lc_left"><p sid="S_PPTP_RUN"></p></div>
+					<div class="lc_middle"> 
+						<div class="input_radio_div"> 
+							<input sid="C_VPNSERVER_PPTP_RUN" name="pptp_run" id="id_pptp_run" type="radio" value="1">
+							<label for="id_pptp_run"><p sid="S_START"></label>
+						</div>
+						<div class="input_radio_div"> 
+							<input sid="C_VPNSERVER_PPTP_RUN" name="pptp_run" id="id_pptp_stop" type="radio" value="0">
+							<label for="id_pptp_stop"><p sid="S_STOP"></label>
+						</div>
+					</div>
+				</div>
+				<div class="lc_row" sid="ROW_MPPE">
+					<div class="lc_left"><p sid="S_PPTP_MPPE"></p></div>
+					<div class="lc_middle"> 
+						<div class="input_radio_div"> 
+							<input sid="C_VPNSERVER_PPTP_MPPE" name="pptp_mppe" id="id_pptp_mppe" type="radio" value="1">
+							<label for="id_pptp_mppe"><p sid="S_USE"></label>
+						</div>
+						<div class="input_radio_div"> 
+							<input sid="C_VPNSERVER_PPTP_MPPE" name="pptp_mppe" id="id_pptp_no_mppe" type="radio" value="0">
+							<label for="id_pptp_no_mppe"><p sid="S_UNUSE"></label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row_l2tp">
+				<div class="lc_row" sid="ROW_L2TP_RUN">
+					<div class="lc_left"><p sid="S_L2TP_RUN"></p></div>
+					<div class="lc_middle"> 
+						<div class="input_radio_div"> 
+							<input sid="C_VPNSERVER_L2TP_RUN" name="l2tp_run" id="id_l2tp_run" type="radio" value="1">
+							<label for="id_l2tp_run"><p sid="S_START"></label>
+						</div>
+						<div class="input_radio_div"> 
+							<input sid="C_VPNSERVER_L2TP_RUN" name="l2tp_run" id="id_l2tp_stop" type="radio" value="0">
+							<label for="id_l2tp_stop"><p sid="S_STOP"></label>
+						</div>
+					</div>
+				</div>
+				<div class="lc_row" sid="ROW_L2TP_PSK">
+					<div class="lc_left"><p sid="S_L2TP_PSK"></p></div>
+					<div class="lc_middle">
+						<div class="div_l2tp_psk">
+							<div class="input_text_div">
+								<input name="l2tp_psk" sid="C_VPNSERVER_L2TP_PSK" id="id_l2tp_psk" type="password">
+							</div>
+							<div class="ui-alt-icon" sid="SHOW_PSK">
+								<input sid="L2TP_PSK_CHECK" id="l2tp_psk_check" type="checkbox" value="1">
+								<label for="l2tp_psk_check"><p sid="S_PWSHOW"></p></label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="lc_row row_l2tp_plugin" sid="ROW_L2TP_PLUGIN">
+					<div class="lc_left">
+						<p sid="S_L2TP_PLUGIN_STATUS"></p>
+					</div>
+					<div>
+						<p sid="L2TP_PLUGIN_STATUS_STR" class="plugin_status_text"></p>
+					</div>
+				</div>
+			</div>
+			<div class="lc_row div_apply">
+				<div class="div_button">
+					<input class="custom_css_button" sid="S_BUTTON_SUBMIT" type="button" data-role="none">
+				</div>
+			</div>
+
+
+			<div sid="ACCOUNTLIST_TITLEBAR" class="vpn_account_list">
+				<div><p sid="S_ACCOUNTLIST_ID"></p></div>
+				<div><p sid="S_ACCOUNTLIST_IPADDR" class="colorgray"></p></div>
+				<div><p sid="S_ACCOUNTLIST_STATUS" class="colorgray"></p></div>
+			</div>
+			<div><ul sid="ACCOUNTLIST"></ul></div>
+			<div class="lc_row vpn_enteradd" sid="ADD_ACCOUNT">
+				<a href="#right_panel" data-icon="false">
+					<div class="titleicon"><img src="/common/images/add_icon.png"></div>
+					<div class="titletext"><p sid="S_ADD_ACCOUNT"></p></div>
+					<div class="icon_openarrow"><img src="/common/images/icon_list_run.png"></div>
+				</a>
+			</div>
+			<div class="lc_row vpn_entermodify" sid="MODIFY_ACCOUNT">
+				<a href="#right_panel" data-icon="false">
+					<div class="titleicon"><img src="/common/images/del_icon.png"></div>
+					<div class="titletext"><p sid="S_MODIFY_ACCOUNT"></p></div>
+					<div class="icon_openarrow"><img src="/common/images/icon_list_run.png"></div>
+				</a>
+			</div>
+		</form>
+	</div>
+</div>
+<div id="footer" data-position="fixed" class="footer" data-role="footer" data-tap-toggle="false"></div>

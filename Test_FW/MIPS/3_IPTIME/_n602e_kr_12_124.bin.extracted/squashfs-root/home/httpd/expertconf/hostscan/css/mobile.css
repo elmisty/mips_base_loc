@@ -1,0 +1,225 @@
+@charset "utf-8";
+/* Swipe works with mouse as well but often causes text selection. */
+/* We'll deny text selecton on everything but INPUTs and TEXTAREAs. */
+
+#service_page :not(INPUT):not(TEXTAREA) {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+/*페이지 기본정의
+/*전체 배경색*/
+.ui-overlay-a, .ui-page-theme-a { background-color: #FFF; }
+hr {
+	border: none;
+	background-color:#48533c;
+}
+/*헤더*/
+#header { background-color: #48533c; border: 1px solid #ccc; border: none;
+}
+/*헤더 경계라인*/
+#header hr { border: 1px solid #48533c; clear: both; }
+.ui-checkbox label { padding-right: 0em; }
+.ui-radio { clear:both; width: 100%; margin-left: 0em; }
+.ui-checkbox .ui-btn{
+	padding-top: 0;
+	padding-bottom: 0;
+	height: 3em;
+	background-color: #EEF1E6;
+}
+#content { background-color: #FAFAF7; font-size:1.1em;}
+.ui-page-theme-a .ui-btn:hover { background-color: #FAFAF7; }
+.ui-page-theme-a .ui-btn { background-color: #FAFAF7; }
+/*main*/
+.lc_logfield
+{
+	margin: 0.5em;
+	margin-top: 0;
+	background-color: rgb(255, 255, 255);
+	height: 30em;
+	overflow: auto;
+}
+.lc_logfield p 
+{
+	margin-left: 0.3em;
+	margin-right: 0.2em;
+	white-space: normal;
+	font-size: #1em;
+	margin-top:0.3em;
+}
+.lc_row
+{
+	overflow: hidden;
+	clear: both;
+	margin-bottom: #0.5em;
+	margin-top:1em;
+	padding-bottom:0.2em;
+}
+.lc_radio_attr
+{
+	overflow: hidden;
+	float: left;
+    margin-top: #0.5em;
+}
+
+.content_ip
+{
+	float: left;
+	overflow: hidden;
+	margin-top: #0.5em;
+}
+.content_ip .input
+{
+	float: left;
+	width: 2.6em;
+	overflow: hidden;
+}
+.content_ip .dot
+{
+	float: left;
+	overflow: hidden;
+	margin-top: 0.9em;
+	width: 0.5em;
+}
+.content_ip .dot p { text-align: center; }
+.content_ping_select
+{
+	overflow: hidden;
+	float: left;
+	margin-right: 0.5em;
+	margin-top: #0.5em;
+	margin-left: 0.5em;
+	width: 5.1em;
+}
+.content_ping_ip
+{
+	overflow: hidden;
+	float: right;
+	margin-right: 1.2em;
+	width:65%;
+}
+.content_ping_ip .title { float: left; }
+.content_ping_ip .title p { line-height: 2.3em; margin-left: #0.5em; margin-right:1.2em;}
+.content_ping_setvalue p
+{
+	line-height: 3em;
+	margin-left: #0.5em;
+	margin-right: 0.5em;
+}
+.content_ping_setvalue .text { float: left;  padding-left:0.5em;}
+.content_ping_setvalue .input_text { float: left; margin-top: 0.5em; }
+
+.content_tcp_ip
+{
+	overflow: hidden;
+	float: left;
+	width:59%;
+}
+.content_tcp_ip .title { float: left; }
+.content_tcp_ip .title p
+{
+	line-height: 3em;
+	margin-left: 1em;
+	margin-right: 0.5em;
+}
+.content_tcp_port
+{
+	overflow: hidden;
+	float: #right;
+	margin-right: ##0.4em;
+	width:41%;
+}
+.content_tcp_port .title { float: left; }
+.content_tcp_port .title p { line-height: 3em; margin-right: 0.5em; }
+.content_tcp_port .content { float: left; }
+.content_tcp_port .content .input
+{
+	float: left;
+	width: 3.7em;
+	margin-top: 0.5em; 
+}
+.content_tcp_port .content .hyphen
+{
+	float: left;
+	width: 1.5em;
+	margin-top: 0.8em; 
+}
+.content_start_button { float: left; margin-left: 0.9em; }
+.content_start_button button
+{
+	clear: both;
+	width: 7em;
+	height: 2.3em;
+	background-color: #8DAF25;
+	border: 0;
+	border-radius:0.3em;
+	cursor: pointer; 
+	margin-top: 0.5em;
+}
+.content_start_button button .icon
+{
+	float: left;
+	margin-left: 0.8em;
+	margin-top:0.1em;
+}
+.content_start_button button .icon img { width: 1.4em; height: 1.1em; }
+.content_start_button button .text
+{
+	float: right;
+	margin-left: #0.5em;
+	margin-right:1em;
+	margin-top:0.1em;
+}
+.content_log_titlebar
+{
+	background-color:#EEF1E6;
+	height:4.5em;
+}
+.content_log_titlebar .title { float: left; }
+.content_log_titlebar .title p
+{
+	margin-left: 1em;
+	line-height: 4.5em;
+	color: rgb(150,150,150);
+}
+.content_log_titlebar .del
+{
+	float: right;
+	margin-right: 1.2em;
+	cursor: pointer;
+}
+.content_log_titlebar .del .icon
+{
+	float: left;
+	margin-right: 0.5em;
+	margin-top: #0.8em;
+	line-height:4.5em;
+}
+.content_log_titlebar .del .icon img { width: 1em; height: 1em; }
+.content_log_titlebar .del .text { float: left; }
+.content_log_titlebar .del .text p { line-height: 4.5em; }
+.lc_radio_attr.left{width:31%;}
+
+/*
+.text.pcount{padding-left:1em; width:2.4em;}
+.text.ptimeouts{padding-left:0.3em; padding-right:0.6em; width:1.5em;}
+.text.psize p{margin-right:0.3em;}
+.text.pbytes{float:right; padding-right:0.5em; width:10%;}
+.text.pcounted{width:2.2em;}
+.text.ptimeout{padding-left:0.3em; padding-right:0.3em; width:4.4em;}
+*/
+
+.lc_left{float:left; width:31%; padding-left:0.5em;}
+.lc_middle{float:left; width:15%;}
+.lc_right{float:left; width:52%; padding-right:#1.3em;}
+.lc_middle .title{padding-top:0.5em;}
+.lc_middle .text{padding-left:0em;}
+.lc_middle .text p{margin-right:0em;}
+.lc_middle .title p{text-align:#right;}
+.text.ptimesec p{margin-right:1.2em;}
+.ui-input-text input{text-align:right;}
+.content_tcp_ip .content_ip.ip{margin-top:0.5em;}
+.lc_row.tcp{margin-top:0.6em;}

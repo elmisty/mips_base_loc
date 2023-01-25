@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<style type="text/css">
+			.account-usermanage-ctrl-cell ul{
+				float: left;
+				margin-bottom: 5px;
+			}
+			#account-change_passwd {
+				width: 150px;
+			}
+		</style>
+		<title>Account</title>
+	</head>
+	
+	<body>
+		<div class="content-right-cell" id="content-account">
+
+			<div>
+				<p i18n="legend-account" class="lang-text fieldset-title legend-p"></p>
+			</div>			
+			<fieldset class="m-fieldset">
+				<legend class="lang-text" i18n="legend-account" style="display: none"><!-- Account --></legend>
+				<div id="account-usermanage-ctrl-table" style="width:435px;margin:10px 0 0 40px;"></div>
+				<div class="account-usermanage-ctrl-cell" style="float:left;margin-bottom:20px;">
+					<ul class="content-model" style="margin-left:15px;">
+						<li>
+							<input type="button" class="input-button lang-value" id="account-add" i18n="add" value="Add"/>
+							<input type="button" class="input-button lang-value" id="account-change_passwd" i18n="changePwd" value="changePassword"/>
+							<input type="button" class="input-button lang-value" id="account-delete" value="Delete" i18n="delete" />
+						</li>
+					</ul>
+					<ul class="content-usr-list" id="account-cell-add" style="display:none;" >
+						<li>
+							<span class="text-title">
+								<strong class="lang-text" i18n="addNewTip"><!-- Add a New User Account --></strong>
+							</span>
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="username" ><!-- Username: --></span>
+							<input type="text" class="input-text" id="account-add-username" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="passwd"><!-- Password: --></span>
+							<input type="password" class="input-text" id="account-add-password" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="confirm-passwd" ><!-- Confirm Password: --></span>
+							<input type="password" class="input-text" id="account-add-confirm_password" />
+						</li>
+					</ul>
+					<ul class="content-usr-list" id="account-cell-change_passwd" style="display:none;" >
+						<li>
+							<span class="text-title">
+								<strong class="lang-text" i18n="changePwd" ><!-- Change Password --></strong>
+							</span>
+						</li>
+						<li class="li-model1">
+							<span class="lang-text" i18n="currentUsr" ><!-- Current User: --></span>
+							<span id="account-current_username"></span>
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="oldPwd"><!-- Old Password: --></span>
+							<input type="password" class="input-text" id="account-change_passwd-old" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="newPwd" ><!-- New Password: --></span>
+							<input type="password" class="input-text" id="account-change_passwd-new" />
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="confirm-passwd" ><!-- Confirm Password: --></span>
+							<input type="password" class="input-text" id="account-change_passwd-confirm_password" />
+						</li>
+					</ul>	
+				</div>
+			</fieldset>
+			<div class="content-list-bottom" style="display:none;">
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" id="account-add-save" value="Save" style="display:none;" i18n="save" />
+					<input type="button" class="input-button lang-value" id="account-change_passwd-save" value="Save" style="display:none;" i18n="save" />
+				</div>		
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		UserManager.init();
+		$("#index-img-loading").hide();
+	</script>
+</html>

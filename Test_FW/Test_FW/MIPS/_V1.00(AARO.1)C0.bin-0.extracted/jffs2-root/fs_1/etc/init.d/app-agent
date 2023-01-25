@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=99
+
+start() {
+	/usr/bin/EmappS &
+
+	# start watch /bin/emapps_monitor daemon
+	#watch -tn 60 /bin/emapps_monitor 1>/dev/null 2>&1 &
+
+	### start watch /sbin/lltd.sh daemon
+        watch -tn 10 /bin/lltd_monitor 1>/dev/null 2>&1 &
+	echo '0' > /tmp/blocking
+}
+
+stop() {
+	killall -9 EmappS
+}

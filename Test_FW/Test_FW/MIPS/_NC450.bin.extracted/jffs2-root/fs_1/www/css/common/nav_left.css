@@ -1,0 +1,172 @@
+/*左侧导航
+-----------------------------*/
+.content .nav-left {
+	width: 200px;
+    /*height: 700px;*/
+    height: 100%;
+    /* float: left; */
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+	background: #4acbd6;
+}
+
+.nav-child-first {
+  margin-top: 5px;
+}
+.nav-child-last {
+  margin-bottom: 5px;
+}
+
+/*所有选项卡的样式*/
+.content .nav-left ul li {
+	/*width: 100%;*/
+	width: 188px;
+	height: auto;
+	text-align: center;
+	margin-left:6px;
+	/*border-top: 1px solid #E0E0E0;*/
+	/*border-bottom: 1px solid #E0E0E0;*/
+	line-height: 45px;
+	font-size: 14px;
+	font-family: Arial;
+	color:#666666;	
+	margin-bottom: 8px;
+}
+.nav-selected{
+	background: #f2f2f2;
+}
+.titlenav-border {
+	background:#21a5dd none repeat scroll 0 0;
+	height: 45px;
+	width: 3px;
+	float: left;
+	display: none;
+}
+.nav-parent {
+	width: 186px;
+    /*margin-left: 5px;*/
+    border: 1px solid #f2f2f2;
+    border-bottom-left-radius: 15px;
+    background: #ffffff;
+    /*margin-top: 4px;*/
+    /*margin-bottom: 4px;*/
+}
+
+.nav-parent-selected .titlenav-border {
+	display: inline;
+}
+
+.title-mark {
+	background: rgba(0, 0, 0, 0) url("/images/img.png") repeat scroll -211px -109px;
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin: 12px 5px;
+}
+.title-mark-nobackground {
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin: 12px 5px;	
+}
+
+
+.nav-parent-selected .title-mark{
+	background-position: -196px -109px;
+}
+
+
+/*主选项卡中子选项卡的样式*/
+.content .nav-left .nav-child li {
+	font-size: 14px;
+	width: 100%;
+	height: 20px;
+	text-align: left;
+	line-height: 20px;
+	padding: 5px 0 5px 20%;
+	/*border: 1px solid;
+	*/
+	border-top: none;
+	border-bottom: none;
+	float:none;
+}
+
+.nav-left .nav-child {
+	/*border-top: 1px solid #E0E0E0;*/
+	width: 100%;
+
+}
+/*子选项卡被选中*/
+.nav-left .nav-child li.nav-child-selected {
+	/*color:#21A5DD;*/
+	color:#36444b;
+	font-weight: bold;
+}
+
+/*鼠标悬浮样式
+------------------------*/
+.content .nav-left ul li:hover {
+	cursor: pointer;
+	/*color:#21A5DD;*/
+	color:#ffcb00;
+}
+
+/*点击选择主选项卡的样式*/
+.content .nav-left ul li .nav-parent-selected {
+	/*color:#21A5DD;*/
+	color:#36444b;
+	font-size:14px;
+	background: #ffcb00;
+	/*background:url("/images/asidebackground.png") repeat-x ;*/
+	font-weight:bold;
+	border-bottom: #f2f2f2;
+	/*border: 1px solid;*/
+}
+
+
+.content .nav-left .nav-img {
+	display: block;
+	float: left;
+	width: 30px;
+	height: 25px;
+	margin: 10px 0 10px 20px;
+}
+
+.nav-live_view .nav-img {
+	background:url("/images/img.png");
+	background-position:-106px -40px;
+}
+.nav-live_view .nav-img-selected {
+	background:url("/images/img.png");
+	/*background-position:-76px -40px;*/
+	background-position:-106px -40px;
+}
+
+.nav-basic .nav-img {
+	background:url("/images/img.png");
+	background-position:297px -40px;
+}
+.nav-basic .nav-img-selected {
+	background:url("/images/img.png");
+	/*background-position:268px -40px;*/
+	background-position:297px -40px;
+}
+.nav-advanced .nav-img {
+	background:url("/images/img.png");
+	background-position:298px -14px;
+}
+.nav-advanced .nav-img-selected {
+	background:url("/images/img.png");
+	/*background-position:268px -14px;*/
+	background-position:298px -14px;
+}
+.nav-system .nav-img {
+	background:url("/images/img.png");
+	background-position:-101px -14px;
+}
+.nav-system .nav-img-selected {
+	background:url("/images/img.png");
+	/*background-position:-71px -14px;*/
+	background-position:-101px -14px;
+}

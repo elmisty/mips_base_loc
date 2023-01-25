@@ -1,0 +1,120 @@
+<div id="header" class="header" data-role="header" data-position="fixed" data-tap-toggle="false"></div>
+<div id="content" class="content" data-role="content">
+	<!--ip-->
+    <div class="lc_row" sid="ROW_IP">
+      <div class="lc_left"><p sid="S_IP_TITLE"></p></div>
+      <div class="lc_middle">
+        <div id="ip_field" sid="C_LANINFO_IP" class="cc_input_ip ip">
+          <div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+        </div>
+      </div>
+    </div>
+
+	<!--netmask-->
+    <div class="lc_row" sid="ROW_NETMASK">
+      <div class="lc_left"><p sid="S_NETMASK_TITLE"></p></div>
+      <div class="lc_middle">
+        <div id="netmask_field" sid="C_LANINFO_NETMASK" class="cc_input_ip ip">
+          <div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="lc_row" sid="ROW_HUBAPUSING">
+        <div class="lc_middle hubapin">
+        <div id="hubapusing_field" sid="LANINFO_HUBAPUSING">
+		<div class="lc_manual_check lc_fullwidth ui-alt-icon hubap">
+			  <input name="hubapusing" sid="C_LANINFO_HUBAPUSING" id="check_hubapusing" type="checkbox" value="1">
+			  <label for="check_hubapusing"><p sid="S_LANINFO_HUBAPUSING"></p></label>
+		</div>
+	</div>
+	</div>
+    </div>
+
+    <div class="lc_row" sid="ROW_GATEWAY">
+      <div class="lc_left"><p sid="S_GATEWAY_TITLE"></p></div>
+      <div class="lc_middle">
+        <div id="gateway_field" sid="C_LANINFO_GATEWAY" class="cc_input_ip ip">
+          <div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+        </div>
+      </div>
+	<div class="lc_right" sid="MGW">
+		<div class="lc_manual_check lc_fullwidth ui-alt-icon passive">
+			<input name="mgw" sid="C_LANINFO_MGW" id="check_mgw" type="checkbox" value="1">
+			<label for="check_mgw"><p sid="S_LANINFO_SELF"></p></label>
+		</div>
+	</div>
+    </div>
+
+    <div class="lc_row" sid="ROW_FDNS">
+      <div class="lc_left"><p sid="S_FDNS_TITLE"></p></div>
+      <div class="lc_middle">
+        <div id="fdns_field" sid="C_LANINFO_FDNS" class="cc_input_ip ip">
+          <div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lc_row" sid="ROW_SDNS">
+      <div class="lc_left"><p sid="S_SDNS_TITLE"></p></div>
+      <div class="lc_middle">
+        <div id="sdns_field" sid="C_LANINFO_SDNS" class="cc_input_ip ip">
+          <div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+          <div class="hyphen"><p>.</p></div>
+          <div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+        </div>
+      </div>
+	<div class="lc_right" sid="MDNS">
+		<div class="lc_manual_check lc_fullwidth ui-alt-icon passive">
+			<input name="mdns" sid="C_LANINFO_MDNS" id="check_mdns" type="checkbox" value="1">
+			<label for="check_mdns"><p sid="S_LANINFO_SELF"></p></label>
+		</div>
+	</div>
+    </div>
+
+	<div class="lc_row lc_submit">
+                <div class="lc_content"><input class="custom_css_button lc_apply_button" sid="S_BUTTON_SUBMIT" type="button" data-role="none"></div>
+        </div>
+
+    <ul class="listview ui-listview" data-role="listview">
+	  <li class="submenulist" sid="lanpcinfo"><a href="#right_panel" data-icon="false">
+		<div class="submenu_icon1"><img src="/common/images/info.png"></div>
+		<div class="line_title submenu_title"><p sid="S_SEARCHADDR_REG"></p></div>
+		<div class="line_status submenu_icon2"><img src="/common/images/icon_list_run.png"></div>
+	  </a></li>
+	</ul>
+  </div>
+<div data-role="popup" class="loading" id="loading_pending" data-overlay-theme="a" data-theme="none" data-shadow="false" data-dismissible="false" data-history="false">
+	<p align="center" sid="PENDING_MSG1"></p>
+	<p align="center" sid="PENDING_MSG2"></p>
+</div>
+<div id="footer" data-position="fixed" class="footer" data-role="footer" data-tap-toggle="false"></div>

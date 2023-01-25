@@ -1,0 +1,113 @@
+#!/bin/sh
+
+. /etc/functions.sh
+
+getoption() {
+	local cfg=$1
+	config_get resolvfile "$cfg" resolvfile
+}
+
+config_load dhcp6c
+
+local dns 
+config_get dns basic dns none
+[ $dns != "dnsmasq" ] && return 0
+
+if [ "$ACTION" = "start" ]; then
+
+	local domain_name_servers
+	config_get domain_name_servers state domain_name_servers
+
+	if [ -n "$domain_name_servers" ]; then
+
+		config_load dhcp
+	
+		local resolvfile
+		config_foreach getoption dnsmasq
+
+		if [ -n "$resolvfile" ]; then
+
+			cp -pf $resolvfile "$resolvfile.dhcp6c_backup"
+            ISPwriteCount=0
+			for nameserver in $domain_name_servers; do
+				
+				## detect if dnsv6 is duplicated in resolvfile
+				matchauto=$(cat $resolvfile |grep "$nameserver")
+				[ "$matchauto" == "" ] && {
+					echo nameserver $nameserver >> $resolvfile
+				}
+				
+				## detect if dnsv6 is duplicated in dhcp6s.uci
+				matchdhcp6suci=$(cat /etc/config/dhcp6s |grep "$nameserver")
+				[ "$matchdhcp6suci" == "" ] && {
+					## write into dhcp6s.uci
+					dnsv6_1_type=$(uci get network.wan.dnsv6_1 |awk -F "," '{print $1}')
+					dnsv6_1_value=$(uci get network.wan.dnsv6_1 |awk -F "," '{print $2}')
+                    [ "$dnsv6_1_type" == "ISP" -a "$dnsv6_1_value" == "" -a $ISPwriteCount -lt 1 ] && {
+						uci set dhcp6s.basic.domain_name_server1="$nameserver"
+                        ISPwriteCount=$((ISPwriteCount+1))
+					} || {
+						dnsv6_2_type=$(uci get network.wan.dnsv6_2 |awk -F "," '{print $1}')
+						dnsv6_2_value=$(uci get network.wan.dnsv6_2 |awk -F "," '{print $2}')
+                        [ "$dnsv6_2_type" == "ISP" -a "$dnsv6_2_value" == "" -a $ISPwriteCount -lt 2 ] && {
+							uci set dhcp6s.basic.domain_name_server2="$nameserver"
+                            ISPwriteCount=$((ISPwriteCount+1))
+						} || {
+							dnsv6_3_type=$(uci get network.wan.dnsv6_3 |awk -F "," '{print $1}')
+							dnsv6_3_value=$(uci get network.wan.dnsv6_3 |awk -F "," '{print $2}')
+                            [ "$dnsv6_3_type" == "ISP" -a "$dnsv6_3_value" == "" -a $ISPwriteCount -lt 3 ] && {
+								uci set dhcp6s.basic.domain_name_server3="$nameserver"
+                                ISPwriteCount=$((ISPwriteCount+1))
+							}
+						}
+					}
+					uci commit dhcp6s
+				}
+			done
+
+		fi
+	
+	fi
+
+fi
+
+if [ "$ACTION" = "stop" ]; then
+
+	config_load dhcp
+
+	local resolvfile
+	config_foreach getoption dnsmasq
+	if [ -f "$resolvfile.dhcp6c_backup" ]; then
+		mv -f "$resolvfile.dhcp6c_backup" $resolvfile
+	fi 
+		
+	## delete dnsv6 in dhcp6s.uci if bak.resolvfile do not have it.
+	dnsv6_1_type=$(uci get network.wan.dnsv6_1 |awk -F "," '{print $1}')
+	[ "$dnsv6_1_type" == "ISP" ] && {
+		dnsv6_1_value=$(uci get dhcp6s.basic.domain_name_server1)
+		match=$(cat $resolvfile |grep "$dnsv6_1_value")
+		[ "$match" == "" ] && {
+			uci del dhcp6s.basic.domain_name_server1
+		}
+	}
+	dnsv6_2_type=$(uci get network.wan.dnsv6_2 |awk -F "," '{print $1}')
+	[ "$dnsv6_2_type" == "ISP" ] && {
+		dnsv6_2_value=$(uci get dhcp6s.basic.domain_name_server2)
+		match=$(cat $resolvfile |grep "$dnsv6_2_value")
+		[ "$match" == "" ] && {
+			uci del dhcp6s.basic.domain_name_server2
+		}
+	}
+	dnsv6_3_type=$(uci get network.wan.dnsv6_3 |awk -F "," '{print $1}')
+	[ "$dnsv6_3_type" == "ISP" ] && {
+		dnsv6_3_value=$(uci get dhcp6s.basic.domain_name_server3)
+		match=$(cat $resolvfile |grep "$dnsv6_3_value")
+		[ "$match" == "" ] && {
+			uci del dhcp6s.basic.domain_name_server3
+		}
+	}
+	uci commit dhcp6s
+	/etc/init.d/dhcp6s restart
+
+fi
+

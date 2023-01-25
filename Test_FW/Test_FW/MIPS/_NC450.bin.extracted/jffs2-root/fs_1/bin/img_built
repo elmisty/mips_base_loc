@@ -1,0 +1,13 @@
+echo "make sure you have reset the IPC before using this script"
+iwpriv ra0 e2p 1FE=FFFF
+sed -i 's/WIRELESS_ENABLE=1/WIRELESS_ENABLE=0/' /usr/local/config/ipcamera/Wireless.conf
+sed -i 's/WIRELESS_EXTENDER_ENABLE=0/WIRELESS_EXTENDER_ENABLE=1/' /usr/local/config/ipcamera/Wireless.conf
+sed -i 's/VideoCtrl_Contrast=32/VideoCtrl_Contrast=64/' /usr/local/config/ipcamera/videoctrl.conf
+rm -f /usr/local/config/ipcamera/PTZ_*
+rm -f /usr/local/config/ipcamera/HwID
+rm -f /usr/local/config/ipcamera/DevID
+rm -f /usr/local/config/ipcamera/TpHeader
+rm -f /usr/local/config/ipcamera/CloudAcc
+rm -f /usr/local/config/ipcamera/ApMac
+rm -f /usr/local/config/ipcamera/LastVer
+echo "Process complete. Now you can cat /dev/mtdblock0 for manufactury file."	

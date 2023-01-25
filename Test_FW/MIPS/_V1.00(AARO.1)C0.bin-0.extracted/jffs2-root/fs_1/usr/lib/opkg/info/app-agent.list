@@ -1,0 +1,5 @@
+/etc/init.d/app-agent
+/usr/include/app_notify.h
+/usr/lib/libmini.so
+/usr/bin/EmappC
+/usr/bin/EmappS

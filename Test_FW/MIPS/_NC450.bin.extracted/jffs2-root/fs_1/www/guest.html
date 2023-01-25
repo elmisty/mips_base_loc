@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>Network Camera</title>
+		<link rel="stylesheet" type="text/css" href="css/common/reset.css?ver=ECC739">
+		<link rel="stylesheet" type="text/css" href="css/common/main.css?ver=ECC739">
+		<link rel="stylesheet" type="text/css" href="css/common/header.css?ver=ECC739">
+		<link rel="stylesheet" type="text/css" href="css/common/nav_left.css?ver=ECC739">
+		<link rel="stylesheet" type="text/css" href="widget/scrollbar.css?ver=ECC739">
+		<link rel="stylesheet" type="text/css" href="widget/select.css?ver=ECC739">
+		<link rel="stylesheet" type="text/css" href="css/live_view.css?ver=ECC739">
+		<style type="text/css">
+			.nav-child {
+				display: none;
+			}
+			#ptzspeedselect{
+				float:right;
+				margin-top:10px;
+			}
+			
+			.mainContainer {
+				display: block;
+				width: 768px;
+			}
+			.centeredVideo {
+				position:relative;
+				display: block;
+				width: 100%;
+				height: 432px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: auto;
+			}
+			.centeredVideo2 {
+				position:relative;
+				display: none;
+				width: 100%;
+				height: 432px;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: auto;
+			}
+		</style>
+		<script type="text/javascript" src="lib/jqueryX.js?ver=ECC739"></script>
+		<script type="text/javascript" src="js/common/conf.js?ver=ECC739"></script>
+		<script type="text/javascript">
+			if(!$.cookie("tplanguage")){
+					$.cookie("tplanguage","EN");
+					langSwitch();
+				}else{
+					langSwitch();
+			}
+			function langSwitch(){
+				switch ($.cookie("tplanguage")) {
+					case "EN":				
+						document.write("<scr"+"ipt src=\"/i18n/lang_en.js?ver=ECC739\"></sc"+"ript>");
+						break
+					case "CN":				
+						document.write("<scr"+"ipt src=\"/i18n/lang_ch.js?ver=ECC739\"></sc"+"ript>");	
+						break
+					default:
+						document.write("<scr"+"ipt src=\"/i18n/lang_en.js?ver=ECC739\"></sc"+"ript>");
+						break
+				}
+			}
+			conf.ProductType = $.cookie("CameraType").substr(0,5);
+			conf.isAdmin = $.cookie("isAdmin");
+
+			document.title = conf.ProductType + ' - Guest';
+
+		</script>
+	</head>
+	<body>
+		<div class="main">
+			<div class="header">
+				<a class="header-logo" target="_blank" href="http://www.tp-link.com"></a>
+				<a id="logout" class="header-logout"></a>
+				<div class="header-descr">
+					<span id="CameraDes" class="lang-text"  i18n="camera-descr-"></span>
+					<span id="CameraTyp" class="lang-text"  i18n="camera-type-"></span>
+				</div>
+				<!--<div id="langch-cell">
+					<select id="lang-select" style="width:100px;">
+						<option i18n="lang-ch" value="CN" id="lang-select-cn">简体中文</option>
+						<option i18n="lang-en" value="EN" id="lang-select-en">English</option>
+					</select>
+				</div>-->
+			</div>
+
+			<div class="content">
+				<div class="nav-left">
+					<ul id="nav-left-list">
+						<li class="nav-live_view">
+							<div id="nav-live_view" class="nav-parent">
+								<!--<span class="titlenav-border"></span>-->
+								<span class="nav-img"></span>
+								<span i18n="nav-live_view" class="lang-text"></span>
+								<span class="title-mark-nobackground"></span>
+							</div>
+						</li>				
+					</ul>
+				</div>
+				<div class="content-right">
+
+					<div id="live_view">
+						<div id="content-live_view" style="width:768px;">
+							<div id="liveview-contain">
+								<img id='livegetimage' alt='live view' style='display:block;width:768px;height:432px;background-color:black;'/>
+							</div>
+							<div id="liveview-contain-new">		
+								<div class="mainContainer">
+									<video id="videoElement" class="centeredVideo" controls autoplay width="768" height="432">
+										Your browser is outdated. Please update to the latest version to play videos. 
+									</video>
+									<video id="videoElement2" class="centeredVideo2" controls autoplay width="768" height="432">
+										Your browser is outdated. Please update to the latest version to play videos. 
+									</video>
+								</div>
+							</div>
+							<div id="video-control_bar">
+								<ul id="controlpanelul">
+									<li class="videocorl">
+										<span id="videocut" i18n="snapshot" class="videoimg lang-title" title="Snapshot"></span>
+									</li>	
+									<li class="videocorl">
+										<span id="videorecordbegin" i18n="record-start" class="videoimg lang-title" title="record-start"></span>
+										<span id="videorecordend" i18n="record-stop" class="videoimg lang-title" title="record-stop"></span>
+									</li>
+								</ul>
+							</div>
+							<!--
+							<div id="yuntaiControl" style="display:none">
+								<div class="yuntaiControl_btn_wrap">
+									<div id="navigation_nw" class="yuntaiControl_btn_nw"></div>
+									<div id="navigation_n" class="yuntaiControl_btn_n"></div>
+									<div id="navigation_ne" class="yuntaiControl_btn_ne"></div>
+									<div id="navigation_w" class="yuntaiControl_btn_w"></div>
+									<div id="navigation_recover" class="yuntaiControl_btn_c"></div>
+									<div id="navigation_e" class="yuntaiControl_btn_e"></div>
+									<div id="navigation_sw" class="yuntaiControl_btn_sw"></div>
+									<div id="navigation_s" class="yuntaiControl_btn_s"></div>
+									<div id="navigation_se" class="yuntaiControl_btn_se"></div>					
+								</div>
+
+								<div id="navigator-point" class="navigator-item">
+									<ul>
+										<li>
+											<span  class="lang-text" class="setting-contain-usermanage-ctrl-date-cell-title fontweightbold" i18n="panspeed"></span>
+										</li>
+										<li id="ptzspeedselect">
+											<select id="navigator-velocity-select"  name="navigator-velocity-select">
+												<option value="0" name="Fast">Fast</option>
+												<option value="1" name="Normal">Normal</option>
+												<option value="2" name="Slow">Slow</option>
+											</select>
+										</li>
+									</ul>
+								</div>
+								<input style="display:none" type="button" id="" class="setting-contain-button setting-contain-navigator-path-start-ctrl" value="Start"/>
+								<input style="display:none" type="button" id="" class="setting-contain-button setting-contain-navigator-path-stop-ctrl" value="Stop"/>
+							</div>
+							-->							
+						</div>
+						<div class="liveview-error" style="display:none;width:600px;margin: 20px auto;">
+							<div style="width:200px;margin:0 auto;">
+								<img class="live-view-tips" src="#" style="width:200px;">
+							</div>			
+							<span id="browser-error-info-span" class="lang-text" i18n="browserTips"><!-- Currently we couldn't support IE browser very well, If  you want to view the camera video,please try another browser that is not IE. --></span>
+							<span id="browser-error-info-span-H5" class="lang-text" i18n="browserTipsH5" style="float:left;font-size:16px;"><!-- Currently we couldn't support IE browser very well, If  you want to view the camera video,please try another browser that is not IE. --></span>
+						</div>
+					</div>
+					
+					<div>
+						<img class="img-loading" id="index-img-loading" src="images/loadings.gif" style="display:none;">
+					</div>
+
+					<div class="content-cell">
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="widget/scrollbar.js?ver=ECC739"></script>
+	<script type="text/javascript" src="widget/select.js?ver=ECC739"></script>
+	<script type="text/javascript" src="widget/ytable.js?ver=ECC739"></script>
+	<script type="text/javascript" src="widget/yscroll.js?ver=ECC739"></script>
+
+	<script type="text/javascript" src="js/common/plug.js?ver=ECC739"></script>
+	<script type="text/javascript" src="js/common/common.js?ver=ECC739"></script>
+	<script type="text/javascript" src="js/common/data.js?ver=ECC739"></script>
+	<script type="text/javascript" src="js/video.js?ver=ECC739"></script>
+	<script type="text/javascript" src="js/live_view.js?ver=ECC739"></script>
+	<script type="text/javascript" src="js/videosetting.js?ver=ECC739"></script>
+	<script type="text/javascript" src="js/index_guest.js?ver=ECC739"></script>
+	<script type="text/javascript">
+		if(conf.ProductType == 'NC220')
+		{
+			$("#livegetimage").css({"height":"480px","width":"641px","margin":"auto"});
+			$("#video-control_bar").css({"width":"641px","float":"none","margin":"auto"});
+		}				
+	</script>
+</html>

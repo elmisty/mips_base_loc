@@ -1,0 +1,10 @@
+Package: luci-i18n-chinese_traditional
+Version: 0.9+svn6252-1
+Depends: libc, luci-web
+Source: feeds/luci/luci
+SourceFile: NBG6616-luci-0.9+svn6252
+Section: luci
+Maintainer: Steven Barth <steven-at-midlink-dot-org>
+Architecture: ar71xx
+Installed-Size: 24142
+Description:  Chinese Traditional

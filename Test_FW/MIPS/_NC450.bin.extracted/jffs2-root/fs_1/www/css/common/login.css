@@ -1,0 +1,198 @@
+* { 
+    margin:0; padding:0; 
+}
+
+input{ 
+    outline:none; 
+}
+
+html {
+    overflow-y: auto; 
+}
+
+html, body { 
+    height: 100%; 
+}
+
+body, form, #fm { 
+    position: relative; 
+}
+
+body, p, form, ul, li { 
+    list-style: none outside none; margin: 0; padding: 0; 
+    font-family: Arial;
+}
+
+body { 
+    background: none repeat scroll 0 0 #FFFFFF; font: 12px arial; 
+}
+
+#wrapper{
+    min-height: 100%;
+    position:relative;
+    background: #F7F7F7;
+}
+.remaccount{
+    float: left;
+    color: #666;
+    font-size: 13px;
+    font-family: Arial;
+    margin-left: 2px;
+}
+
+.class-header{
+    background:#4acbd6; 
+    display: block; 
+    height: 90px; 
+    margin: 0 auto;
+}
+
+.class-logo{
+    cursor: pointer; 
+    float: left; 
+    height: 80px; 
+    position: relative; 
+    background: #22A5DD; 
+    width: 230px;
+}
+
+.class-header a{
+    background: url("../../images/tp-link_logo.png") no-repeat; 
+    float: left; 
+    height: 46px; 
+    left:25px; 
+    top:25px; 
+    position:relative; 
+    width: 120px;
+}
+
+.class-middle{
+    padding-bottom: 100px; 
+    text-align: center;
+}
+
+.class-contain{
+    margin-top:128px;
+    height: 279px;
+    width: 604px;
+    margin-left:auto;
+    margin-right: auto;
+    background: #fdfdff none repeat scroll 0 0;
+    border: 2px solid #e9e9e9;
+    border-radius: 5px;
+    box-shadow: 1px 1px 12px #e7e7e7;
+}
+
+
+.login-info-username{
+    width: 272px;
+    height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #b5b5b5;
+    margin-top:50px;
+}
+
+.login-info-password{
+    width: 272px;
+    height: 34px;
+    margin-left: auto;
+    margin-right: auto;
+    border:1px solid #b5b5b5;
+    margin-top:20px;
+}
+
+.login-info-focus{
+    border:1px solid #4acbd6;
+}
+
+.login-control{
+    width:274px;
+    height:34px;
+    margin-top:20px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.login-img-psw{
+    background: url("../../images/img.png") no-repeat scroll; 
+    background-position:-156px -40px;
+    width:21px;
+    height: 26px;
+    float: left;
+    margin-top: 5px;
+    border-right: 1px solid #b5b5b5;
+    margin-left:8px;
+    padding-right: 8px;
+}
+
+.login-img-psw-focus{
+    border-right: 1px solid #4acbd6;
+    background: url("../../images/img.png") no-repeat scroll; 
+    background-position:-131px -40px;    
+}
+
+.login-img-usr{
+    background: url("../../images/img.png") no-repeat scroll; 
+    background-position:-156px -14px;
+    width: 21px;
+    height: 26px;
+    float: left;
+    margin-top:4px;
+    border-right: 1px solid #b5b5b5;
+    margin-left:8px;
+    padding-right: 8px;
+}
+
+.login-img-usr-focus{
+    border-right: 1px solid #4acbd6;
+    background: url("../../images/img.png") no-repeat scroll; 
+    background-position:-131px -14px;   
+}
+
+.login-control-remember{
+    width: 150px;
+    float: left;
+    line-height: 18px;
+}
+
+.login-input{
+    border: 0 solid; 
+    color: #656565; 
+    font-size: 16px; 
+    height: 26px; 
+    margin-top: 5px;
+    width: 215px;
+}
+
+.class-copyright{
+    background: #E6E6E6; 
+    height: 46px; 
+    margin: 0 auto; 
+    overflow: hidden; 
+    position: fixed; 
+    text-align: center; 
+    width: 100%; 
+    z-index: 0;
+    line-height: 46px;
+    bottom: 0px;
+}
+
+.login-input-button{
+    /*background: url("../../images/button.png") repeat-x;*/ 
+    background: #4acbd6;
+    border: 1px solid #4acbd6; 
+    border-radius: 5px; 
+    color: #ffffff; 
+    cursor: pointer; 
+    float: right; 
+    font-family: Arial; 
+    font-size: 16px; 
+    height: 30px; 
+    width: 89px;
+}
+
+.login-input-button:hover{
+    border: 1px solid #45BDE6; 
+    background: #23c4c4;
+}

@@ -1,0 +1,7 @@
+{
+    "type": "mixed",
+    "isLive": true,
+    "withCredentials": true,
+    "cors": true,
+    "url": ":8080/stream/video/mixed?resolution=hd&audio=aac"
+}

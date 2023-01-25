@@ -1,0 +1,10 @@
+Package: kmod-crypto-manager
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-c7416cfa16dc3a16ccc3103c55a65435), kmod-crypto-hash, kmod-crypto-core
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 11059
+Description:  CryptoAPI algorithm manager

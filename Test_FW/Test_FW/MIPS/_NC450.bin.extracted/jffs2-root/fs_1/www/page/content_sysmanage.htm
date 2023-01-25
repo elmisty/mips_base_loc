@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>Management</title>
+		<link rel="stylesheet" type="text/css" href="css/sysmanager.css?ver=ECC739">
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-management">
+			<div>
+				<fieldset id="sysmanager-progressbar" class="m-fieldset f-hide"> 
+					<legend id="progress-title"></legend>
+					<div class="sevenprogressbar">
+						<span class="sevenprogressbar-cell">
+							<span class="sevenprogressbar-text">
+								<span class="text-title ">text</span><!--text-->
+							</span>
+						</span>
+						<span class="sevenprogressbar-cell">
+							<span class="sevenprogressbar-percent"></span>
+							<span class="sevenprogressbar-img"></span>
+						</span>
+					</div>
+				</fieldset>
+			</div>		
+			<div id="management-cell">
+				<div>
+					<p i18n="reboot" class="lang-text fieldset-title legend-p"></p>
+				</div>
+				<fieldset class="m-fieldset" >
+					<legend class="lang-text" i18n="reboot" style="display: none"><!-- Reboot --></legend>
+					<div class="sysmanagent-sub-cell">
+						<span class="text-title lang-text" i18n="reboot-yourcamera"><!-- Reboot your camera: --></span>
+						<input type="button" class="input-button lang-value" id="sysmanager-reboot" value="Reboot" i18n="reboot" />
+					</div>
+				</fieldset>
+				<div>
+					<p i18n="back-and-restore" class="lang-text fieldset-title legend-p"></p>
+				</div>
+				<fieldset class="m-fieldset">
+					<legend class="lang-text" i18n="back-and-restore" style="display: none"><!-- Backup and Restore --></legend>
+					<div class="sysmanagent-sub-cell">
+						<span class="text-title lang-text" i18n="backup-currentSetting"><!-- Back up current settings: --></span>
+						<input type="button" class="input-button lang-value" i18n="backup" id="sysmanager-backup" value="Backup" />
+					</div>
+						
+					<div class="div-upload">
+						<span class="lang-text" i18n="restore-backup-setting" ><!-- Restore settings from a backup file: --></span>
+						<input id="sysmanager-restore-path-input" type="text" class="input-text" tabindex="1">
+						<input type="file" id="sysmanager-restore-path" class="input-file" name="IPCAM" />
+						<div class="div-upload-button-list">
+							<input type="button" class="input-button lang-value" id="sysmanager-restore-button-path_browser" value="Browse" i18n="browse" />
+							<input type="button" class="input-button lang-value" id="sysmanager-factory-restore" value="Restore" i18n="restore" />
+						</div>
+					</div>
+					<div class="sysmanagent-sub-cell">
+						<span class="text-title lang-text" i18n="restore-default-setting" style="width:201px;margin-left:39px;"><!-- Restore factory default settings: --></span>
+						<input type="button" class="input-button lang-value" id="sysmanager-factory-reset" value="Reset" i18n="reset" />
+					</div>						
+				</fieldset>
+				<div>
+					<p i18n="update" class="lang-text fieldset-title legend-p"></p>
+				</div>
+				<fieldset class="m-fieldset">
+					<legend class="lang-text" i18n="update" style="display: none"><!-- Update --></legend>
+					<div class="div-upload">
+						<span class="lang-text" i18n="upgrade-harddisk" ><!-- Upgrade from a file on your hard disk: --></span>
+						<input id="sysmanager-update-path-input" type="text" class="input-text" tabindex="1">
+						<input type="file" id="sysmanager-upgrade-path" class="input-file" name="IPCAM" />
+						<div class="div-upload-button-list">
+							<input type="button" class="input-button lang-value" id="sysmanager-update-button-path_browser" value="Browse" i18n="browse" />
+							<input type="button" class="input-button lang-value" i18n="upgrade" id="sysmanager-upgrade" value="Upgrade" />
+						</div>
+					</div>
+					<!--<div>
+						<span class="text-tips lang-text" i18n="software-update" ></span>
+						<input type="button" class="input-button lang-value" id="sysmanager-software-detect" style="display:none;" value="Download" i18n="download" />
+						<span class="text-tips lang-text" id="sysmanager-software-detect-tips" i18n="detect-tips" ></span>
+					</div>-->
+				</fieldset>
+			</div>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		$("#index-img-loading").hide();
+	</script>
+	<script type="text/javascript" src="js/management.js?ver=ECC739"></script>
+</html>

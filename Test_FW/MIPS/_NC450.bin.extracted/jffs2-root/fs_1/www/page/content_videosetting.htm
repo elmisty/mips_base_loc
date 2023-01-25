@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<link rel="stylesheet" type="text/css" href="css/videosetting.css?ver=ECC739">
+		<title>Video</title>
+		<style type="text/css">
+		.plugin-select{
+			bottom: 3px;
+		}
+		</style>
+	</head>
+	<body>
+		<!--video-->
+		<div class="content-right-cell" id="content-videosetting">
+			<div>
+				<p i18n="video" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset" id="video-field">
+				<legend class="lang-text" i18n="video" style="display: none"><!-- Video --></legend>
+					<div>
+						<span class="text-title lang-text" i18n="videoProfile1"><!-- Video Profile 1: --></span>
+						<div class="videosetting-table">
+							<div class="table-header">
+								<div class="table-td">
+									<span class="lang-text" i18n="codingFormat"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="resolution"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="frameRate"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="mode"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="imageQuality"></span>
+								</div>
+							</div>
+							<div class="table-body">
+								<div class="table-td">
+									<span>H.264</span>
+								</div>
+								<div class="table-td">
+									<span id="videosetting1-resolution"><!-- 1280*720 --></span>
+								</div>
+								<div class="table-td">
+									<div class="f-center">
+										<select id="videoprofile1-frameRate1" style="width:80px;">
+											<option value="30" >30FPS</option>
+											<option value="25" >25FPS</option>
+											<option value="20" >20FPS</option>
+											<option value="15">15FPS</option>
+											<option value="10">10FPS</option>
+										</select>
+									</div>
+									
+								</div>
+								<div class="table-td">
+									<span>VBR</span>
+								</div>
+								<div class="table-td">
+									<div class="f-center">
+										<select id="videoprofile1-imageQuality1" style="width:100px;">
+											<option class="lang-text" i18n="high"value="0"></option>
+											<option class="lang-text" i18n="low" value="2"></option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="videoprofile2info">
+						<span class="text-title lang-text" i18n="videoProfile2"><!-- Video Profile 2: --></span>
+						<div class="videosetting-table">
+							<div class="table-header">
+								<div class="table-td">
+									<span class="lang-text" i18n="codingFormat"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="resolution"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="frameRate"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="mode"></span>
+								</div>
+								<div class="table-td">
+									<span class="lang-text" i18n="imageQuality"></span>
+								</div>
+							</div>
+							<div class="table-body">
+								<div class="table-td">
+									<span>H.264</span>
+								</div>
+								<div class="table-td">
+									<span id="videosetting2-resolution">320*240</span>
+								</div>
+								<div class="table-td">
+									<div class="f-center">
+										<select id="videoprofile2-frameRate1" style="width:80px;">
+											<option value="15" id="rateDisappear-15">15FPS</option>
+											<option value="10" id="rateDisappear-10">10FPS</option>
+											<option value="5" id="rateDisappear-5">5FPS</option>
+										</select>
+									</div>
+									
+								</div>
+								<div class="table-td">
+									<span>VBR</span>
+								</div>
+								<div class="table-td">
+									<div class="f-center">
+										<select id="videoprofile2-imageQuality1" style="width:100px;">
+											<option class="lang-text" i18n="high"value="0"><!-- High --></option>
+											<option class="lang-text" i18n="medium" value="1"><!-- Medium --></option>
+											<option class="lang-text" i18n="low" value="2"><!-- Low --></option>
+										</select>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<ul>
+						<li>
+							<span class="text-title lang-text" i18n="backlight"><!-- Backlight Compensation: --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" class="content-input-radio" name="backlight_compensation-model" id="videosetting-backlight-enable" value="2" />
+							<span class="lang-text" i18n="radio-enable"><!-- Enable --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" class="content-input-radio" name="backlight_compensation-model" id="videosetting-backlight-disable" value="0" />
+							<span class="lang-text" i18n="radio-disable"><!-- Disable --></span>
+						</li>
+					</ul>
+					<ul>
+						<li class="li-model5">
+							<span class="lang-text" i18n="lightFre"><!-- Light Frequency: --></span>
+							<select id="videosetting-lightfrequency" style="width:80px;">
+								<option class="lang-text" i18n="auto" value="0"><!-- Auto --></option>
+								<option value="1">50Hz</option>
+								<option value="2">60Hz</option>
+							</select>								
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span class="text-title lang-text" i18n="timeStamp-osd"><!-- Time Stamp&On-Screen Display (OSD): --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" class="content-input-radio" name="time_stamp_osd-model" id="videosetting-osd-enable" value="1"/>
+							<span class="lang-text" i18n="radio-enable"><!-- Enable --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" class="content-input-radio" name="time_stamp_osd-model" id="videosetting-osd-disable" value="0"/>
+							<span class="lang-text" i18n="radio-disable"><!-- Disable --></span>
+						</li>
+						<li class="li-model3" style="display:none;" id="videosetting-osd-text">
+							<span class="lang-text" i18n="osd-text" ><!-- OSD Text: --></span>
+							<input type="text" class="input-text" id="videosetting-osd-input-text" maxlength="19"/>
+						</li>
+					</ul>
+			</fieldset>
+			<div class="content-list-bottom">
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" i18n="save" id="videosetting-save" value="Save" />					
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Videosetting.init();
+		$("#index-img-loading").hide();
+	</script>	
+</html>

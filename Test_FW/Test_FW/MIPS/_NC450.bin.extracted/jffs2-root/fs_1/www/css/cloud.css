@@ -1,0 +1,18 @@
+#content-cloud_setting li {
+	clear: left;
+}
+
+#cloud-new-register {
+	margin: 10px 0 0 10px;
+}
+
+#li-cloud-acceptTips input{
+    margin: 23px 7px 10px 0;
+}
+#content-cloud_setting .a-tplink {
+	float: left;
+	clear: left;
+	margin : 0 0 10px 40px;
+	text-decoration: underline !important;
+}
+

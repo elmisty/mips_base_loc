@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+START=03
+
+USB0_ENABLED_GPIO_NO=16
+
+boot(){
+	# record initial process	
+	echo 1 > /tmp/initial_process	
+
+	# Export USB0_ENABLE gpio pin
+	echo $USB0_ENABLED_GPIO_NO > /sys/class/gpio/export
+	echo out >/sys/class/gpio/gpio${USB0_ENABLED_GPIO_NO}/direction
+	echo 1 >/sys/class/gpio/gpio${USB0_ENABLED_GPIO_NO}/value
+	/bin/setmac wlan
+	# 
+	cat <<EOF >/var/platform.definition
+#!/bin/sh
+GPIO_CTRL_PATH=/sys/class/gpio
+USB0_ENABLED_GPIO_NO=$USB0_ENABLED_GPIO_NO
+EOF
+
+}

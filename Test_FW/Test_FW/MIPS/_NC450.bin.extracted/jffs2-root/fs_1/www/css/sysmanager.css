@@ -1,0 +1,52 @@
+#sysmanager-progressbar {
+	border-left: 0;
+	border-right: 0;
+	display: none;
+}
+
+#restor-backup{
+    margin-left:0px;
+}
+
+#upgrade-disk{
+    margin-left:0px;
+}
+
+.sevenprogressbar {
+    float: left;
+   
+    position: relative;
+    width: 100%;
+}
+
+.sevenprogressbar-cell {
+    float: left;
+    height: 25px;
+    padding-bottom: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.sevenprogressbar-text {
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.sevenprogressbar-percent {
+    left: 2px;
+    position: absolute;
+    top: 5px;
+    width: 50px;
+    z-index: 1;
+}
+
+.sevenprogressbar-img {
+    background: #22a5dd none repeat scroll 0 0;
+    float: left;
+    height: 100%;
+    position: relative;
+    width: 0;
+}

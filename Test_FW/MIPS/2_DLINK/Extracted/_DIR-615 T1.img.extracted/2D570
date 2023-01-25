@@ -1,0 +1,79 @@
+This page is used to configure the VPN PPTP client. Here you can edit parameters for pptp.@#$
+Please enter pptp client username@#$
+Please enter pptp client password@#$
+Please enter pptp server address@#$
+Invalid value in server address@#$
+Invalid value in username@#$
+Invalid value in password@#$
+PPTP Configuration@#$
+PPTP Settings@#$
+Default GW:@#$
+PPTP Table@#$
+Username:@#$
+Password:@#$
+Interface@#$
+Enable:@#$
+Server:@#$
+Address@#$
+Gateway@#$
+Auth:@#$
+Apply@#$
+Reset@#$
+State@#$
+PPTP@#$
+auto@#$
+This page is used to configure the parameters for your l2tp access.@#$
+Invalid session name! It must be a string no longer than 7.@#$
+Invalid MTU value! You should set a value between 65-1500.@#$
+Cannot accept space character in User Name.@#$
+Invalid port number. It should be 1-65535.@#$
+Cannot accept space character in Password.@#$
+User name should not be blank!@#$
+LNS port should not be blank!@#$
+L2TP name should not be blank@#$
+LNS ip should not be blank!@#$
+User Name cannot be empty!@#$
+Password cannot be empty!@#$
+L2TP Configuration@#$
+Invalid User Name.@#$
+Invalid Idle Time.@#$
+Invalid Password.@#$
+Connection Type:@#$
+Authentication:@#$
+Idle Time(min):@#$
+Default Route:@#$
+L2TP Settings@#$
+Apply Changes@#$
+User Name:@#$
+L2TP Table@#$
+IP Address@#$
+LNS PORT:@#$
+Password:@#$
+Interface@#$
+Session:@#$
+LNS IP:@#$
+Gateway@#$
+Refresh@#$
+Status@#$
+Name:@#$
+NAPT:@#$
+Reset@#$
+MTU:@#$
+Name@#$
+A Demilitarized Zone is used to provide Internet services without sacrificing unauthorized access to its local private network. Typically, the DMZ host contains devices accessible to Internet traffic, such as Web (HTTP ) servers, FTP servers, SMTP (e-mail) servers and DNS servers.@#$
+DMZ Host IP address cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address value. It should be the decimal number (0-9).@#$
+Invalid IP address range in 1st digit. It should be 1-223.@#$
+Invalid IP address range in 2nd digit. It should be 1-254.@#$
+Invalid IP address range in 3rd digit. It should be 1-254.@#$
+Invalid IP address range in 4th digit. It should be 1-254.@#$
+DMZ host IP must be in the same network with gateway.@#$
+DMA host IP should not be the same as gateway.@#$
+DMZ Host IP Address:@#$
+Invalid IP address.@#$
+DMZ Configuration@#$
+Apply Changes@#$
+Enable DMZ@#$
+DMZ Host@#$
+Reset@#$

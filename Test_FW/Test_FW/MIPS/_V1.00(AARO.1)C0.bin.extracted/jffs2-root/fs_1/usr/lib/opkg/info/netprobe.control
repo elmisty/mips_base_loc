@@ -1,0 +1,8 @@
+Package: netprobe
+Version: 1
+Depends: libc, p0f
+Source: package/private/zyxel/netprobe
+Section: net
+Architecture: ar71xx
+Installed-Size: 11385
+Description:  NetProbe~~~

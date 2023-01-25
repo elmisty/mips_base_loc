@@ -1,0 +1,202 @@
+#!/bin/sh /etc/rc.common
+
+START=20
+STOP=90
+
+SERVICE_DAEMONIZE=1
+SERVICE_WRITE_PID=1
+
+boot() {
+	ifdown wan
+	sleep 1
+
+	config_load network
+	stop
+	[ -e /proc/sys/kernel/core_pattern ] && {
+		ulimit -c unlimited
+		echo '/tmp/%e.%p.%s.%t.core' > /proc/sys/kernel/core_pattern
+	}
+	service_start /sbin/netifd
+
+	setup_switch() { return 0; }
+
+	include /lib/network
+	setup_switch
+
+	sleep 1
+	
+	config_get config_section general config_section
+	if [ "$config_section" == "wan" ]; then
+		act_mac_clone
+	elif [ "$config_section" == "advance" ]; then
+
+		SystemModeStatus=$(uci_get system main system_mode)
+		
+		[ "$SystemModeStatus" == "1" ] && {
+			ipChnageEnable=$(uci_get network general auto_ip_change)
+		}
+
+		["$ipChnageEnable" == "1" ] && {
+		/sbin/start_auto_ip_change
+		} 
+	elif [ "$config_section" == "ipalias" ]; then
+		config_foreach ip_alias alias
+	fi		
+}
+
+ip_alias(){                                          
+	config_load network	
+	local alias=$1
+	local interface
+	local ip_addr
+	local mask
+	local enabled
+	
+	if [ $alias == "alias1" ]; then
+	  num=1
+	elif [ $alias == "alias2" ]; then
+	  num=2
+	fi
+	
+	config_get interface $alias interface_alias
+	config_get enabled $alias enabled
+	config_get ip_addr $alias ipaddr_alias
+	config_get mask $alias netmask_alias
+	
+	if [ $enabled == "enabled" ]; then
+		if [ $ip_addr != "0.0.0.0" ]; then
+			ifconfig br-$interface:$num $ip_addr netmask $mask up
+		fi
+	else
+		if [ $ip_addr != "0.0.0.0" ]; then	
+			ifconfig br-$interface:$num $ip_addr netmask $mask down
+		fi
+	fi
+}
+
+start() {
+	## WenHsien-NBG6716-2014.0107: for DHCPv6 Default Router (DR) setting.
+	##    SAVE current  DR when: network.sh start() First-Line.
+	##    LOAD previous DR when: RA_dhcp6c.sh start() Last-Line, and route.sh boot() Last-Line.
+	##    related UCI CONF     : network.wan.dhcpv6gw
+	dhcpv6gw=$(ip -6 route |grep default |awk '{print $3}')
+	wanface=$(uci get dhcp6c.basic.interface)
+	## DHCPv6 only
+	v6_proto=$(uci get network.$wanface.v6_proto)
+    if [ "$v6_proto" == "dhcp" ];then
+        uci set network.$wanface.dhcpv6gw=$dhcpv6gw
+        uci commit network
+	fi
+
+	ifdown wan
+    sleep 1
+
+	config_load network
+	stop
+	[ -e /proc/sys/kernel/core_pattern ] && {
+		ulimit -c unlimited
+		echo '/tmp/%e.%p.%s.%t.core' > /proc/sys/kernel/core_pattern
+	}
+	service_start /sbin/netifd
+	setup_switch() { return 0; }
+
+	include /lib/network
+	setup_switch
+
+	sleep 1
+		
+	config_get config_section general config_section
+	if [ "$config_section" == "wan" ]; then
+		act_mac_clone
+	elif [ "$config_section" == "advance" ]; then
+
+		SystemModeStatus=$(uci_get system main system_mode)
+		
+		[ "$SystemModeStatus" == "1" ] && {
+			ipChnageEnable=$(uci_get network general auto_ip_change)
+		}
+
+		["$ipChnageEnable" == "1" ] && {
+		/sbin/start_auto_ip_change
+		} 
+
+	elif [ "$config_section" == "ipalias" ]; then
+		config_foreach ip_alias alias
+	fi	
+
+	##Add For 6rd
+	local ck6rd=$(uci get network.general."$config_section"6rd_enable)
+	if [ -n $ck6rd ]; then
+	    	[ "$ck6rd" == "1" ] && ifup "$config_section"6rd || ifdown "$config_section"6rd
+	fi
+	
+	wlan_btn=$(cat /tmp/wlan_on | sed 's/"//g' )
+	[ "$wlan_btn" == "1" ] && {	
+		/sbin/wifi down
+		/sbin/wifi up
+	}
+
+}
+
+restart() {
+	ifdown -a
+	sleep 1
+	start
+
+	# start 3G
+	config_load network
+	config_get config_section general config_section
+	if [ "$config_section" == "3g" ]; then	
+		#reset
+		rm /tmp/pppd-status
+		rm /tmp/3g_time*
+
+		PID1=$(ps | grep -v grep | grep 'pppd call 3g' | awk '{print $1}') ##PID for pppd call 3g
+		if [ "$PID1" != "" ]; then
+			kill $PID1
+			sleep 8
+		fi	
+		
+		##################### start 3G ###########################
+		usb1_3g_status=$(cat /tmp/usb1)
+		usb2_3g_status=$(cat /tmp/usb2)
+		if [ "$usb1_3g_status" == "1" -o "$usb2_3g_status" == "1" ] ; then
+			if [ -e /etc/adapter ] ; then
+				PID2=$(ps | grep -v grep | grep '3g_ready.sh' | awk '{print $1}') ##PID for pppd call 3g
+				if [ "$PID2" == "" ]; then
+					/sbin/3g_ready.sh
+					echo "3g_ready.sh" >/tmp/3g_shell_status
+				fi
+			else
+				PID2=$(ps | grep -v grep | grep '3g.sh' | awk '{print $1}') ##PID for pppd call 3g
+				if [ "$PID2" == "" ]; then
+					/sbin/3g.sh
+					echo "3g.sh" >/tmp/3g_shell_status
+				fi
+			fi
+		fi
+	else
+		PID2=$(ps | grep -v grep | grep 'pppd call 3g' | awk '{print $1}') ##PID for pppd call 3g
+		if [ "$PID2" != "" ]; then
+			kill $PID2
+			sleep 8
+		fi
+	fi	
+}
+
+shutdown() {
+	ifdown -a
+	stop
+}
+
+stop() {
+	service_stop /sbin/netifd
+}
+
+reload() {
+	ubus call network reload	
+	start	
+
+##	/sbin/wifi down
+##	/sbin/wifi up
+}

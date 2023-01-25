@@ -1,0 +1,17 @@
+A Demilitarized Zone is used to provide Internet services without sacrificing unauthorized access to its local private network. Typically, the DMZ host contains devices accessible to Internet traffic, such as Web (HTTP ) servers, FTP servers, SMTP (e-mail) servers and DNS servers.@#$
+DMZ Host IP address cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address value. It should be the decimal number (0-9).@#$
+Invalid IP address range in 1st digit. It should be 1-223.@#$
+Invalid IP address range in 2nd digit. It should be 1-254.@#$
+Invalid IP address range in 3rd digit. It should be 1-254.@#$
+Invalid IP address range in 4th digit. It should be 1-254.@#$
+DMZ host IP must be in the same network with gateway.@#$
+DMA host IP should not be the same as gateway.@#$
+DMZ Host IP Address:@#$
+Invalid IP address.@#$
+DMZ Configuration@#$
+Apply Changes@#$
+Enable DMZ@#$
+DMZ Host@#$
+Reset@#$

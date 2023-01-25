@@ -1,0 +1,10 @@
+Package: kmod-usb-core
+Version: 3.3.8-1
+Depends: kernel (=3.3.8-1-c7416cfa16dc3a16ccc3103c55a65435), kmod-nls-base
+Source: package/kernel
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ar71xx
+Installed-Size: 69126
+Description:  Kernel support for USB

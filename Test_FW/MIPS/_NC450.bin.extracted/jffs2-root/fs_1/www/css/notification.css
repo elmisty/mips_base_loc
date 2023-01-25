@@ -1,0 +1,32 @@
+/* notification
+----------------------------------*/
+.input-checkbox {
+	display: none;
+}
+
+#smtp_note {
+	color: red;
+	width: 900px;
+}
+#smtp_note span{
+	float: left;
+}
+
+#notification-ftp-port,
+#notification-email-smtp_port {
+	width: 60px;
+}
+
+.checkbox-notification-model-ftp, .checkbox-notification-model-email {
+	bottom: -8px;
+}
+
+.checkbox-notification-ftp-pasive_mode {
+	bottom: 3px;
+}
+
+#notification-tplink-faq {
+	margin: 0 5px 0 0;
+
+}
+

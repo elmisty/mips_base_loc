@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>Nav-left</title>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-navigator_manage">
+			<div id="yuntai">
+				<div id="yuntai-controller">
+					<div id="yuntai-controller-nw" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-n" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-ne" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-w" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-center" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-e" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-sw" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-s" class="yuntai-controller-side"></div>
+					<div id="yuntai-controller-se" class="yuntai-controller-side"></div>
+				</div>
+				<ul class="content-usr-list">
+					<li>
+						<span clas="text-title">巡航路径</span>
+					</li>
+					<li>
+						<select>
+							<option></option>
+							<option></option>
+						</select>
+					</li>
+					<li>
+						<input type="button" class="content-input-button"value="Start">
+						<input type="button" class="content-input-button"value="Stop">
+					</li>
+				</ul>
+			</div>
+			<fieldset>
+				<legend>Navigator Manage</legend>
+					<ul class="content-usr-list">
+						<li>
+							<span class="text-title">
+								<strong>云盘转速：</strong>
+							</span>
+							<select>
+								<option>Fast</option>
+								<option>Normal</option>
+								<option>Slow</option>
+							</select>
+						</li>
+						<li>
+							<span class="text-title">
+								<strong>预设点：</strong>
+							</span>
+							<select>
+								<option></option>
+								<option></option>
+								<option></option>
+							</select>
+							<input type="button" id="navigator_point_add" class="navigator_add" value="Add">
+							<input type="button" id="navigator_point_rename" class="navigator_rename" value="Rename">
+							<input type="button" id="navigator_point_delete" class="navigator_delete" value="Delete">
+							<input type="button" id="navigator_point_runto" class="navigator_runto" value="Run to">
+						</li>
+						<li class="navigator_point-item" id="navigator_point-tips" style="display: none;">
+							<span class="text-tips">Tips : 请输入一个新的预设点名称</span>
+						</li>
+						<li class="navigator_point-item" id="navigator_point-detial" style="display: none;">
+							<span class="text-title">预设点名称：</span>
+							<input type="text" id="navigator_point-name" class="content-input-text" />
+							<input type="button" class="content-input-button" id="navigator_point-name-save" value="Save" />
+						</li>
+						<li>
+							<span class="text-title">
+								<strong>巡航路径：</strong>
+							</span>
+							<select>
+								<option></option>
+								<option></option>
+							</select>
+							<input type="button" id="navigator_path_add" class="navigator_add" value="Add">
+							<input type="button"id="navigator_path_edit" class="navigator_rename" value="Edit">
+							<input type="button" id="navigator_path_delete" class="navigator_delete" value="Delete">
+						</li>
+						<li class="navigator_path-item" id="navigator_point-detial" style="display: none;" >
+							<span class="text-title">路径名称：</span>
+							<input type="text" id="navigator_point-name" class="content-input-text" />
+							<input type="button" class="content-input-button" id="navigator_point-name-save" value="Save" />
+						</li>
+					</ul>
+			</fieldset>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/navigator.js?ver=ECC739"></script>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>network</title>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-network">
+			<div id="content-network-basic">
+				<div>
+					<p i18n="legend-IPaddr" class="lang-text fieldset-title legend-p"></p>
+				</div>
+
+				<fieldset id="content-network-ip_address" class="m-fieldset">
+					<legend class="lang-text" i18n="legend-IPaddr" style="display: none"><!-- IP Adress --></legend>
+					<ul id="content-network-ip_model" style="margin-left:40px;">
+						<!-- <li>
+							<span class="text-title lang-text" i18n="title-IPmodel" >IP Model:</span>
+						</li> -->
+						<li class="li-model2">
+							<input type="radio" id="ip_model-dynamicip" name="network-radio-ip_model" value="1" class="content-input-radio" />
+							<span class="lang-text" i18n="dynmicIP"><!-- Dynamic IP --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" id="ip_model-staticip" name="network-radio-ip_model" class="content-input-radio" value="0"/>
+							<span class="lang-text" i18n="staticIP" ><!-- Static IP --></span>
+						</li>
+					</ul>										
+					<ul id="content-network-static_ipsetting" style="display:none;">
+						<li class="li-model1">
+							<span class="lang-text" i18n="macAddr" ><!-- MAC Address: --></span>
+							<span id="network-mac"></span>
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="IPaddr"><!-- IP Address: --></span>
+							<input type="text" class="input-text" id="content-static-ip-ip_address">
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="subMask"><!-- Subnet Mask: --></span>
+							<input type="text" class="input-text" id="content-static-ip-sub_netmask" >
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="gateway" ><!-- Default Gateway: --></span>
+							<input type="text" class="input-text" id="content-static-ip-default_gateway" >
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="pds" ><!-- Primary DNS Server: --></span>
+							<input type="text" class="input-text" id="content-static-ip_pds">
+						</li>
+						<li class="li-model3">
+							<span class="lang-text" i18n="sds"><!-- Secondary DNS Server: --></span>
+							<input type="text" class="input-text" id="content-static-ip_sds">
+						</li>
+					</ul>
+					<ul id="content-network-dynamicip-fallbackip" style="display:none;">
+						<li class="li-model3">
+							<span class="lang-text" i18n="fallbackIP"><!-- Fallback IP: --></span>
+							<input type="text" class="input-text" id="network_fallbackip">
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+		<div id="content-network-advanced" style="display:none;">
+			<!--pppoe-->
+			<fieldset id="content-network-pppoe" class="m-fieldset">
+				<legend class="lang-text" i18n="legend-pppoe">PPPoE</legend>
+				<ul id="content-network-pppoe-model">
+					<li>
+						<span i18n="title-pppoe" class="text-title lang-text">PPPoE:</span>
+					</li>
+					<li class="li-model2" id="pppoe-enable">
+						<input type="radio" id="pppoe_model-enable" name="network-radio-pppoe_model" class="content-input-radio" value="1" />
+						<span class="lang-text" i18n="radio-enable">Enable</span>
+					</li>
+					<li class="li-model2" id="pppoe-disable">
+						<input type="radio" id="pppoe_model-disable" name="network-radio-pppoe_model" class="content-input-radio" value="0"/>
+						<span class="lang-text" i18n="radio-disable">Disable</span>
+					</li>
+				</ul>
+				<ul class="content-usr-list" id="content-network-pppoe_setting" style="display:none;">
+					<li class="li-model1" id="content-network-pppoe-satus">
+						<span class="lang-text" i18n="pppoe-status">Status:</span>
+						<span id="network-pppoestate"></span>
+					</li>
+					<li class="li-model3">
+						<span class="lang-text" i18n="pppoe-username" >Username: </span>
+						<input type="text" class="input-text" id="content-pppoe-username" />
+					</li>
+					<li class="li-model3">
+						<span class="lang-text" i18n="passwd"> Password: </span>
+						<input type="password" class="input-text" id="content-pppoe-password" />
+					</li>
+				</ul>
+			</fieldset> 		
+			<div>
+				<p i18n="legend-http" class="lang-text fieldset-title legend-p"></p>
+			</div>	
+			<fieldset id="content-network-http" class="m-fieldset" >
+				<legend class="lang-text" i18n="legend-http" style="display: none"><!-- HTTP --></legend>
+				<ul id="content-network-http_port">
+					<li class="li-model3">
+						<span class="lang-text" i18n="http-port"><!-- HTTP Port: --></span>
+						<input type="text" class="input-text" id="network-httpport" />
+					</li>
+				</ul>
+			</fieldset>
+
+			<!--upnp-->
+			<fieldset id="content-network-upnp" class="m-fieldset">
+				<legend class="lang-text" i18n="title-upnp" style="display: none">UPnP</legend>
+				<ul id="content-network-upnp-upnp_port_forwarding_model">
+					<li id="upnp-title">
+						<span class="text-title lang-text" i18n="title-upnp">UPnP:</span>
+					</li>
+					<li class="li-model2" id="upnp-enable">
+						<input type="radio" id="upnp_model-enable" class="content-input-radio" name="network-radio-upnp_model" value="1" />
+						<span class="lang-text" i18n="radio-enable" >Enable</span>
+					</li>
+					<li class="li-model2" id="upnp-disable">
+						<input type="radio" id="upnp_model-disable" class="content-input-radio" name="network-radio-upnp_model" value="0"/>
+						<span class="lang-text" i18n="radio-disable">Disable</span>
+					</li>
+				</ul>
+				<ul id="content-network-upnp-upnp_name">
+					<li class="li-model1">
+						<span class="lang-text" i18n="upnp-name">UPnP Name:</span>
+						<span id="network-upnp_name"></span>
+					</li>
+				</ul>
+			</fieldset>	
+			
+			<div>
+				<p i18n="title-bonjour" class="lang-text fieldset-title legend-p"></p>
+			</div>			
+			<fieldset id="content-network-bonjour" class="m-fieldset">
+				<legend class="lang-text" i18n="title-bonjour" style="display:none"><!-- Bonjour --></legend>
+				<ul id="content-network-bonjour-bonjour_model">
+						<li id="bonjour-title">
+							<span class="text-title lang-text" i18n="title-bonjour"><!-- Bonjour: --></span>
+						</li>
+						<li class="li-model2" id="bonjour-enable">
+							<input type="radio" id="bonjour_model-enable" class="content-input-radio" name="network-radio-bonjour_model" value="1" />
+							<span class="lang-text" i18n="radio-enable"><!-- Enable --></span>
+						</li>
+						<li class="li-model2" id="bonjour-disable">
+							<input type="radio" id="bonjour_model-disable" class="content-input-radio" name="network-radio-bonjour_model" value="0" />
+							<span class="lang-text" i18n="radio-disable"><!-- Disable --></span>
+						</li>
+					</ul>
+					<ul id="content-network-bonjour-bonjour_name">
+						<li class="li-model1">
+							<span class="lang-text" i18n="bonjour-name"><!-- Bonjour Name: --></span>
+							<span id="network-bonjour_name"></span>
+						</li>
+					</ul>
+				</fieldset>
+			</div>
+			<div class="content-list-bottom" >				
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" i18n="save" id="network-save" value="Save">					
+				</div>
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Network.init();
+		$("#index-img-loading").hide();
+	</script>	
+</html>

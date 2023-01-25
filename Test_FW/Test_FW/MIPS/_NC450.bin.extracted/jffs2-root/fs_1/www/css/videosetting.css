@@ -1,0 +1,25 @@
+#content-videosetting .plugin-select{
+	  text-align: left;
+}
+
+
+#content-videosetting table {
+  border-right: 1px solid #d9d9d9;
+  border-top: 1px solid #d9d9d9;
+}
+
+/*css3 伪类选择器，低版本浏览器不支持*/
+#content-videosetting table tr:first-child {
+	background: #efefef none repeat scroll 0 0;
+}
+
+#content-videosetting table tr.table-tr-first {
+	background: #efefef none repeat scroll 0 0;
+}
+
+.videosetting-table td{
+  	border-bottom: 1px solid #d9d9d9 !important;
+  	border-left: 1px solid #d9d9d9;
+  	padding: 5px 30px;
+  	text-align: center;
+}

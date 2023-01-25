@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<!--<link rel="stylesheet" type="text/css" href="css/sound.css?ver=ECC739">-->
+		<title>Sound Detection</title>
+		<style type="text/css">
+			.content-sounddec-ctrl {
+				margin-left: 40px;
+			}
+			.sounddetectiontips {
+				float: left;
+			}
+			#sound-cell .li-model5 span{
+				width: 150px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-sound_detection">
+			<div>
+				<p i18n="legend-soundDetect" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset" id="sounddetec-field">
+				<legend class="lang-text" i18n="legend-soundDetect" style="display: none"><!-- Sound Detection --></legend>
+				<ul>
+					<li>
+						<span class="sd-title lang-text" i18n="title-soundDetect">
+							<!-- Sound Detection: -->
+						</span>
+					</li>
+					<li class="li-model2">
+						<input type="radio" class="content-input-radio sounddec-radio" name="sound_detection-model" id="sounde_detection-model-enable" value="1" />
+						<span class="lang-text" i18n="radio-enable" ><!-- Enable --></span>
+					</li>
+					<li class="li-model2">
+						<input type="radio" class="content-input-radio sounddec-radio" name="sound_detection-model" id="sounde_detection-model-disable" value="0" />
+						<span class="lang-text" i18n="radio-disable" ><!-- Disable --></span>
+					</li>
+				</ul>
+				<ul id="sound-cell" style="display:none;">
+					<ul>
+						<li class="li-model5">
+							<span class="lang-text" i18n="sensitivity" ><!-- Sensitivity: --></span>
+							<select id="motion-sound-sensitivity" style="width:212px;">
+								<option class="lang-text" i18n="high" value="3"><!-- High --></option>
+								<option class="lang-text" i18n="medium" value="2"><!-- Medium --></option>
+								<option class="lang-text" i18n="low" value="1"><!-- Low --></option>
+							</select>
+						</li>
+					</ul>
+					<ul class="content-sounddec-ctrl" style="margin-left:40px;">
+						<div id="motiondetection-soundctrl"></div>
+					</ul>
+				</ul>
+			</fieldset>
+			<div class="content-list-bottom">
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" i18n="save" id="sound_detection-save" value="Save" />						
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		//$(".content-right-cell").fadeIn(800);
+		$("#index-img-loading").hide();
+	</script>
+	<script type="text/javascript" src="js/sound_detection.js?ver=ECC739"></script>	
+</html>

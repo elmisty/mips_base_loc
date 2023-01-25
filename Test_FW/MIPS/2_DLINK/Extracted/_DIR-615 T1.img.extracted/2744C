@@ -1,0 +1,1577 @@
+When configuring the router to access the IPv6 Internet be sure to choose the correct IPv6 Connection Type from the drop down menu. If you are unsure of which option to choose contact your Internet Service Provider (ISP)@#$
+If you are having trouble accessing the IPv6 Internet through the router double check any settings you have entered on this page and verify them with your ISP if needed@#$
+to manage the membership of Internet Protocol multicast groups. 'IGMP proxy(multicast)' feature@#$
+IGMP (Internet Group Management Protocol join/leave) is a communications protocol used@#$
+If you already have a DHCP server on your network or are using static IP addresses@#$
+When configuring the router to access the Internet, be sure to choose the correct@#$
+address you will use to access the web management interface of your router@#$
+applications(transmitter/media server & receivers/IPSTBs) w/ multicast@#$
+Here you can change the settings or view some information of VPN PPTP.@#$
+Here you can change the settings or view some information of VPN L2TP.@#$
+needs to be enabled for the device(L2 switch) to support multimedia@#$
+This page is used to configure the parameters for your l2tp access.@#$
+If you have devices on your network that should always have@#$
+fixed IP addresses,add a Static DHCP for each such device@#$
+as these are case sensitive. The majority of connection@#$
+This page is used to configure parameters of VPN PPTP.@#$
+on all the devices on your network,select DHCP Mode@#$
+through the process of setting up your connection@#$
+The IP address of your router is the same IP@#$
+First time users are recommended to run the@#$
+page and you will be guided step by step@#$
+capability,i.e. IPTV on-line gaming etc@#$
+Please take care when entering your@#$
+issues are caused by incorrect@#$
+If you consider yourself an@#$
+configured a router before@#$
+to disable this feature@#$
+input all the settings@#$
+advanced user or have@#$
+from the list below@#$
+Internet Setup@#$
+Helpful Hints@#$
+combinations@#$
+Access Type@#$
+Click the@#$
+User name@#$
+manually@#$
+password@#$
+Setup->@#$
+Wizard@#$
+click@#$
+None@#$
+More@#$
+and@#$
+to@#$
+or@#$
+You can click radio button of each profile to check detail info or change settings of each profile. The table is a brief summary of how many profiles you can create it provides profile number SSID of this profile Security type of this profile this guest wireless network is Enabled or Not and the SSID will be displayed or not@#$
+This mode have a bridge function. Wireless repeater can be used to expand the coverage of the wireless signal. You can scan and connect the network to expand the wireless signal coverage in this page.@#$
+You can add wireless client by PIN mode. If you use PIN mode you should input client PIN code. Meanwhile you should start client WPS process. You can find client PIN code on clientmanager@#$
+The operating distance or range of your wireless connection can vary significantly based on the physical placement of the router. For best results place your router@#$
+To ensure proper agency compliance and compatibility between similar products in your area the operating channel and region must be set correctly@#$
+If this check box is checked then this guest network is enabled. You and your visitors can connect to your network via the SSID of this profile@#$
+Failure to follow these guidelines can result in significant performance degradation or inability to wirelessly connect to the router@#$
+Away from potential sources of interference such as PCs microwave ovens and cordless phones@#$
+By default these options need not be changed for this router@#$
+Near the center of the area in which your PCs will operate@#$
+Placement of the Router to Optimize Wireless Connectivity@#$
+WDS allows a wireless network to be expanded.@#$
+In an elevated location such as a high shelf@#$
+Away from large metal surfaces@#$
+Wireless Settings of Profile@#$
+to operate with Wireless@#$
+Enable Guest Network@#$
+Network Profiles@#$
+Helpful Hints@#$
+More@#$
+NOTE@#$
+Note@#$
+The router monitors outgoing traffic. When the router detects a specific outgoing traffic it will remember the IP address of the computer that send data and the input port of the 'trigger'.The trigger input port on the flow of information is then sent to trigger the computer. Applications from Internet can access to the local computer through Port Mapping/Port Triggering so lan hosts can provide service such as ftp http games and so on. Once the port trigger is enabled the requests from the Internet will be sent to the appropriate server in LAN@#$
+DMZ is used to provide services to WAN for local host. It can prevent unauthorized access to local host from WAN. Typical DMZ has some devices that WAN can access such as web FTP SMTP and DNS@#$
+Used to configure the keyword filter. You can add or remove keywords to filter. This feature can prevent LAN users to access the website with specific keywords@#$
+You can configure dynamic DNS for DynDNS.org TZO or Oray. You can add / delete a dynamic DNS. The account provided by DDNS service providers@#$
+Used to limit the specific LAN packets sent to the Internet through the gateway. This feature can protect or restrict local LAN@#$
+You can prevent certain local IP accessing Internet with IP port filter and block accessing to certain Internet services@#$
+You can configure the Net Snipper which allows multiple computers to share the network through this router@#$
+IGMP proxy enables the system transfer the message of the local host through standard IGMP interface@#$
+You can configure virtual server on this page so application from WAN can access your computer@#$
+The router can exchange routing information with others when the RIP protocol is enabled@#$
+You can configure specific rules to manage the QoS of incoming packets on this page@#$
+You can configure Telnet on this page. It will run in the background if enabled@#$
+You can configure UPnP on this page. It will run in the background if enabled@#$
+You can Specify what kind of service should be enabled in WAN on this page@#$
+You can configure NAT ALG and Passing through on this page@#$
+You can configure IPv6 Static Route on this page@#$
+You can configure traffic shaping on this page@#$
+You can configure DoS setting on this page@#$
+You can configure IPv6 Filter on this page@#$
+You can add/delete IP route on this page@#$
+Helpful Hints@#$
+More@#$
+but is the admin password to log into the router setup interface. The password must be@#$
+written down and saved in a safe place. You have to reset the route if you forget@#$
+please do not interrupt when the software is sending to the router@#$
+to a file on your computer. So you can restore the router settings@#$
+It is very important to keep the router clock synchronization@#$
+You should save the configuration of the router@#$
+The password is not your ISP account password@#$
+the password and re-configure from scratch@#$
+This page is used to restart the router@#$
+from the file if the router goes down@#$
+such as accurate log time@#$
+and router is restarting@#$
+After clicking Upload,@#$
+Helpful Hints@#$
+Attention@#$
+More@#$
+Displays the list of all LAN clients that are assigned IP addresses by DHCP service and currently connected to your router@#$
+This is a summary of the number of packets that have passed on each interface since the router was last initialized@#$
+Displays the list of all wireless clients that are currently connected to your wireless router@#$
+This page displays all the details about WAN and LAN connection@#$
+This page displays a summary overview of your router status@#$
+including device firmware version summary of your Internet@#$
+configuration including ethernet status@#$
+This is a list of the IPv6 rules@#$
+Helpful Hints@#$
+More@#$
+This page shows the current status and some basic settings of the device.@#$
+Wireless Router Status@#$
+WLAN Configuration@#$
+LAN Configuration@#$
+WAN Configuration@#$
+Repeater Status@#$
+Broadcast SSID@#$
+Product Name@#$
+Subnet Mask@#$
+DHCP Server@#$
+MAC Address@#$
+DNS Servers@#$
+Mac Address@#$
+Encryption@#$
+DNS Status@#$
+IP Address@#$
+Date/Time@#$
+Interface@#$
+Wireless@#$
+DNS Mode@#$
+Protocol@#$
+Channel@#$
+Gateway@#$
+Refresh@#$
+System@#$
+Uptime@#$
+Status@#$
+Mode@#$
+SSID@#$
+WPS@#$
+DNS@#$
+Firmware External Version:@#$
+Firmware Internal Version:@#$
+Hardware version:@#$
+Firmware Version@#$
+KernelVersion:@#$
+Product Page:@#$
+Checksum:@#$
+continue@#$
+Version@#$
+Date:@#$
+This page is used to configure the Dynamic DNS address from dlinkddns.com(Free),DynDNS.org, TZO, or www.oray.com. Here you can Add/Remove to configure Dynamic DNS.@#$
+Please enter hostname for this account@#$
+Please enter username for this account@#$
+Please enter password for this account@#$
+Invalid value in hostname@#$
+Invalid value in username@#$
+Invalid value in password@#$
+Dynamic DNS Configuration@#$
+Routing Configuration@#$
+dlinkddns.com(Free)@#$
+DDNS Configuration@#$
+Dynamic DDNS Table@#$
+Account Settings@#$
+DDNS provider@#$
+Dynamic DNS@#$
+DynDNS.org@#$
+Advanced@#$
+Hostname@#$
+Username@#$
+Password@#$
+Service@#$
+Enable@#$
+Remove@#$
+Select@#$
+State@#$
+Ddns@#$
+TZO@#$
+Add@#$
+This table shows IP address, MAC address for each client.@#$
+Active Wireless Client Table@#$
+Active Wired Client Table@#$
+Active Client Table@#$
+MAC Address@#$
+IP Address@#$
+Refresh@#$
+Status@#$
+Name@#$
+This page is used to configure the filtered keyword. Here you can add/delete filtered keyword@#$
+URL Blocking Configuration@#$
+URL Blocking Capability@#$
+Delete Selected Keyword@#$
+Routing Configuration@#$
+Invalid keyword value@#$
+URL Blocking Table@#$
+Apply Changes@#$
+AddKeyword@#$
+Keywords@#$
+Disable@#$
+Keyword@#$
+Enable@#$
+Entries in this ACL table are used to permit certain types of data packets from Internet network to the Gateway. &nbsp;&nbsp;Using of such access control can be helpful in securing or restricting the Gateway management@#$
+Sorry!It must need at least one ip from lan or one lan interface to be permited to access the modem@#$
+The start Ip address in ip range must be lesser than end Ip address@#$
+Invalid port!More than one services occupy the same port@#$
+any ip address!please clear the end ip@#$
+(The IP 0.0.0.0 represent any IP )@#$
+ACL Configuration -- Direction@#$
+LAN ACL Switch Configuration@#$
+WAN ACL Configuration@#$
+IP Address/Interface@#$
+Access Control List@#$
+ACL configuration@#$
+Current ACL Table@#$
+Direction Select@#$
+Services Allowed@#$
+LAN ACL Switch@#$
+WAN Interface@#$
+ACL Settings@#$
+WAN Setting@#$
+is invalid@#$
+IP Address@#$
+Direction@#$
+Advanced@#$
+Service@#$
+telnet@#$
+Select@#$
+Action@#$
+Apply@#$
+Reset@#$
+Help@#$
+tftp@#$
+snmp@#$
+Port@#$
+ping@#$
+web@#$
+ftp@#$
+lan@#$
+wan@#$
+LAN@#$
+WAN@#$
+any@#$
+Any@#$
+Add@#$
+The port that you assign has been occupied by '+openedPort[i].srvName+'('+openedPort[i].startPort+'-'+ openedPort[i].endPort+'),please reinput@#$
+The page allows you to config virtual server,so others can access the server through the Gateway.@#$
+Sorry,the inputed port has been occupied by remote access.please input one other port@#$
+It's modem's IP.please input an valid IP from LAN@#$
+Virtual service number should be less than 48@#$
+The interval of lan&wan port should be equal!@#$
+Current Virtual Server Forwarding Table@#$
+Invalid characters,please reinput@#$
+Invalid LAN Open port range!@#$
+User-defined Service Name@#$
+Invalid LAN IP address@#$
+Invalid LAN Open port!@#$
+Usual Service Name@#$
+The LAN Open port@#$
+Invalid WAN port!@#$
+Local IP Address@#$
+(ex. 5001:5010)@#$
+Virtual Server@#$
+WAN Ip Address@#$
+LAN Ip Address@#$
+WAN IP Address@#$
+WAN Interface@#$
+LAN Open Port@#$
+Apply Changes@#$
+Service Type@#$
+The WAN port@#$
+WAN Setting@#$
+Ip Address@#$
+ServerName@#$
+Local Port@#$
+is unvalid@#$
+Interface@#$
+WAN Port@#$
+Protocol@#$
+Action@#$
+State@#$
+Any@#$
+Here you can change the settings or view some information on the system time and NTP parameters@#$
+This page is used to configure the system time and Network Time Protocol(NTP) server@#$
+Invalid intetval value. It should be the decimal number (0-9)@#$
+Invalid year value. It should be the decimal number (0-9)@#$
+Invalid hour value. It should be the decimal number (0-9)@#$
+Invalid day value. It should be the decimal number (0-9)@#$
+Invalid min value. It should be the decimal number (0-9)@#$
+Invalid sec value. It should be the decimal number (0-9)@#$
+Invalid intetval . It should be 1-999@#$
+Invalid year . It should be 0-9999@#$
+Invalid hour . It should be 0-23@#$
+Invalid day . It should be 1-31@#$
+Invalid min . It should be 0-59@#$
+Invalid sec . It should be 0-59@#$
+System Time Configuration@#$
+Interval cannot be empty@#$
+year cannot be empty@#$
+hour cannot be empty@#$
+day cannot be empty@#$
+min cannot be empty@#$
+sec cannot be empty@#$
+Invalid charaters@#$
+NTP Configuration@#$
+Apply Changes@#$
+Get GMT Time@#$
+System Time@#$
+Time Zone@#$
+Start NTP@#$
+NTP Start@#$
+Interval@#$
+GMT time@#$
+Server2@#$
+Server@#$
+State@#$
+Reset@#$
+This page is used to reboot your system with current setting or reset configuration to default setting.@#$
+Do you really want to reset configuration to default setting ?@#$
+Reboot/Reset System@#$
+Commit and Reboot@#$
+Reboot/Reset@#$
+Reboot@#$
+Reset@#$
+System reboot!@#$
+Please wait@#$
+Autoboot@#$
+seconds@#$
+UploadError@#$
+Do you really want to reset the current settings to default@#$
+The request is in process, please wait a few seconds@#$
+This page allows you backup and restore Settings@#$
+Do you really want to upgrade the settings@#$
+Backup/Restore Settings@#$
+Save Settings to File@#$
+Save/Reload Setting@#$
+Load Settings from@#$
+Upload@#$
+Save@#$
+This page allows you upgrade the Wireless Router firmware to new version. Please note,@#$
+do not power off the device during the upload because it may crash the system.@#$
+The request is in process, please wait a few seconds@#$
+Automatically reset default after firmware upgraded@#$
+Note:System will reboot after file is uploaded@#$
+Do you really want to upgrade the firmware@#$
+Firmware Upgrade@#$
+Upgrade Firmware@#$
+Select File@#$
+Upload@#$
+Reset@#$
+This page is used to configure UPnP. The system acts as a daemon when you enable UPnP@#$
+>Disable&nbsp;&nbsp;@#$
+UPnP Configuration@#$
+Current UPnP Table@#$
+Internal Port@#$
+External Port@#$
+Apply Changes@#$
+Description@#$
+IP Address@#$
+Protocol@#$
+>Enable@#$
+Active@#$
+UPnP@#$
+This page shows the packet statistics for transmission and reception regarding to network interface.@#$
+Statistics@#$
+Interface@#$
+Refresh@#$
+LAN1@#$
+LAN2@#$
+LAN3@#$
+LAN4@#$
+(1)Enable the DHCP Server if you are using this device as a DHCP server. This page lists the IP address pools available to hosts on your LAN. The device distributes numbers in the pool to hosts on your network as they request Internet access@#$
+(2)This page lists the fixed IP/MAC address on your LAN. The device distributes the number configured to hosts on your network as they request Internet access@#$
+This page is used to configure the LAN interface of your Wireless Router. Here you may change the setting for IP addresss, subnet mask, etc.@#$
+If you choose "None", then the router will do nothing when the hosts request a IP address.@#$
+LAN IP address or Netmask change will result in failure of accessing to this Router@#$
+You should release and renew PC's IP address for the succedent configuraion.@#$
+Starting address should be in the same network with ending address@#$
+Invalid DHCP lease time. It should be the decimal number (0-9)@#$
+Invalid mac address!please input one valid unicast mac address@#$
+Are you sure you want to change the LAN IP address or Netmask@#$
+Dhcp pool should be in the same network with gateway address.@#$
+Invalid DHCP lease time. It should be 1-'+maxleasetime+'@#$
+The Ip address should be in the range of DHCP ip pool@#$
+This page can be used to config the DHCP mode:None@#$
+The mac address has bound another ip address@#$
+Invalid DHCP lease time. It should not be 0@#$
+dhcp static ip entry has reached max number@#$
+The Ip address has been occupied@#$
+please select an entry to update@#$
+Please input DHCP IP pool range@#$
+DHCP Static IP Configuration@#$
+DHCP Server Settings@#$
+DHCP Static IP Table@#$
+LAN Interface Setup@#$
+Invalid characters@#$
+(ex. 00E086710502)@#$
+Delete Selected@#$
+or DHCP Server@#$
+Max Lease Time@#$
+IP Pool Range@#$
+Apply Changes@#$
+DNS Server 1@#$
+DNS Server 2@#$
+DNS Server 3@#$
+Relay Server@#$
+Subnet Mask@#$
+Domain Name@#$
+MAC Address@#$
+Mac Address@#$
+IP Address@#$
+(Optional)@#$
+DHCP Mode@#$
+minutes@#$
+Select@#$
+Update@#$
+Reset@#$
+Undo@#$
+Add@#$
+This page is used to configure the routing information. Here you can add/delete IP routes.@#$
+Next Hop IP should be on the same network with router's LAN or WAN IP !@#$
+Destination address can't be the same with router's LAN ip address!@#$
+Next Hop IP should be on the same network with router's LAN IP !@#$
+Invalid metric value. It's 1st character should not be 0.@#$
+Invalid metric value. It should be 2-15.@#$
+please select an entry to delete@#$
+please select an entry to update@#$
+Subnet Mask can't be all zero!@#$
+Routing Configuration@#$
+Static Route Table@#$
+Max rule number:@#$
+Delete Selected@#$
+Destination@#$
+Subnet Mask@#$
+Show Routes@#$
+Delete All@#$
+Add Route@#$
+Next Hop@#$
+NextHop@#$
+Enable@#$
+Metric@#$
+Update@#$
+Select@#$
+State@#$
+Host@#$
+This table shows a list of destination routes commonly accessed by your network.@#$
+Current IP Routing Table@#$
+IP Route Table@#$
+Destination@#$
+Subnet Mask@#$
+NextHop@#$
+Refresh@#$
+Close@#$
+This page is used to configure Telnet. The system acts as a daemon when you enable Telnet.@#$
+Telnet Configuration@#$
+Apply Changes@#$
+Telnet:@#$
+Disable@#$
+Enable@#$
+Sum of downrateceiling should not be larger than down total bandwidth!@#$
+Sum of uprateceiling should not be larger than up total bandwidth!@#$
+This page is used to configure traffic bandwidth and rules.@#$
+Down Floor should not be larger than down total bandwidth!@#$
+End IP address can not be less than the start IP address!@#$
+Up Floor should not be larger than Up total bandwidth!@#$
+Down Floor should not be larger than down Ceiling!!@#$
+rule is not integrity, fill all related fields!@#$
+Up Floor should not be larger than up Ceiling!@#$
+"source port "+ sport.value + " invalid!"@#$
+"dest port "+ dport.value + " invalid!"@#$
+Invalid start destinition IP address!@#$
+Invalid end destinition IP address!@#$
+Invalid start source IP address!@#$
+Invalid destinition IP address!@#$
+Invalid down stream bandwidth!@#$
+Total Bandwidth(0, Unlimited):@#$
+Invalid end source IP address!@#$
+Invalid up stream bandwidth!@#$
+Invalid source IP address!@#$
+Guaranteed Bandwidth(Kbps)@#$
+please assign TCP/UDP!@#$
+Fill with digital > 0!@#$
+Auto Traffic Shaping@#$
+Max Bandwidth(Kbps)@#$
+Source NetMask:@#$
+Traffic Control@#$
+Start Source IP@#$
+Dest NetMask:@#$
+Down Ceiling:@#$
+End Source IP@#$
+Start Dest IP@#$
+Down Ceiling@#$
+Source Port:@#$
+Down Stream@#$
+Source Port@#$
+Up Ceiling:@#$
+Down Floor:@#$
+End Dest IP@#$
+Down Floor@#$
+Up Ceiling@#$
+Source IP:@#$
+Dest Port:@#$
+UP Stream@#$
+QoS Rules@#$
+Dest Port@#$
+Source IP@#$
+Up Floor:@#$
+Up Floor@#$
+Protocol@#$
+Dest IP:@#$
+Dest IP@#$
+Delete@#$
+Apply@#$
+kbps@#$
+NONE@#$
+Add@#$
+Invalid numberoftries value! You should set a value between 1-3.@#$
+Invalid maxhopcount value! You should set a value between 1-64.@#$
+Invalid timeout value! You should set a value between 1-65535.@#$
+Invalid PCR value! You should set a value between 1-65535.@#$
+Invalid dscp value! You should set a value between 0-63.@#$
+This page is used to traceroute diagnostic.@#$
+Traceroute Diagnostic@#$
+NumberOfTries@#$
+Maintenance@#$
+Diagnostics@#$
+MaxHopCount@#$
+Traceroute@#$
+Interface@#$
+Datasize@#$
+Timeout@#$
+Bytes@#$
+Host@#$
+DSCP@#$
+ms@#$
+This table shows the result of trace route.@#$
+Traceroute Diagnostic@#$
+Ping Result@#$
+Traceroute@#$
+Through this process, You can easily add wireless clients to the network without the need for any specific configuration, such as SSID, security mode or password.@#$
+3. If ACL mode is set to "Allow List", the list must not be empty.(Setting is in Wireless/Access Control page)@#$
+2. The encryption of security must not be WEP or WPA-TKIP/WPA2-TKIP.(Setting is in Wireless/Security page)@#$
+To use the wizard to add a wireless client to WPS-enabled wireless router, the client must support WPS@#$
+Check the user manual or the box of the wireless client to confirm whether it supports the WPS@#$
+PIN number was generated. You have to click 'Apply Changes' button to make change effectively@#$
+WPS was disabled automatically because wireless mode setting could not be supported@#$
+WPS was disabled automatically because Radius Authentication could not be supported@#$
+WPS was disabled automatically because WPS2.0 has some restrictions to enable WPS@#$
+If the wireless client does not support WPS, you must configure it manually@#$
+1. Broadcast SSID must be enabled.(Setting is in Wireless/Advanced page)@#$
+WPS (WiFi Protected Setup), easily connect devices to a wireless router@#$
+You need go to Wireless/Security page to modify settings to enable WPS@#$
+You need go to Wireless/Basic page to modify settings to enable WPS@#$
+Wi-Fi Protected Setup@#$
+WPS Setup@#$
+Wireless@#$
+Next@#$
+Through this process, You can easily add wireless clients to the network without the need for any specific configuration, such as SSID, security mode or password.@#$
+If your card supports WPS, please click "Generate PIN code", and input PIN Code here.@#$
+Invalid Enrollee PIN length! The device PIN is usually four or eight digits long@#$
+Invalid Enrollee PIN! Enrollee PIN must be numeric digits@#$
+Checksum failed! Use PIN anyway?@#$
+The device PIN is disabled@#$
+Entry PIN of wireless NIC@#$
+Wi-Fi Protected Setup@#$
+Add WPS Client@#$
+Start PIN@#$
+PIN Mode@#$
+Wireless@#$
+Select@#$
+Wi-Fi Protected Setup@#$
+Wireless@#$
+This page is used to add user account to access the web server of Wireless Router. Empty user name or password is not allowed@#$
+Password is not matched. Please type the same password between \'new\' and \'confirmed\' box@#$
+Password cannot be more than 30 charaters, Please try it again.@#$
+Invalid password.Some special characters are not allowd.@#$
+Invalid username.Some special characters are not allowd@#$
+Username cannot be empty. Please try it again@#$
+Password cannot be empty. Please try it again@#$
+Please select an entry to modify@#$
+Please select an entry to delete@#$
+User Account Configuration@#$
+User Account Table@#$
+Confirm Password@#$
+Configuration@#$
+Old Password@#$
+New Password@#$
+Can't delete@#$
+User Name@#$
+Privilege@#$
+Select@#$
+Modify@#$
+Delete@#$
+Reset@#$
+Add@#$
+This page is used to configure the parameters for wireless LAN clients which may connect to your Access Point. Here you may change wireless encryption settings as well as wireless network parameters@#$
+Pre-Shared Key value has illegal characters.Some special characters \\\'" are not allowd@#$
+Invalid length of \'Key '+ idx + '\' value. It should be 13 characters or 26 Hex number@#$
+Invalid length of \'Key '+ idx + '\' value. It should be 5 characters or 10 Hex number@#$
+If broadcast SSID is disabled, the WPS would be disabled.\nDo you sure@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f)@#$
+If the security is WPA-TKIP, the WPS would be disabled.\nDo you sure@#$
+The encryption key you selected \'Key '+ idx + '\'cannot be blank@#$
+Invalid characters.Some special characters \\\'"? are not allowd@#$
+If the security is WEP, the WPS would be disabled.\nDo you sure@#$
+There should not be more than one consecutive space in the key@#$
+Invalid key value. It should be in hex number (0-9 or a-f)@#$
+Pre-Shared Key value should be set at least 8 characters@#$
+Pre-Shared Key value should be less than 63 characters@#$
+Invalid SSID. Some special characters are not allowd.@#$
+>(8-63 characters or 64 hex digits)@#$
+Security Options(WPA-PSK+WPA2-PSK)@#$
+&nbsp; &nbsp;Current Channel@#$
+Security Encryption(WEP) Key@#$
+Authentication RADIUS Server@#$
+Security Options(WPA2-PSK)@#$
+Enable Wireless Isolation@#$
+Security Options(WPA-PSK)@#$
+Personal (Pre-Shared Key)@#$
+Security Encryption(WEP)@#$
+WPA Authentication Mode@#$
+Enable SSID Broadcast@#$
+Max Transmission Rate@#$
+Pre-Shared Key Format@#$
+ASCII (13 characters)@#$
+ASCII (5 characters)@#$
+WLAN Basic Settings@#$
+Authentication Type@#$
+Encryption Strength@#$
+Hex (64 characters)@#$
+Hex (10 characters)@#$
+Hex (26 characters)@#$
+Enterprise (RADIUS)@#$
+Region Selection@#$
+Security Options@#$
+Wireless Network@#$
+Wireless Basics@#$
+Pre-Shared Key@#$
+Shared Keys@#$
+Key Format:@#$
+Name(SSID)@#$
+Band Width@#$
+Passphrase@#$
+IP address@#$
+Automatic@#$
+Wireless@#$
+128 bits@#$
+Password@#$
+Channel@#$
+64 bits@#$
+Region@#$
+Cancel@#$
+ASCII@#$
+Key 1@#$
+Key 2@#$
+Key 3@#$
+Key 4@#$
+Apply@#$
+Mode@#$
+Port@#$
+Hex@#$
+Here we provide several guest networks for your guests to use your router to surf the Internet temporary. You can configure your SSID, security options and so on. Guests can only access to your router if you enable your guest network.@#$
+Pre-Shared Key value has illegal characters.Some special characters  \\\'" are not allowd@#$
+Invalid length of \'Key '+ idx + '\' value. It should be 13 characters or 26 Hex number@#$
+Invalid length of \'Key '+ idx + '\' value. It should be 5 characters or 10 Hex number@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f)@#$
+The encryption key you selected \'Key '+ idx + '\'cannot be blank.@#$
+Invalid characters.Some special characters \\\'"? are not allowd@#$
+There should not be more than one consecutive space in the key@#$
+Invalid SSID. Some special characters  \\\'"? are not allowd@#$
+Invalid key value. It should be in hex number (0-9 or a-f)@#$
+Pre-Shared Key value should be set at least 8 characters@#$
+Pre-Shared Key value should be less than 63 characters@#$
+Allow Guest to access My Local Network@#$
+Guest Wireless Network Name(SSID)@#$
+8-63 characters or 64 hex digits@#$
+Wireless Settings--Profile 1@#$
+Wireless Settings--Profile 2@#$
+Wireless Settings--Profile 3@#$
+Wireless Settings--Profile 4@#$
+Security Encryption(WEP) Key@#$
+Security Options--Profile 1@#$
+Security Options--Profile 2@#$
+Security Options--Profile 3@#$
+Security Options--Profile 4@#$
+Enable Wireless Isolation@#$
+Security Encryption(WEP)@#$
+ASCII (13 characters)@#$
+Enable SSID Broadcast@#$
+Pre-Shared Key Format@#$
+ASCII (5 characters)@#$
+Enable Guest Network@#$
+Hex (10 characters)@#$
+Hex (26 characters)@#$
+Encryption Strength@#$
+Authentication Type@#$
+Hex (64 characters)@#$
+Network Profiles@#$
+Security Options@#$
+SSID Broadcast@#$
+Pre-Shared Key@#$
+Guest Network@#$
+Invalid SSID@#$
+Shared Key@#$
+Key Format@#$
+Passphrase@#$
+Automatic@#$
+Wireless@#$
+Security@#$
+Scheme@#$
+Cancel@#$
+Select@#$
+Apply@#$
+Key 1@#$
+Key 2@#$
+Key 3@#$
+Key 4@#$
+None@#$
+Yes@#$
+No@#$
+3. If ACL mode is set to "Allow List", the list must not be empty.(Setting is in Wireless/Access Control page)@#$
+2. The encryption of security must not be WEP or WPA-TKIP/WPA2-TKIP.(Setting is in Wireless/Security page)@#$
+PIN number was generated. You have to click \'Apply Changes\' button to make change effectively.@#$
+This page helps you to setup advanced wireless features, include Fragment Threshold etc.@#$
+Invalid value of Fragment Threshold. Input value should be between 256-2346 in decimal@#$
+//WPS was disabled automatically because WPS2.0 has some restrictions to enable WPS@#$
+WPS was disabled automatically because wireless mode setting could not be supported@#$
+WPS was disabled automatically because Radius Authentication could not be supported@#$
+Invalid value of Beacon Interval. Input value should be between 20-1024 in decimal@#$
+WPS was disabled automatically because WPS2.0 has some restrictions to enable WPS@#$
+Invalid value of RTS Threshold. Input value should be between 1-2347 in decimal@#$
+1. Broadcast SSID must be enabled.(Setting is in Wireless/Advanced page)@#$
+You need go to Wireless/Security page to modify settings to enable WPS@#$
+Invalid value of DTIM. Input value should be between 1-255 in decimal@#$
+You need go to Wireless/Basic page to modify settings to enable WPS@#$
+Invalid value. It should be in decimal number (0-9)@#$
+Ethernet to Wireless Blocking@#$
+Fragment Threshold(256-2346)@#$
+Wireless Advanced Settings@#$
+Advanced Wireless Settings@#$
+Authentication Type:&nbsp;@#$
+Keep current configuration@#$
+Wireless Advanced Setting@#$
+Wifi Multicast to Unicast@#$
+Open System&nbsp;&nbsp;@#$
+Shared Key&nbsp;&nbsp;@#$
+RTS Threshold(1-2347)@#$
+Radio Power (Percent)@#$
+Enabled&nbsp;&nbsp;@#$
+HT20/40 Coexistence@#$
+Access Control List@#$
+PIN of the router@#$
+Advanced Wireless@#$
+Enable Wireless@#$
+Beacon Interval@#$
+Short Preamble@#$
+Broadcast SSID@#$
+Relay Blocking@#$
+DTIM Interval@#$
+Preamble Type@#$
+Long Preamble@#$
+Apply Changes@#$
+Aggregation@#$
+Disable PIN@#$
+Enable WPS@#$
+Data Rate@#$
+WPS Setup@#$
+ACL Setup@#$
+Disabled@#$
+Short GI@#$
+Wireless@#$
+Auto@#$
+Only the mac address on the list can be allowed to connect to the router, when you enable Wireless Access Control Mode.@#$
+WPS will be disabled automatically if you enable the ACL feature and ACL list is empty. \nAre you sure to modify@#$
+Invalid mac address!please input one valid unicast mac address@#$
+Wireless Access Control Mode: &nbsp;&nbsp;&nbsp;&nbsp;@#$
+The number of ACL rules should not be more than 20@#$
+MAC Address: &nbsp;&nbsp;&nbsp;&nbsp;@#$
+Enable Wireless Access Control Mode@#$
+please select an entry to delete@#$
+&nbsp;&nbsp;(ex. 00e086710502)@#$
+Wireless Access Control Mode@#$
+Wireless Access Control@#$
+Access Control List@#$
+Advanced Wireless@#$
+Delete Selected@#$
+Allow Listed@#$
+Deny Listed@#$
+Delete All@#$
+Wireless@#$
+Disable@#$
+Cancel@#$
+Apply@#$
+Add@#$
+DHCP mode will be set to 'none' if the repeater is enabled.\nBe sure to enable repeater?@#$
+Step 1: click 'Site Survey'. Sites surveyed will be displayed in the list below@#$
+This page is used to configure the parameters for wireless repeater@#$
+DHCP mode will be set to 'none' if the repeater is enabled@#$
+Invalid SSID. Some special characters  are not allowd@#$
+Click 'Next' to Continue repeater settings@#$
+Surveying, do not interrupt@#$
+one item, and click 'Next'@#$
+Wireless Repeater Setup@#$
+SSID cannot be empty@#$
+Wireless Repeater@#$
+Disable Wireless@#$
+Repeater Enabled@#$
+Invalid SSID@#$
+MAC Address@#$
+Site Survey@#$
+SSID of AP@#$
+Security@#$
+Wireless@#$
+Channel@#$
+Signal@#$
+Select@#$
+Apply@#$
+SSID@#$
+Next@#$
+Step: Setup the wireless security. Turn on WEP or WPA by using Encryption Keys could prevent any unauthorized access to your wireless network@#$
+Pre-Shared Key value has illegal characters.Some special characters \\\'" are not allowd@#$
+Invalid length of Key "+ idx + " value. It should be 5 characters or 10 Hex number.@#$
+Invalid length of Key"+ idx + " value. It should be 13 characters or 26 Hex number.@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f)@#$
+The encryption key you selected \'Key ' + idx + '\'cannot be blank.@#$
+Invalid characters.Some special characters \\\'"? are not allowd@#$
+There should not be more than one consecutive space in the key@#$
+Invalid key value. It should be in hex number (0-9 or a-f)@#$
+Pre-Shared Key value should be set at least 8 characters@#$
+Pre-Shared Key value should be less than 63 characters@#$
+8-63 characters or 64 hex digits@#$
+Wireless Security Settings@#$
+Security Encryption(WEP)@#$
+Wireless Repeater Setup@#$
+Wireless WEP Key Setup@#$
+Pre-Shared Key Format@#$
+ASCII (13 characters)@#$
+ASCII (5 characters)@#$
+Hex (64 characters)@#$
+Authentication Type@#$
+Encryption Strength@#$
+Hex (10 characters)@#$
+Hex (26 characters)@#$
+Wireless Repeater@#$
+Security Options@#$
+Pre-Shared Key@#$
+Encryption@#$
+Passphrase@#$
+Shared Key@#$
+Key Format@#$
+Automatic@#$
+Wireless@#$
+Previous@#$
+ASCII@#$
+bits@#$
+Next@#$
+Hex@#$
+Key@#$
+We strongly recommend that you modify IP address of the local gateway to avoid IP address conflicts with the center of the AP. (ex. if IP address of AP is 192.168.1.1, you can modify IP address of the local gateway to 192.168.1.2).@#$
+LAN IP address or Netmask change will result in failure of accessing to this Router@#$
+You should release and renew PC's IP address for the succedent configuraion.@#$
+Are you sure you want to change the LAN IP address or Netmask?@#$
+Step 3: click 'Finish' to save the configuration@#$
+Wireless Repeater Setup@#$
+Finish Configuration@#$
+Illegal IP Address@#$
+Wireless Repeater@#$
+Illegal mask@#$
+Subnet Mask@#$
+IP Address@#$
+Wireless@#$
+Finish@#$
+WLAN is restarting! Please wait...@#$
+WLAN Restart@#$
+Please wait@#$
+Autoboot@#$
+This page is used to configure the action of force redirecting to the predefined web site when your access internet (web browser) first time!@#$
+Invalid key value: % & \\ ? \@#$
+URL Redirect Configuration@#$
+URL Redirect Capability:@#$
+Routing Configuration@#$
+URL(redirect to):@#$
+Apply Changes@#$
+Disable@#$
+Enable@#$
+This page is used to configure FTP Server ALG and FTP Client ALG ports .@#$
+Invalid port value! You should set a value between 1-65535.@#$
+Delete Selected DestPort@#$
+FTP ALG Configuration@#$
+FTP ALG ports Table@#$
+Add Dest Ports@#$
+Setting port@#$
+FTP ALG port@#$
+Entries in this table are used to restrict certain types of data packets from your local network to Internet through the Gateway. Use of such filters can be helpful in securing or restricting your local network@#$
+The start trigger port ' + matchPort_s[i].value + ' is unvalid@#$
+The start relate port ' + relatePort_s[i].value + ' is unvalid@#$
+The end trigger port ' + matchPort_e[i].value + ' is unvalid@#$
+The end relate port ' + relatePort_e[i].value + ' is unvalid@#$
+The range of related port [' + oS + '-' + oE + '] is unvalid@#$
+The range of open port [' + tS + '-' + tE + '] is unvalid@#$
+please input the match port & relate port rightly@#$
+please input an application name@#$
+User-defined Application Name@#$
+Current Port Triggering Table@#$
+please select an application@#$
+Delta Force (Client/Server)@#$
+Usual Application Name@#$
+Port Triggering Status@#$
+Not support selection@#$
+Rainbow Six/RogueSpea@#$
+illegal service name@#$
+QuickTime 4 Client@#$
+Start Relate Port@#$
+Nat Port Trigger@#$
+Application Type@#$
+Calista IP Phone@#$
+Start Match Port@#$
+Trigger Protocol@#$
+End Relate Port@#$
+Port Triggering@#$
+Asheron's Call@#$
+End Match Port@#$
+Open Protocol@#$
+Apply Changes@#$
+Relate Port@#$
+NO_SEL_MSG@#$
+RE_ALL_MSG@#$
+Select One@#$
+ServerName@#$
+Match Port@#$
+Net2Phone@#$
+Direction@#$
+Aim Talk@#$
+Nat Type@#$
+outgoing@#$
+incoming@#$
+Napster@#$
+Action@#$
+ICQ@#$
+Username cannot be empty. Please try it again@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Product Page@#$
+Username:@#$
+Password:@#$
+Login@#$
+This page is used to configurate ipv6 lan setting. User can set lan RA server work mode and lan DHCPv6 server work mode.@#$
+Min Interval should be between 3 and 3/4*(Max Interval)!@#$
+Valid Time should be larger than Preferred Time!@#$
+Valid Time must be larger than Preferred Time!@#$
+Prefix Length should be between 16 and 64!@#$
+Max Interval should be between 4 and 1800!@#$
+Please input link-local address!@#$
+Please input a valid number for@#$
+Please input Prefix Address!@#$
+Please input global address!@#$
+Lan Global Address Setting@#$
+DHCPV6 Pool Start Address@#$
+Prefixlen can't be empty!@#$
+DHCPV6 Pool End Address@#$
+Invalid Prefix Address.@#$
+Please input address!@#$
+Wrong Preferred Time!@#$
+Wrong Prefix Length!@#$
+IPv6 Address Pool:@#$
+Wrong Valid Time!@#$
+can not be empty@#$
+Invalid address.@#$
+LAN IPv6 Setting@#$
+Global Address:@#$
+Prefix Address:@#$
+Preferred Time:@#$
+LAN IPv6 Setup@#$
+Preferred Time@#$
+Prefix Length:@#$
+DHCPv6 Setting@#$
+Prefix Length@#$
+Local Network@#$
+Max Interval:@#$
+Min Interval:@#$
+Apply Changes@#$
+Address Mode:@#$
+Prefix Mode:@#$
+DHCPv6 Mode:@#$
+DNS Servers:@#$
+is invalid!@#$
+Valid Time:@#$
+Valid Time@#$
+RA Setting@#$
+Enable:@#$
+M Flag:@#$
+O Flag:@#$
+Setup@#$
+Secs@#$
+This page is used to configure the ipv6 routing information. Here you can add/delete IPv6 routes.@#$
+Please select the entry to be deleted!@#$
+Please input Destination Address!@#$
+Invalid Destination Address.@#$
+Please select one interface!@#$
+Please input Prefix Length!@#$
+IPv6 Routing Configuration@#$
+Invalid Next Hop Address.@#$
+IPv6 Static Route Table@#$
+Wrong Prefix Length!@#$
+Wrong Next Hop!@#$
+Delete Selected@#$
+Prefix Length@#$
+Destination@#$
+Interface@#$
+Add Route@#$
+Next Hop@#$
+NextHop@#$
+Select@#$
+Entries in this table are used to restrict certain types of ipv6 data packets from your local network to Internet through the Gateway. Use of such filters can be helpful in securing or restricting your local network.@#$
+Invalid SPort value! You should set a value between 1-65535.@#$
+Invalid Sport value range! port from is larger than port to.@#$
+Invalid DPort value! You should set a value between 1-65535.@#$
+Invalid Dport value range! port from is larger than port to.@#$
+Invalid Destination Address.@#$
+Please input Prefix Length!@#$
+Outgoing Default Action:@#$
+Incoming Default Action:@#$
+Invalid Source Address.@#$
+Default Action Status@#$
+Wrong Prefix Length!@#$
+Source IPv6 Address:@#$
+Current Filter Table@#$
+IPv6/Port Filtering@#$
+Rule configuration@#$
+Dest IPv6 Address:@#$
+Source IPv6/Prefix@#$
+IP/Port Filtering@#$
+Dest IPv6/Prefix@#$
+Prefix Length:@#$
+Apply Changes@#$
+Rule Action:@#$
+Icmp6Type:@#$
+Direction:@#$
+Downstream@#$
+ICMP6Type@#$
+Direction@#$
+Upstream@#$
+Protocol@#$
+Enable:@#$
+Permit@#$
+Action@#$
+ICMP6@#$
+PING6@#$
+SPort@#$
+DPort@#$
+Reset@#$
+State@#$
+Deny@#$
+Help@#$
+Rule@#$
+TCP@#$
+UDP@#$
+Entries in this ACL table are used to permit certain types of data packets from your local network or Internet network to the Gateway.@#$
+Sorry!It must need at least one ip from lan or one lan interface to be permited to access the modem!@#$
+Using of such access control can be helpful in securing or restricting the Gateway managment.@#$
+You can specify which services are accessable form LAN or WAN side.@#$
+Invalid port!More than one services occupy the same port!@#$
+ACLv6 Configuration -- Direction@#$
+LAN ACL Switch Configuration@#$
+Please input Prefix Length!@#$
+Current IPv6 ACL Table@#$
+IPv6 Address/Interface@#$
+Invalid Ipv6 Address.@#$
+Wrong Prefix Length!@#$
+Access Control List@#$
+ACL configuration@#$
+ACL Configuration@#$
+Direction Select:@#$
+Services Allowed:@#$
+LAN ACL Switch:@#$
+' is invalid!'@#$
+ACLv6 Settings@#$
+WAN Interface:@#$
+WAN Setting:@#$
+IP Address@#$
+Interface@#$
+Direction@#$
+Advanced@#$
+Service@#$
+telnet@#$
+Action@#$
+Apply@#$
+ping6@#$
+Reset@#$
+tftp@#$
+snmp@#$
+Port@#$
+LAN@#$
+WAN@#$
+any@#$
+Any@#$
+web@#$
+ftp@#$
+Add@#$
+All of your IPv6 Internet and network connection details are displayed on this page@#$
+Wireless Router IPv6 Status@#$
+IPv6 Connection Information@#$
+LAN IPv6 Link-Local Address@#$
+IPv6 Network Information@#$
+Seccondary DNS Address@#$
+Active LAN IPv6 Client@#$
+IPv6 Connection Type@#$
+IPv6 Default Gateway@#$
+Primary DNS Address@#$
+WAN IPv6 Address@#$
+LAN IPv6 Address@#$
+Network Status@#$
+DHCP-PD Prefix@#$
+IPv6 Address@#$
+DHCP-PD@#$
+Refresh@#$
+Name@#$
+This table shows a list of destination ipv6 routes commonly accessed by your network.@#$
+Current IPV6 Routing Table@#$
+IPV6 Route Table@#$
+IP Route Table@#$
+Destination@#$
+Interface@#$
+NextHop@#$
+Refresh@#$
+Metric@#$
+The easy setup will tell you how to configure the basic network parameters. To continue, please click the "Next" button.@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+&nbsp&nbspEasy Setup@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Manual@#$
+Next@#$
+The easy setup will tell you how to configure the basic network parameters. To continue, please click the "Next" button.@#$
+&nbsp&nbspEasy Setup@#$
+Wizard@#$
+Manual@#$
+Next@#$
+The Easy Setup supports three popular types of connection. To make sure the connection type your ISP provides, please refer to the ISP.@#$
+Dynamic IP - Usually for Cable Modem and the router will automatically obtain an IP address from the DHCP server@#$
+Static IP - This type of connection uses a permanent, fixed (static) IP address that your ISP assigned.@#$
+PPPoE - Usually for ADSL Modem and you will need a PPPoE username and password from your ISP@#$
+&nbsp&nbspEasy Setup - WAN Connection Type@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Back@#$
+Next@#$
+Wrong account or password, please enter the correct Internet account and password, such as forgetting to ask your network service provider.@#$
+The WAN port is not properly connected, please confirm the WAN port cable has been plugged in and the WAN port light is on.@#$
+The PPPOE server did not respond, please confirm whether the WAN port was connected to your ISP's network.@#$
+Password is not matched. Please type the same password between \'Password\' and \'Confirm Password\' box@#$
+Enter the account username and password provided by your ISP@#$
+Username cannot be empty. Please try it again@#$
+Password cannot be empty. Please try it again@#$
+Illegal characters in the pppoe username!@#$
+Illegal characters in the pppoe password!@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+&nbsp&nbspEasy Setup - PPPoE@#$
+Valid username and password@#$
+Hardware version:@#$
+Firmware Version@#$
+Confirm Password@#$
+Account Validate@#$
+Wireless Router@#$
+Select Language@#$
+User Name@#$
+Password@#$
+Back@#$
+Next@#$
+Invalid '+ msg+' value. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx@#$
+cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx@#$
+has an invalid IP address range in 1st digit. It should be 1-223@#$
+has an invalid IP address range in 2nd digit. It should be 0-255@#$
+has an invalid IP address range in 3rd digit. It should be 0-255@#$
+has an invalid IP address range in 4th digit. It should be 1-254@#$
+Invalid '+ msg+' value. It should be the decimal number (0-9)@#$
+WAN IP and LAN IP must be on different networks@#$
+DNS IP and LAN IP must be on different networks@#$
+Secondary DNS and Primary DNS must be different@#$
+Enter the IP parameters provided by your ISP@#$
+WAN and gateway must be on the same network@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+DNS IP and WAN IP must be different@#$
+WAN and gateway must be different@#$
+&nbsp&nbspEasy Setup - Static IP@#$
+Invalid ip netmask address@#$
+Hardware version:@#$
+Firmware Version@#$
+&nbsp;(Optional)@#$
+Wireless Router@#$
+Default Gateway@#$
+Select Language@#$
+Secondary DNS@#$
+Subnet Mask@#$
+Primary DNS@#$
+IP Address@#$
+Gateway IP@#$
+invalid@#$
+Back@#$
+Next@#$
+It is recommended strongly that you choose one of following options to enable security, and select WPA-PSK/WPA2-PSK AES encryption.@#$
+Pre-Shared Key value has illegal characters.Some special characters \\\'" are not allowd@#$
+You can configure the wireless parameters and security settings of router on this step@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f)@#$
+Invalid SSID. Some special characters \\\'" are not allowd@#$
+Pre-Shared Key value should be set at least 8 characters@#$
+Pre-Shared Key value should be less than 63 characters@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+(8-63 characters or 64 hex digits)@#$
+&nbsp&nbspEasy Setup - Wireless@#$
+Disable the wireless radio@#$
+WPA-PSK/WPA2-PSK AES@#$
+Hex(64 characters)@#$
+Wireless Security@#$
+Hardware version:@#$
+Firmware Version@#$
+Control Sideband@#$
+Disable Security@#$
+Wireless Router@#$
+Select Language@#$
+Pre-Shared Key@#$
+Channel Width@#$
+Auto 20/40M@#$
+Channel@#$
+ASCII@#$
+SSID@#$
+Mode@#$
+High@#$
+Back@#$
+Next@#$
+20M@#$
+Low@#$
+Key@#$
+Tips: Please click "Setup" on the Menu, and then click "Internet Setup" for detail settings if the router still can not access the internet.@#$
+Click the 'Finish' button to finish the Easy Setup@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+&nbsp&nbspEasy Setup@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Finish@#$
+Back@#$
+Saving the settings and taking effect@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Please wait@#$
+Wrong account or password, please enter the correct Internet account and password, such as forgetting to ask your network service provider.@#$
+The WAN port is not properly connected, please confirm the WAN port cable has been plugged in and the WAN port light is on.@#$
+The PPPOE server did not respond, please confirm whether the WAN port was connected to your ISP's network.@#$
+Pre-Shared Key value has illegal characters.Some special characters  \\\'" are not allowd.@#$
+msg + ' cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.'@#$
+'Invalid '+ msg+' value. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.'@#$
+msg + ' has an invalid IP address range in 1st digit. It should be 1-223.'@#$
+msg + ' has an invalid IP address range in 2nd digit. It should be 0-255.'@#$
+msg + ' has an invalid IP address range in 4th digit. It should be 1-254.'@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f).@#$
+'Invalid '+ msg+' value. It should be the decimal number (0-9).'@#$
+has an invalid IP address range in 3rd digit. It should be 0-255@#$
+Invalid SSID. Some special characters  \\\'" are not allowd.@#$
+Pre-Shared Key value should be set at least 8 characters.@#$
+Pre-Shared Key value should be less than 63 characters.@#$
+WAN IP and LAN IP must be on different networks!@#$
+DNS IP and LAN IP must be on different networks!@#$
+Secondary DNS and Primary DNS must be different!@#$
+Username cannot be empty. Please try it again.@#$
+Password cannot be empty. Please try it again.@#$
+WAN and gateway must be on the same network!@#$
+DNS IP and WAN IP must be different!@#$
+Illegal characters in the username!@#$
+Illegal characters in the password!@#$
+WAN and gateway must be different!@#$
+(8-63 characters or 64 hex digits)@#$
+Valid username and password.@#$
+Invalid ip netmask address!@#$
+Advanced Network Settings@#$
+Hex (64 characters)@#$
+msg + ' invalid.'@#$
+Hardware version:@#$
+Firmware Version@#$
+Account Validate@#$
+Save and Connect@#$
+Wireless Router@#$
+Default Gateway@#$
+Select Language@#$
+Secondary DNS:@#$
+Wireless Setup@#$
+Pre-Shared Key@#$
+Secondary DNS@#$
+Product Page:@#$
+Connect type:@#$
+Primary DNS:@#$
+Primary DNS@#$
+Internet IP@#$
+Subnet Mask@#$
+IP Address@#$
+Gateway IP@#$
+(Optional)@#$
+WAN Setup@#$
+User Name@#$
+Internet@#$
+Password@#$
+NETWORK@#$
+Client@#$
+Router@#$
+LAN IP@#$
+Static@#$
+PPPoE@#$
+ASCII@#$
+SSID@#$
+Map@#$
+Key@#$
+This page is used to configure the parameters for Internet network which connects to the WAN port of your Access Point. Here you may change the access method to static IP, DHCP or PPPoE by click the item value of WAN Access type.@#$
+Do you really want to configure ac name?If ac name is different with the pppoe server,dial will fail@#$
+Please choose one IPv6 connection type except Link-Local Only, 6to4, 6rd, and IPv6 in IPv4 Tunnel@#$
+Optional. It should be consistent with the setting of PPPoE Server or empty@#$
+(Need to repair the connection of your PC if DNS configuration changed.)@#$
+When IPv6 connection type is Static, can't choose DS-Lite DHCPv6 mode@#$
+WAN IP and LAN IP must be on different networks@#$
+DNS IP and LAN IP must be on different networks@#$
+Illegal characters in the pppoe service name!@#$
+WAN and gateway must be on the same network@#$
+Illegal idle time value! It must be (0-9).@#$
+Illegal characters in the pppoe username!@#$
+Illegal characters in the pppoe password!@#$
+msg+'Invalid. should be xxx.xxx.xxx.xxx@#$
+not be null. should be xxx.xxx.xxx.xxx@#$
+msg+'Invalid. should be number(0-9)@#$
+msg+'Secound number should be 0-255@#$
+Illegal MTU value! It must be (0-9)@#$
+DNS IP and WAN IP must be different@#$
+msg+'First number should be 1-223@#$
+msg+'Third number should be 0-255@#$
+msg+'Fourth number should be1-254@#$
+WAN and gateway must be different@#$
+DNS 2 and DNS 1 must be different@#$
+DNS 3 and DNS 1 must be different@#$
+DNS 3 and DNS 2 must be different@#$
+Invalid host name characters@#$
+PPP username can't be empty@#$
+PPP password can't be empty@#$
+Invalid ip netmask address@#$
+Attain DNS Automatically@#$
+default gateway address@#$
+AFTR Name or Address@#$
+WAN Interface Setup@#$
+Invalid Idle time@#$
+Static IP Address@#$
+Invalid MTU size@#$
+Set DNS Manually@#$
+WAN Access Type@#$
+Default Gateway@#$
+Connection Type@#$
+DS-Lite DHCPv6@#$
+WAN Interface@#$
+Apply Changes@#$
+WAN port rate@#$
+msg+'Invalid@#$
+AP WAN Setup@#$
+Service Name@#$
+DNS Server 1@#$
+DNS Server 2@#$
+DNS Server 3@#$
+DS-Lite Mode@#$
+Subnet Mask@#$
+Default MAC@#$
+MAC from PC@#$
+IP Address@#$
+MAC manual@#$
+(Optional)@#$
+IP address@#$
+User Name@#$
+Host Name@#$
+Idle Time@#$
+MAC Clone@#$
+Password@#$
+MTU Size@#$
+AC Name@#$
+Manual@#$
+Reset@#$
+Use this section to configure the internal network settings of your router. If you change the LAN IPv6 Address here, you may need to adjust your PC's network settings to access the network again.@#$
+Use this section to configure your IPv6 Connection type. If you are unsure of your connection method, please contact your Internet Service Provider.@#$
+Use this section to setup IPv6 Autoconfiguration to assign IP addresses to the computers on your network@#$
+You should choose another IPv4 Internet Connection mode rather than 'DS-Lite' to access the Internet@#$
+Enter the IPv6 address information provided by your Internet Service Provider (ISP)@#$
+Obtain DNS server address automatically or enter a specific DNS server address@#$
+(Optional. It should be consistent with the setting of PPPoE Server or empty.)@#$
+Enter the IPv6 in IPv4 Tunnel information provided by your Tunnel Broker@#$
+Enter the information provided by your Internet Service Provider (ISP)@#$
+(6rd prefix length)+(32-(6rd mask length)) can't be larger than 64@#$
+V6inV4 remote ipv6 address can't be equal with local ipv6 address@#$
+Choose the mode to be used by the router to the IPv6 Internet@#$
+If IPv4 connection is not DHCP, can't set 6rd mode to DHCPv4@#$
+When DS-Lite is DHCPv6 mode, can't set IPv6 type to Static@#$
+Dhcp pool start value can't be larger than end value!\n@#$
+Ipv6 address can't be equal with gateway address@#$
+V6inV4 remote ipv6 address can't be empty@#$
+V6inV4 local ipv6 address can't be empty@#$
+Obtain DNS server address automatically@#$
+Address Autoconfiguration Settings@#$
+Invalid local ipv6 prefix length@#$
+Invalid dhcp pool start value!\n@#$
+Wan ipv6 address can't be empty@#$
+Wan ipv6 gateway can't be empty@#$
+Invalid dhcp pool end value!\n@#$
+Invalid dhcp lifetime value!\n@#$
+Invalid secondary dns address@#$
+Use the following DNS address@#$
+Router Advertisement Lifetime@#$
+Invalid 6rd ipv4 mask length@#$
+Invalid ra lifetime value!\n@#$
+IPv6 in IPv4 Tunnel Settings@#$
+PPP username can't be empty@#$
+PPP password can't be empty@#$
+Invalid remote ipv6 address@#$
+Invalid primary dns address@#$
+LAN IPv6 Link-Local Address@#$
+Invalid ipv6 prefix length@#$
+Invalid local ipv6 address@#$
+Primary dns can't be empty@#$
+Lan address can't be empty@#$
+6rd prefix can't be empty@#$
+Invalid 6rd prefix length@#$
+Wan IPv6 Address Settings@#$
+Lan IPv6 Address Settings@#$
+IPv6 Address Range(Start)@#$
+Invalid wan ipv6 address@#$
+Invalid wan ipv6 gateway@#$
+Enable Autoconfiguration@#$
+SLAAC + Stateless DHCPv6@#$
+IPv6 Address Range(End)@#$
+Invalid LAN IPv6 prefix@#$
+Autoconfiguration Type@#$
+My IPv6 Connection is@#$
+Secondary DNS Address@#$
+IPv6 Address Lifetime@#$
+IPv6 Connection Type@#$
+Subnet Prefix Length@#$
+Invalid lan address@#$
+IPv6 In IPv4 Tunnel@#$
+Remote IPv4 Address@#$
+Remote IPv6 Address@#$
+Primary DNS Address@#$
+Invalid 6rd prefix@#$
+Local IPv4 Address@#$
+Local IPv6 Address@#$
+Invalid Idle time@#$
+IPv6 DNS Settings@#$
+Invalid MTU size@#$
+6rd DHCPv4&nbsp;@#$
+LAN IPv6 Address@#$
+Stateful(DHCPv6)@#$
+Link-local only@#$
+Defautl Gateway@#$
+Connection Type@#$
+6rd IPv6 Prefix@#$
+Enable DHCP-PD@#$
+AP IPV6 Setup@#$
+6to4 Settings@#$
+Apply Changes@#$
+SLAAC/DHCPv6@#$
+IPv6 Address@#$
+Service Name@#$
+6to4 Address@#$
+6rd Settings@#$
+IPv4 Address@#$
+Static IPv6@#$
+Mask Length@#$
+6to4 Relay@#$
+>(minutes)@#$
+User Name@#$
+Idle Time@#$
+6rd Relay@#$
+Password@#$
+MTU Size@#$
+6rd Mode@#$
+AC Name@#$
+6 to 4@#$
+Manual@#$
+PPPoE@#$
+Reset@#$
+IPV6@#$
+6rd@#$
+This page is used to configure the VPN PPTP client. Here you can edit parameters for pptp.@#$
+Please enter pptp client username@#$
+Please enter pptp client password@#$
+Please enter pptp server address@#$
+Invalid value in server address@#$
+Invalid value in username@#$
+Invalid value in password@#$
+PPTP Configuration@#$
+PPTP Settings@#$
+Default GW:@#$
+PPTP Table@#$
+Username:@#$
+Password:@#$
+Interface@#$
+Enable:@#$
+Server:@#$
+Address@#$
+Gateway@#$
+Auth:@#$
+Apply@#$
+Reset@#$
+State@#$
+PPTP@#$
+auto@#$
+This page is used to configure the parameters for your l2tp access.@#$
+Invalid session name! It must be a string no longer than 7.@#$
+Invalid MTU value! You should set a value between 65-1500.@#$
+Cannot accept space character in User Name.@#$
+Invalid port number. It should be 1-65535.@#$
+Cannot accept space character in Password.@#$
+User name should not be blank!@#$
+LNS port should not be blank!@#$
+L2TP name should not be blank@#$
+LNS ip should not be blank!@#$
+User Name cannot be empty!@#$
+Password cannot be empty!@#$
+L2TP Configuration@#$
+Invalid User Name.@#$
+Invalid Idle Time.@#$
+Invalid Password.@#$
+Connection Type:@#$
+Authentication:@#$
+Idle Time(min):@#$
+Default Route:@#$
+L2TP Settings@#$
+Apply Changes@#$
+User Name:@#$
+L2TP Table@#$
+IP Address@#$
+LNS PORT:@#$
+Password:@#$
+Interface@#$
+Session:@#$
+LNS IP:@#$
+Gateway@#$
+Refresh@#$
+Status@#$
+Name:@#$
+NAPT:@#$
+Reset@#$
+MTU:@#$
+Name@#$
+A Demilitarized Zone is used to provide Internet services without sacrificing unauthorized access to its local private network. Typically, the DMZ host contains devices accessible to Internet traffic, such as Web (HTTP ) servers, FTP servers, SMTP (e-mail) servers and DNS servers.@#$
+DMZ Host IP address cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address value. It should be the decimal number (0-9).@#$
+Invalid IP address range in 1st digit. It should be 1-223.@#$
+Invalid IP address range in 2nd digit. It should be 1-254.@#$
+Invalid IP address range in 3rd digit. It should be 1-254.@#$
+Invalid IP address range in 4th digit. It should be 1-254.@#$
+DMZ host IP must be in the same network with gateway.@#$
+DMA host IP should not be the same as gateway.@#$
+DMZ Host IP Address:@#$
+Invalid IP address.@#$
+DMZ Configuration@#$
+Apply Changes@#$
+Enable DMZ@#$
+DMZ Host@#$
+Reset@#$

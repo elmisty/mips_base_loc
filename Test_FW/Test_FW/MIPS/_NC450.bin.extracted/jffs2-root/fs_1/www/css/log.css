@@ -1,0 +1,59 @@
+
+#content-log select {
+	height: auto;
+}
+#content-log .select .triangle{
+	float: right;
+}
+
+#content-log fieldset {
+	/*width:762px;*/
+}
+
+
+.sevenTables-toolbar.slide-item{
+	float: left;
+}
+
+#systemlog-ctrl-table .datagrid-header {
+  background: #efefef none repeat scroll 0 0;
+  width: 100%;
+}
+#systemlog-ctrl-table .datagrid-body {
+  width: 100%;
+}
+
+
+.sevenTables-toolbar {
+	float:left;
+	height:100%;
+	background:#EFEFEF;
+	border-left:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+	position:relative;
+	width: 100%;
+}
+.sevenTables-toolsbar-cell{
+	 clear: none;
+  	float: left;
+  	margin: 5px;
+}
+
+.sevenTables-toolbar-changecontain-title {
+  margin-top: 5px;
+}
+.tips-cell{
+	text-align:center;
+}
+.sevenTables-noresponse-td{
+	position:relative;
+	border:none!important;
+}.sevenTables-noresponse{
+	margin-top:5px;
+	margin-bottom:5px;
+	float:left;
+	width:642px!important;
+	position:relative;
+}
+

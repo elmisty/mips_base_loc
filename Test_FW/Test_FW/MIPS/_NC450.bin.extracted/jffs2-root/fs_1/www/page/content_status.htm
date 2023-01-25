@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>Status</title>
+	</head>
+
+	<body>
+		<!--status-->
+		<div class="content-right-cell" id="content-status" >
+			<div>
+				<p i18n="legend-basic" class="lang-text fieldset-title"></p>
+			</div>
+			<fieldset class="m-fieldset">
+				<legend i18n="legend-basic" class="lang-text" style="display: none"><!-- Basic --></legend>
+				<ul>
+					<li class="li-model1">
+						<span i18n="basic-camearname" class="lang-text"><!-- Camera Name: --></span>
+						<span id="status-cameraname"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="basic-model" class="lang-text"><!-- Model: --></span>
+						<span id="status-devicemodel"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="basic-firmware" class="lang-text"><!-- Firmware: --></span>
+						<span id="status-fwVersion"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="basic-viewers" class="lang-text"><!-- Current Viewers: --></span>
+						<span id="status-viewer"></span>
+					</li>
+				</ul>
+			</fieldset>
+
+			<div>
+				<p i18n="legend-cloud" class="lang-text fieldset-title legend-p"></p>
+			</div>		
+			<fieldset class="m-fieldset">
+				<legend i18n="legend-cloud" class="lang-text" style="display: none"><!-- Cloud Server --></legend>
+				<ul>
+					<li class="li-model1">
+						<span i18n="cloud-connecState" class="lang-text"><!-- Connection Status: --></span>
+						<span id="status-cloud-status"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="cloud-username" class="lang-text"><!-- Username: --></span>
+						<span id="status-cloud-username"></span>
+					</li>
+				</ul>
+			</fieldset>
+		
+			<div>
+				<p i18n="legend-wireless" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset">
+				<legend i18n="legend-wireless" class="lang-text" style="display: none"><!-- Wireless --></legend>
+				<ul>
+					<li class="li-model1">
+						<span i18n="wireless-connecState" class="lang-text"><!-- Connection Status: --></span>
+						<span id="status-wireless-status"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="wireless-wirelessName" class="lang-text"><!-- Wireless Network Name: --></span>
+						<span id="status-wireless-name"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="wireless-channel" class="lang-text"><!-- Channel: --></span>
+						<span id="status-wireless-channel"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="wireless-signal" class="lang-text"><!-- Rate/Signal Strength: --></span>
+						<span id="status-wireless-strength"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="wireless-security" class="lang-text"><!-- Security: --></span>
+						<span id="status-wireless-security"></span>
+					</li>
+				</ul>
+			</fieldset>
+
+			<div>
+				<p i18n="legend-network" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset">
+				<legend i18n="legend-network" class="lang-text" style="display: none"><!-- Network --></legend>
+					<ul>
+						<li class="li-model1">
+							<span i18n="network-connectType" class="lang-text"><!-- Connection Type: --></span>
+							<span id="status-linktype"></span>
+						</li>
+						<li class="li-model1">
+							<span i18n="networks-macAddr" class="lang-text"><!-- MAC Address: --></span>
+							<span id="status-mac"></span>
+						</li>
+						<li class="li-model1">
+							<span i18n="network-lanIP" class="lang-text"><!-- LAN IP Address: --></span>
+							<span id="status-lanIp"></span>
+						</li>
+						<li class="li-model1">
+							<span i18n="network-submask" class="lang-text"><!-- Subnet Mask: --></span>
+							<span id="status-submask"></span>			
+						</li>
+						<li class="li-model1">
+							<span i18n="network-gateway" class="lang-text"><!-- Default Gateway: --></span>
+							<span id="status-gateway"></span>
+						</li>
+	        			<li class="li-model1">
+	        				<span i18n="network-pds" class="lang-text"><!-- Primary DNS Server: --></span>
+	        				<span id="status-pdns"></span>
+	        				
+	        			</li>
+						<li class="li-model1">
+							<span i18n="wireless-sds" class="lang-text"><!-- Secondary DNS Server: --></span>
+							<span id="status-sdns"></span>			
+						</li>	
+					</ul>
+			</fieldset>
+
+			<fieldset class="m-fieldset" style="display:none">
+				<legend i18n="legend-pppoe" class="lang-text">PPPoE</legend>
+				<ul>
+					<li class="li-model1">
+						<span i18n="pppoe-status" class="lang-text">Status:</span>
+						<span id="status-pppoestatus"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="pppoe-wanIP" class="lang-text">WAN IP Address:</span>
+						<span id="status-pppoewanip"></span>
+					</li>
+				</ul>
+			</fieldset>
+
+
+			<div>
+				<p i18n="legend-videoprofile1" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset">
+				<legend i18n="legend-videoprofile1" class="lang-text" style="display: none"><!-- Video Profile 1 --></legend>
+				<ul>
+					<li class="li-model1">
+						<span i18n="videoprofile1-resolution" class="lang-text"><!-- Resolution: --></span>
+						<span id="status-resolution-1"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="videoprofile1-frameRate" class="lang-text"><!-- Frame Rate: --></span>
+						<span id="status-frameRate-1"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="videoprofile1-imageQuality" class="lang-text"><!-- Image Quality: --></span>
+						<span id="status-imageQuality-1"></span>
+						
+					</li>
+					<li class="li-model1">
+						<span i18n="videoprofile1-lightFre" class="lang-text"><!-- Light Frequency: --></span>
+						<span id="status-lightFre"></span>	
+					</li>
+				</ul>
+			</fieldset>
+
+			<fieldset id="videoprofile2" class="m-fieldset f-hide">
+				<legend i18n="legend-videoprofile2" class="lang-text"><!-- Video Profile 2 --></legend>
+				<ul>
+					<li class="li-model1">
+						<span i18n="videoprofile2-resolution" class="lang-text"><!-- Resolution: --></span>
+						<span id="status-resolution-2"></span>
+					</li>
+					<li class="li-model1">
+						<span i18n="videoprofile2-frameRate" class="lang-text"><!-- Frame Rate: --></span>
+						<span id="status-frameRate-2"></span>					
+					</li>
+					<li class="li-model1">
+						<span i18n="videoprofile2-imageQuality" class="lang-text"><!-- Image Quality: --></span>
+						<span id="status-imageQuality-2"></span>				
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Status.VIEW.init();
+		$("#index-img-loading").hide();
+		Status.init();
+	</script>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		 <link rel="stylesheet" type="text/css" href="css/wireless.css?ver=ECC739"> 
+		<title>Wireless Connection</title>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-wireless_connection">
+			<div>
+				<p i18n="legend-wirelessConnect" class="lang-text fieldset-title legend-p"></p>
+			</div>			
+			<fieldset class="m-fieldset" id="wireless-field">
+				<legend class="lang-text" i18n="legend-wirelessConnect" style="display: none"><!-- |legendWirelessConnect| --></legend>
+				<ul id="wireless_connection_model" style="margin: 10px 0 0 40px;">
+					<!-- <li>
+						<span class="text-title lang-text" i18n="title-wirelessConnect">|titleWirelessConnect|</span>
+					</li> -->
+					<li class="li-model2">
+						<input type="radio" id="wireless_connection_model-enable" class="content-input-radio" name="wireless_connection_radio-model" value="1" checked/>
+						<span class="lang-text" i18n="radio-enable">|radioEnable|</span>
+					</li>
+					<li class="li-model2">
+						<input type="radio" id="wireless_connection_model-disable" class="content-input-radio" name="wireless_connection_radio-model" value="0"/>
+						<span class="lang-text" i18n="radio-disable">|radioDisable|</span>
+					</li> 
+				</ul>		
+				<div id="wireless_connection_patch" >
+					<div id="wireless-table-cell">
+						<span class="text-title lang-text" i18n="wireless-list" ><!-- |wirelessList| --></span>
+						<input type="button" class="input-button lang-value" id="wireless_connection-scan" value="|scan|" i18n="scan">
+						<p id="wireless_false_tips" style="display:none;" ></p>
+						<div class="wireless-img-container">
+							<img class="img-loading" id="connection-img-load" src="images/loading.gif" >
+						</div>
+						<div class="setting-contain-wireless-ctrl-table" style="display:none;float:left;clear:left;margin-left:40px;"></div>	
+					</div>		
+					
+					<div id="wireless-ctrl-cell" class="g-ctrl" style="margin-top:20px;float:left;clear:left;">
+						<ul>
+							<li class="li-model1" id="wireless-name-auto">
+								<span class="lang-text" i18n="wirelessname">|wirelessname|</span>
+								<span id="wireless_network-auto-ssid"></span>
+							</li>
+							<li class="li-model3" id="wireless-name-manually" style="display:none;">
+								<span class="lang-text" i18n="wirelessname">|wirelessname|</span>
+								<input type="text" class="input-text" id="wireless_network-manually-ssid">
+							</li>
+						</ul>
+						<input type="button" class="input-button lang-value" id="wireless_connection-switch-button" value="|manually|" i18n="manually" style="display:none;">
+						<ul id="wireless_connection-auto" style="width:700px;">
+							<li class="li-model4" id="wireless-auto-wep-contain" style="display:none;">
+								<span class="lang-text" i18n="passwd" >|passwd|</span>
+								<input type="password" class="input-pwd" id="wireless_connection-auto-wepkey">
+								<input type="text" class="input-text pwd-text" id="wireless_connection-auto-wepkey-decode" style="display: none;">
+								<span class="checkbox-img"></span>
+								<input type="checkbox" class="input-checkbox showpwd" id="wireless_connection-auto-showwepkey">
+								<span class="lang-text span-showpwd" i18n="show-passwd">|showPasswd|</span>
+							</li>
+							<li class="li-model4" id="wireless-auto-wpa-contain" style="display:none;">
+								<span class="lang-text" i18n="passwd" >|passwd|</span>
+								<input type="password" class="input-pwd" id="wireless_connection-auto-wpakey">
+								<input type="text" class="input-text pwd-text" id="wireless_connection-auto-wpakey-decode" style="display: none;">
+								<span class="checkbox-img"></span>
+								<input type="checkbox" class="input-checkbox showpwd" id="wireless_connection-auto-showwpakey">
+								<span class="lang-text span-showpwd" i18n="show-passwd" >|showPasswd|</span>
+							</li>
+						</ul>
+						<ul id="wireless_connection-manually" style="display:none;">
+							<li class="li-model5" >
+								<span class="lang-text" i18n="security" >|security|</span>
+								<select id="content-wireless_connection-security" style="width:210px;">
+									<option id="wireless_connection-security-none" value="None"
+										>None</option>
+									<option id="wireless_connection-security-wep" value="WEP">Wep</option>
+									<option id="wireless_connection-security-wpa" value="WPA-PSK">WPA-PSK</option>
+									<option id="wireless_connection-security-wpa2" value="WPA2-PSK">WPA2-PSK</option>
+									<option id="wireless_connection-security-wpawpa2" value="WPA/WPA2-PSK">WPA/WPA2-PSK</option>
+								</select>
+							</li>
+							<li class="li-model5 wireless-man-wep-contain" style="display:none;">
+								<span class="lang-text" i18n="wep-key-index" >|wepKeyIndex|</span>
+								<select id="wireless_connection-wep_key_index" style="width:210px;">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+								</select>
+							</li>
+							<li class="li-model5 wireless-man-wpa-contain" style="display:none;">
+								<span class="lang-text" i18n="encryption" >|encryption|</span>
+								<select id="wireless_connection-encryption" style="width:210px;">
+									<option value="TKIPAES">Automatic</option>
+									<option value="AES">AES</option>
+									<option value="TKIP">TKIP</option>
+								</select>
+							</li>
+							<li class="li-model4 wireless-man-wep-contain" id="wireless_connection-manually-weppsw" style="display:none;">
+								<span class="lang-text" i18n="passwd">|passwd|</span>
+								<input type="password" class="input-pwd" id="wireless_connection-man-wepkey">
+								<input type="text" class="input-text pwd-text" id="wireless_connection-man-wepkey-decode" style="display: none;">
+								<span class="checkbox-img"></span>
+								<input type="checkbox" class="input-checkbox showpwd" id="wireless_connection-man-showwepkey">
+								<span class="lang-text span-showpwd" i18n="show-passwd" >|showPasswd|</span>
+							</li>
+							<li class="li-model4 wireless-man-wpa-contain" id="wireless_connection-manually-wpapsw" style="display:none;">
+								<span class="lang-text" i18n="passwd" >|passwd|</span>
+								<input type="password" class="input-pwd" id="wireless_connection-man-wpakey">
+								<input type="text" class="input-text pwd-text" id="wireless_connection-man-wpakey-decode" style="display: none;">
+								<span class="checkbox-img"></span>
+								<input type="checkbox" class="input-checkbox showpwd" id="wireless_connection-man-showwpakey">
+								<span class="lang-text span-showpwd" i18n="show-passwd" >|showPasswd|</span>
+							</li>	
+						</ul>
+					</div>			
+				</div>
+			</fieldset>
+			<div class="content-list-bottom">		
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" id="wireless_connection-save" value="|connect|" i18n="connect">
+				</div>		
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Wireless.init();
+		$("#index-img-loading").hide();
+	</script>	
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Expires" content="-1">
+		<!-- latest IE version -->
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+		<link type="text/css" href="css/common/login.css?ver=ECC739" rel="stylesheet" />
+		<link type="text/css" href="css/plug.css?ver=ECC739"  rel="stylesheet" />
+		<title>NC450 Admin - Login</title>
+		
+		<link href="favicon.ico" rel="icon" />
+		<!--<link href="favicon.png" rel="shortcut icon png"/>-->
+		<script type="text/javascript" src="lib/jqueryX.js?ver=ECC739"></script>
+		<script type="text/javascript" src="i18n/en.js?ver=ECC739"></script>
+		<script type="text/javascript" src="js/common/plug.js?ver=ECC739"></script>
+	</head>
+
+	<body>
+		<div id="header" class="class-header">
+			<a id="logo" class="class-logo" target="_blank" href="http://www.tp-link.com"></a>
+		</div>
+
+			<div id="middle" class="class-middle">
+				<ul class="class-contain">
+					<li class="login-info-username">
+						<span  class="login-img-usr"></span>
+						<input type="text" class="login-input" id="username" maxlength="20" tabindex="1" name="Usernme">
+					</li>
+
+					<li class="login-info-password">
+						<span class="login-img-psw"></span>
+						<input autocomplete="off" tabindex="2" class="login-input" id="password" type="password" name="Password">
+					</li>
+
+				<li class="login-control">
+					<ul>
+						<li class="login-control-remember">
+							<input type="checkbox" id="login-remember-account">
+							<p class="remaccount">Remember account</p>
+						</li>
+						<li class="login-control-button">
+							<input type="button" id="login-submit" class="login-input-button" value="Login" tabindex="4">
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+
+		<div id="footer" class="class-copyright">
+			<p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> TP-Link Technologies Co.,Ltd. All rights reserved.</p>
+		</div>
+	</body>
+	<script type="text/javascript" src="js/login.js?ver=ECC739"></script>
+	<script type="text/javascript">
+		Login.init();
+	</script>
+</html>

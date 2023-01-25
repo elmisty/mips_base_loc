@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>System log</title>
+		<link rel="stylesheet" type="text/css" href="css/log.css?ver=ECC739">
+		<style type="text/css">
+			.img-loading{
+				display: block;
+				margin: 80px auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-log">
+			<div>
+				<p i18n="systemLog" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset">
+				<legend class="lang-text" i18n="systemLog" style="display: none"><!-- System Log --></legend>
+				<div id="log-img-loading" style="height: 380px; margin: 0 auto; width:742px;">
+					<img class="img-loading" src="images/loading.gif">
+				</div>
+				<div id="systemlog-ctrl-table" style="margin:20px 0 0 40px;"></div>
+			</fieldset>
+			<fieldset id="log-control-cell" class="m-fieldset f-hide" style="margin-top:30px;">
+				<legend i18n="logControl" class="lang-text"><!-- Log Control --></legend>
+				<div>
+					<ul>
+						<li class="li-model5">
+							<span i18n="Level" class="lang-text"><!-- Level --></span>
+							<select style="width:120px;" id="log-control-level">
+							<!-- <option value="ALL" i18n="ALL" class="lang_option lang-text"></option> -->
+							<option value="EMERG" i18n="EMERG" class="lang_option lang-text"></option>
+								<option value="ALERT" i18n="ALERT" class="lang_option lang-text"></option>
+								<option value="CRIT" i18n="CRIT" class="lang_option lang-text"></option>
+								<option value="ERROR" i18n="ERROR" class="lang_option lang-text"></option>
+								<option value="WARNING" i18n="WARNING" class="lang_option lang-text"></option>
+								<option value="NOTICE" i18n="NOTICE" class="lang_option lang-text"></option>
+								<option value="INFO" i18n="INFO" class="lang_option lang-text"></option>
+								<option value="DEBUG" i18n="DEBUG" class="lang_option lang-text"></option>
+
+							</select>
+						</li>		
+						<li class="li-model5">
+							<span i18n="Module" class="lang-text"><!-- Moduel --></span>
+							<select style="width:120px;" id="log-control-model">
+								<option value="ALL" i18n="ALL" class="lang_option lang-text"></option>
+								<option value="audioDetection" i18n="audioDetection" class="lang_option lang-text"></option>
+								<option value="autoUpgrade" i18n="autoUpgrade" class="lang_option lang-text"></option>
+								<option value="Bonjour" i18n="Bonjour" class="lang_option lang-text"></option>
+								<option value="Button" i18n="Button" class="lang_option lang-text"></option>
+								<option value="Cloud" i18n="Cloud" class="lang_option lang-text"></option>
+								<option value="DateTime" i18n="DateTime" class="lang_option lang-text"></option>
+								<option value="DayNight" i18n="DayNight" class="lang_option lang-text"></option>
+								<option value="DevFind" i18n="DevFind" class="lang_option lang-text"></option>
+								<option value="Device" i18n="Device" class="lang_option lang-text"></option>
+								<option value="IpcSwitch" i18n="IpcSwitch" class="lang_option lang-text"></option>
+
+								<option value="librpm" i18n="librpm" class="lang_option lang-text"></option>
+								<option value="Location" i18n="Location" class="lang_option lang-text"></option>
+								<option value="MDNew" i18n="MDNew" class="lang_option lang-text"></option>
+								<option value="MsgPush" i18n="MsgPush" class="lang_option lang-text"></option>
+								<option value="NetConfig" i18n="NetConfig" class="lang_option lang-text"></option>
+								<option value="NetSwitch" i18n="NetSwitch" class="lang_option lang-text"></option>
+								<option value="Oem" i18n="Oem" class="lang_option lang-text"></option>
+								<option value="Onvif" i18n="Onvif" class="lang_option lang-text"></option>
+								<option value="rpc_mod" i18n="rpc_mod" class="lang_option lang-text"></option>
+								<option value="rpms" i18n="rpms" class="lang_option lang-text"></option>
+
+								<option value="SD" i18n="SD" class="lang_option lang-text"></option>
+								<option value="Session" i18n="Session" class="lang_option lang-text"></option>
+								<option value="System" i18n="System" class="lang_option lang-text"></option>
+								<option value="tddp" i18n="tddp" class="lang_option lang-text"></option>
+								<option value="UPnP" i18n="UPnP" class="lang_option lang-text"></option>
+								<option value="UserManage" i18n="UserManage" class="lang_option lang-text"></option>
+								<option value="VideoControl" i18n="VideoControl" class="lang_option lang-text"></option>
+								<option value="Wireless" i18n="Wireless" class="lang_option lang-text"></option>
+								<option value="WorkMode" i18n="WorkMode" class="lang_option lang-text"></option>
+								<option value="ADNew" i18n="ADNew" class="lang_option lang-text"></option>
+
+								<option value="autoupgradenotice" i18n="autoupgradenotice" class="lang_option lang-text"></option>
+								<option value="cloud" i18n="cloud" class="lang_option lang-text"></option>
+								<option value="ddns" i18n="ddns" class="lang_option lang-text"></option>
+								<option value="filecut" i18n="filecut" class="lang_option lang-text"></option>
+								<option value="ftpAlarmNew" i18n="ftpAlarmNew" class="lang_option lang-text"></option>
+								<option value="libcloud" i18n="libcloud" class="lang_option lang-text"></option>
+								<option value="SDRecord" i18n="SDRecord" class="lang_option lang-text"></option>
+								<option value="speaker" i18n="speaker" class="lang_option lang-text"></option>
+								<option value="streamd" i18n="streamd" class="lang_option lang-text"></option>
+								<option value="smtpAlarmNew" i18n="smtpAlarmNew" class="lang_option lang-text"></option>
+								<option value="vod" i18n="vod" class="lang_option lang-text"></option>
+								<option value="server" i18n="server" class="lang_option lang-text"></option>
+
+							</select>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span i18n="net-switch" class="text-title lang-text"><!-- Net Switch: --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" value="1" id="log-net-enable" name="log-net" class="content-input-radio">
+							<span i18n="radio-enable" class="lang-text"><!-- Enable --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" value="0" id="log-net-disable" name="log-net" class="content-input-radio" checked="checked">
+							<span i18n="radio-disable" class="lang-text"><!-- Enable --></span>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<span i18n="debug-switch" class="text-title lang-text"><!-- Debug-Switch: --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" value="1" id="log-debug-enable" name="log-debug" class="content-input-radio">
+							<span i18n="radio-enable" class="lang-text"><!-- Enable --></span>
+						</li>
+						<li class="li-model2">
+							<input type="radio" value="0" id="log-debug-disable" name="log-debug" class="content-input-radio" checked="checked">
+							<span i18n="radio-disable" class="lang-text"><!-- Enable --></span>
+						</li>
+					</ul>
+					<ul>
+						<li class="li-model3">
+							<input type="button" class="input-button lang-value" i18n="save" id="log-control-save" value="Save"/>
+						</li>
+					</ul>	
+				</div>
+			</fieldset>
+			<div class="content-list-bottom">
+				<div class="button-list">
+					<input type="button" class="input-button lang-value" i18n="refresh" id="log-refresh" value="Refresh" />			
+					<input type="button" class="input-button lang-value" i18n="save-log" id="log-save" value="Save Log" />
+					<input type="button" class="input-button lang-value" i18n="clear-log" id="log-clear" value="Clear Log" />
+					<input type="button" class="input-button lang-value" i18n="logControl" id="log-control" value="Log Control"/>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		//$(".content-right-cell").fadeIn(800);
+		$("#index-img-loading").hide();
+	</script>
+	<script type="text/javascript" src="js/system_log.js?ver=ECC739"></script>
+</html>

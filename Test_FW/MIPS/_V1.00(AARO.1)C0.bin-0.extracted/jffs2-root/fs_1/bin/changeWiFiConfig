@@ -1,0 +1,81 @@
+#!/bin/sh
+
+help()
+{
+	echo "Usage: changeWiFiConfig [Radio/24G|5G] [SSID/str] [Channel/str]"
+	echo "For example:"
+	echo "Cmd: changeWiFiConfig 24G ZyXELSSID24G 6"
+	echo "	Turn off 5G radio and ture on 24g radio"
+	echo "	Set 2.4G SSID / Channel according to parameters"
+	echo "	Set 2.4G WiFi to no security"
+	echo "	Set 2.4G WiFi bandwidth to fixed 40MHz"
+	echo "===================================================="
+	echo "Cmd: changeWiFiConfig 5G ZyXELSSID5G 36"
+	echo "	Turn off 2.4G radio and turn on 5G radio"
+	echo "	Set 5G SSID / Channel according to parameters"
+	echo "	Set 5G WiFi to no security"
+	echo "	Set 5G WiFi bandwidth to fixed 80MHz"
+}
+
+radio=$1
+ssid=$2
+channel=$3
+
+if [ $# -eq 0 -o "$1" == "help" ]; then
+	help
+	exit 0
+fi
+
+if [ "$radio" == "24G" -o "$radio" == "24g" ]; then
+	#Turn off 5G radio
+	uci set wireless.wifi1.disabled=1
+	uci set wireless.ath10.disabled=1
+	#Turn on 24G radio
+	uci set wireless.wifi0.disabled=0
+	uci set wireless.ath0.disabled=0
+	
+	#Set 2.4G WiFi to no security
+	uci set wireless.wifi0.auth=OPEN
+	uci set wireless.ath0.auth=NONE
+	uci set wireless.ath0.encryption=NONE
+	
+	#Set 2.4G WiFi bandwidth to fixed 40MHz
+	uci set wireless.wifi0.channel_width=40
+	
+	#set ssid
+	uci set wireless.ath0.ssid=$ssid
+	
+	#set channel
+	uci set wireless.wifi0.channel=$channel
+	uci set wireless.wifi0.AutoChannelSelect=0
+	
+	uci commit wireless
+	wifi up
+	echo "OK"
+elif [ "$radio" == "5G" -o "$radio" == "5g" ]; then
+	#Turn off 24G radio
+	uci set wireless.wifi0.disabled=1
+	uci set wireless.ath0.disabled=1
+	#Turn on 5G radio
+	uci set wireless.wifi1.disabled=0
+	uci set wireless.ath10.disabled=0
+	
+	#Set 5G WiFi to no security
+	uci set wireless.wifi1.auth=OPEN
+	uci set wireless.ath10.auth=NONE
+	uci set wireless.ath10.encryption=NONE	
+	
+	#Set 5G WiFi bandwidth to fixed 80MHz
+	uci set wireless.wifi1.channel_width=80
+	
+	#set ssid
+	uci set wireless.ath10.ssid=$ssid
+	
+	#set channel
+	uci set wireless.wifi1.channel=$channel
+	uci set wireless.wifi1.AutoChannelSelect=0
+	
+	uci commit wireless
+	wifi up
+	echo "OK"
+fi

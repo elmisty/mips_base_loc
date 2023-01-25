@@ -1,0 +1,194 @@
+@charset "utf-8";
+#service_page :not(INPUT):not(TEXTAREA) {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+.ui-overlay-a, .ui-page-theme-a { background-color: #FFF; }
+hr {
+        border:none;
+        background-color: #48533c;
+        text-align:left;
+        clear: both;
+}
+#header {
+        background-color: #48533c;
+        border: #1px solid #ccc;
+	border:none;
+}
+#header hr {
+        border: 1px solid #48533c;
+        clear: both;
+}
+.listview { clear: both; }
+.listview a { padding: 0px; background-color: #F6F6F6; }
+.listview p {
+        display: block !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+        text-shadow: none;
+        font-style: normal;
+        font-family: "돋움", "Arial Unicode MS";
+        color: #444;
+        font-size: inherit !important;
+}
+.ui-page-theme-a .ui-btn.ui-btn-active { background-color: #F6F6F6; border-color: #DDD;}
+.ui-page-theme-a .ui-btn:focus { box-shadow: none; }
+
+.listview .line_title { float: left; }
+.listview .line_title p {
+        padding-left: 0.3em;
+        line-height: 2em;
+}
+.listview .line_status { float: right; display: table; }
+.listview .line_status p { line-height: 2em; }
+.listview .line_status span { display: table-cell;      vertical-align: middle; }
+.listview .line_status img {
+        height: 1em;
+        width: 1em;
+        padding-top: 0.3em;
+        padding-right: 0.3em;
+}
+.listview .line_value { clear: both; height: 1.5em; }
+.listview .line_value p { padding-left: 0.3em; color: #888; }
+#right_main, #right_sub {
+        clear: both;
+        margin-bottom: 10px;
+        overflow: auto;
+}
+.lc_left {
+        display: table;
+        float: left;
+        line-height: 2.5em;
+        height: 2.5em;
+        margin-top: 2px;
+        width: 6.5em;
+	//overflow: hidden;
+}
+
+#right_main .lc_left span {
+        display: table-cell;
+        vertical-align: middle;
+        width: 0.7em;
+}
+#right_main .lc_left span img {
+        height: 5px;
+        width: 5px;
+        margin-bottom: 0.2em;
+}
+#right_main .lc_row { clear: both; overflow : hidden; }
+
+.lc_right {
+        float: left;
+        width: 16.5em;
+        overflow: hidden;
+}
+.lc_right_ipdisk { width: 16em; }
+
+#right_main .value p { width: 50px; }
+#right_main #desc p,
+#right_sub #desc p {color: #777; line-height: 1.5em; }
+#right_sub #desc .title { margin-bottom: 5px; }
+
+.custom_css_button {
+        width: 6em;
+        height: 2.5em;
+        float: right;
+}
+
+#maincontent .lc_grayfont_text { color:#999; text-overflow:ellipsis; white-space:normal;}
+#maincontent .lc_link_text { color:#568100; text-overflow:ellipsis; white-space:normal;}
+/*local css*/
+#maincontent >div { background-color: #ffffff; }
+#maincontent .title_div { 
+	overflow: hidden;
+	padding: 0.8em;
+	border-style: #solid;
+	border-color: #CCC;	
+	border-width: 0 0 1px 0;
+	height: #40px;
+}
+#maincontent .title_div img { width: 4em; float: left; }
+#maincontent .title_div .title_left_div { float: left; margin-left: 0.5em; font-size: 1.3em; padding-top: 0.2em;}
+#maincontent .title_div .title_left_div >* { float: left; }
+#maincontent .title_div .title_right_div { float: right; padding-top: 0.8em;}
+#maincontent .title_div .title_right_div p { float: left; max-height: 2.5em; max-width: 25em; }
+#maincontent .title_div .title_right_div img { width: 1em; height: 1em; margin-left: 0.5em;  }
+#maincontent .title_div .link_desc_div { clear: both; line-height:1em;}
+#maincontent .title_div .link_desc_div p { float: left; }
+#maincontent .title_div .link_desc_div img { float: left; width: 1em; height: 1em; padding-top: #0.1em; vertical-align:middle;}
+
+#maincontent .contents_div .row_div { overflow: hidden; }
+#maincontent .contents_div .row_div p { padding: #0.5em; padding-top:0.3em; padding-left: #0.5em; padding-bottom:0.3em;}
+#maincontent .contents_div .row_div:nth-child(odd) { background-color: #f9f9f9; padding: #0.4em; padding-left: 0.6em;}
+#maincontent .contents_div .row_div:nth-child(even) { background-color: #f9f9f9; padding:#0.4em; padding-left: 0.6em;}
+#maincontent .contents_div .row_div input[type='checkbox'] { display: none; }
+#maincontent .contents_div .row_div .left_div { width: 40%; float: left; min-height: 1em; }
+#maincontent .contents_div .row_div .right_div { float: left; width:60%;}
+#maincontent .contents_div .row_div .right_div p { float: left; }
+#maincontent .contents_div .row_div .right_div img { width:1em; height: 1em; margin: 0.4em 0 0 0.2em; }
+#maincontent .contents_div .row_div .label_div { padding-right: #0.5em; }
+#maincontent .contents_div .row_div .label_div label { background-color: inherit; padding-top: 0; padding-bottom: 0; padding-left: #1em; height: auto; }
+#maincontent #extra .contents_div .row_div .right_div p.lc_link_text { margin-left: 0; padding-right: 0; }
+
+#maincontent .link_desc_p { margin-left: 0.5em; }
+
+
+#maincontent .contents_div { 
+	overflow: hidden; 
+	-webkit-transition-duration: 0.4s;
+	-webkit-transition-property: max-height, border-top;
+	transition-duration: 0.4s;
+	transition-property: max-height;
+	font-size: 1.1em;
+	background-color: #f9f9f9;
+}
+
+.hide {
+	-webkit-transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+	max-height: 0;
+	border-bottom: 0px solid #CCC; 
+}
+.show {
+	-webkit-transition-timing-function: ease-in;
+	transition-timing-function: ease-in;
+	max-height: 1000px;
+	border-bottom: #1px solid #CCC; 
+}
+#iighz .contents_div .row_div label p, #vghz .contents_div .row_div label p { margin-left: 1.5em; }
+
+p#etc_info {
+	padding-top: 0.7em;
+}
+
+p#pass_info {
+	margin-left: 1.5em;
+}
+div#extra_firmware_link {
+	padding-left: #11em;
+	padding-bottom: #1em;
+}
+div#link_sec_setting {
+	padding-left: #11em;
+	padding-bottom: #1em;
+}
+.for_padding{
+	padding: 0.5em 0 0.5em 0.5em; 
+}
+.row_div.lp{
+	padding-left: 0.6em;
+}
+.right_div.pass{padding-left:0.5em;}
+.remote_info2{width:40% !important;}
+.row_div1 .left_div{width:40% !important;}
+.row_div1 .right_div{width:60%;}
+#extra .row_div{padding-bottom:0.7em;}
+.row_div{padding-top:.1em; padding-bottom:.1em;}
+.title_div p{padding-bottom:.2em;}
+.config-line{background-color:#f8f8f5 !important;}
+.ui-btn-icon-left{padding-left:1.8em;}
+.ui-btn-icon-left:after{left:0em;}

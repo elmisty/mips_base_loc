@@ -1,0 +1,72 @@
+#content-date .plugin-select {
+	margin: 5px 5px 0 0;
+}
+
+.input-button-long {
+	width:350px;
+	clear: left;
+	margin-left: 80px;
+}
+
+#content-date .checkbox {
+	bottom: -8px;
+}
+
+#content-date span.text-title  {
+	min-width: 100px;
+	float: left;
+ 
+}
+
+#content-date span.text-title-little {
+	float: left;
+	margin-right: 8px;
+}
+
+#content-date ul {
+	margin-left: 30px;
+}
+
+#content-date li.daylight_saving_time-manually-cell span.text-title {
+	width: 100px;
+}
+#content-date li.daylight_saving_time-manually-cell select {
+	width: auto;
+}
+
+#content-date li.set_date_manually-cell span {
+	width: 50px;
+}
+#content-date li.set_date_manually-cell select {
+	width: 80px;
+}
+
+#content-date li.time_conf-model-sns-cell,
+#content-date li.daylight_saving_time-manually-cell,
+#content-date li.set_date_manually-cell {
+	margin-left: 20px;
+}
+
+#get_time_from_system {
+	width: 300px;
+	float: left;
+	margin-left: 15%;
+}
+
+
+.sync_ntp_sword_img {
+	background: url("/images/img.png");
+	background-position: -233px -110px;
+	float: left;
+	width: 25px;
+	height: 20px;
+	margin-top: 6px;
+	margin-left: 5px;
+}
+.sync_ntp_sword_img:hover{
+	background-position: -233px -110px;
+}
+
+#date-sns-manual{
+	height: 20px;
+}

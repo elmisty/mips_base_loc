@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 from FINDMIPSBASE import *
+import time
 
 if __name__ == "__main__":
     argu_parser = ArgumentParser(description='Automatic base address finder for MIPS archtecture')
@@ -16,7 +17,9 @@ if __name__ == "__main__":
         args.windowsize = 4
 
     print(args.target, args.matchsize)
-    do_find = FINDMIPSBASE(imgpath=args.target, wnd_size=args.windowsize, match_size=args.matchsize, byte_order=args.ord)
+    start = time.time()
+    do_find = FINDMIPSBASE(imgpath=args.target, wnd_size=args.windowsize, match_size=args.matchsize, byte_order=args.ord)    
+    
     #do_find = FINDMIPSBASE('./Test_FW/EXIST_GP/54B5_wr543gv2', wnd_size=4, match_size=5000, byte_order='big')
     #do_find = FINDMIPSBASE('./Test_FW/EXIST_GP/1310_n604r_kr_8_88', wnd_size=4, match_size=5000, byte_order='big')
     #do_find = FINDMIPSBASE('./Test_FW/EXIST_GP/25062_EW7303APn', wnd_size=4, match_size=8000, byte_order='big')
@@ -28,4 +31,7 @@ if __name__ == "__main__":
     #do_find = FINDMIPSBASE('./Test_FW/40', wnd_size=4, match_size=9800, byte_order='big')
 
     do_find.do_analyze()
+    end = time.time()
+    print("[!] TIME RESULT : {}".format(float(end - start)))
+    
     #do_find.do_analyze(mode='manual', gp_reg=0x80304000)

@@ -1,0 +1,9 @@
+name=ipTIME N602E/N602E plus
+company=EFM Networks
+url=www.iptime.co.kr
+type=wireless_router
+vendor=efm
+easymesh.support_type=4
+easymesh.support_role=2
+easymesh.support_func=wireless_stt|wired_bh|guest_network|expert_wifi
+

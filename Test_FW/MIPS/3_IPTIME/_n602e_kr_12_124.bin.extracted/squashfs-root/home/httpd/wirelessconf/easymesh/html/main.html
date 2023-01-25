@@ -1,0 +1,305 @@
+<div id="header" class="header" data-role="header" data-position="fixed" data-tap-toggle="false"></div>
+<div id="content" class="content" data-role="content">
+	<form id="iux_form">
+		<div class="lc_wrap_radiobutton" sid="">
+			<div class="lc_left"><p sid="S_EASYMESH_TITLE"></p></div>
+			<div class="lc_middle">
+				<div id="mode_controller_container" class="mode">
+					<input name="mode" id="mode_controller" sid="C_MODE" type="radio" value="controller">
+					<label for="mode_controller"><p sid="S_CONTROLLER_MODE"></p></label>
+				</div>
+
+				<div id="mode_agent_container" class="mode">
+					<input name="mode" id="mode_agent" sid="C_MODE" type="radio" value="agent">
+					<label for="mode_agent"><p sid="S_AGENT_MODE"></p></label>
+				</div>
+
+				<div id="mode_none_container" class="mode">
+					<input name="mode" id="mode_none" sid="C_MODE" type="radio" value="none">
+					<label for="mode_none"><p sid="S_INACTIVE"></p></label>
+				</div>
+			</div>
+		</div><!--lc_row-->
+		<div sid="L_FIELD_CONFIG" class="field">
+
+			<div class="lc_row" sid="ROW_SSID">
+				<div class="lc_left"><p sid="S_NETWORK_NAME"></p></div>
+
+				<div class="lc_middle">
+					<div class="lc_input_user">
+						<input name="main_ssid" sid="C_MAIN_USERID" type="text" maxlength="32" style="ime-mode:disabled">
+					</div>
+				</div>
+				<div class="lc_right">
+					<div id="main_ap_ad_container" class="lc_manual_check lc_fullwidth ui-alt-icon check">
+						<input sid="C_MAIN_HIDDEN" id="input_allowprivate_check" type="checkbox" value="1">
+						<label for="input_allowprivate_check"><p sid="S_NAME_HIDDEN"></p></label>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lc_row" sid="ROW_PW">
+				<div class="lc_left"><p sid="S_TITLE_USERPW"></p></div>
+
+				<div class="lc_middle">
+					<div class="lc_input_pw">
+						<input name="main_pass" sid="C_MAIN_USERPW" type="password" minlength="8" maxlength="64" style="ime-mode:disabled">
+					</div>
+				</div>
+
+				<div class="lc_right">
+					<div class="lc_manual_check lc_fullwidth ui-alt-icon check">
+						<input sid="C_MAIN_CHECK" id="input_passwd_check" type="checkbox" value="1">
+						<label for="input_passwd_check"><p sid="S_VIEW_PASSWD"></p></label>
+					</div>
+				</div>
+			</div>
+
+			<div class="lc_row row-select" sid="ROW_2G_OPTION">
+				<div class="lc_left"><p sid="S_NETWORK_OPTION2G"></p></div>
+
+				<div class="lc_middle">
+					<div class="ui-alt-icon ui-nodisc-icon lc_select">
+						<select name="2g_policy" sid="S_2GHZ_POLICY" type="select" id="2g_policy"></select>
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row" sid="ROW_SSID_2G">
+				<div class="lc_left"><p sid="S_NETWORK_NAME2G"></p></div>
+
+				<div class="lc_middle">
+					<div class="lc_input_user">
+						<input name="main_ssid" sid="S_MAIN_2GSSID" type="text" maxlength="32" style="ime-mode:disabled" disabled>
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row lc_desc" sid="ROW_SSID2G_DESC">
+				<div class="lc_left">
+				</div>
+				<div class="lc_middle">
+					<div class="lc_input_user">
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row row-select" sid="ROW_HUBAPUSING">
+				<div class="lc_left"><p sid="S_GUESTNET"></p></div>
+
+				<div class="lc_middle">
+					<div class="ui-alt-icon ui-nodisc-icon lc_select">
+						<select name="guest_policy" sid="S_GUEST_POLICY" type="select" id="guest_policy"></select>
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row" sid="ROW_GUESTSSID">
+				<div class="lc_left"><p sid="S_GUESTNET_NAME"></p></div>
+
+				<div class="lc_middle">
+					<div class="lc_input_user">
+						<input name="guest_ssid" sid="C_GUEST_USERID" type="text" maxlength="32" style="ime-mode:disabled">
+					</div>
+				</div>
+				<div class="lc_right">
+					<div id="guest_ap_ad_container" class="lc_manual_check lc_fullwidth ui-alt-icon guestcheck">
+						<input name="check_mac" sid="C_GUEST_HIDDEN" id="mac_manual_check" type="checkbox" value="1">
+						<label for="mac_manual_check"><p sid="S_NAME_HIDDEN"></p></label>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="lc_row" sid="ROW_GUESTPW">
+				<div class="lc_left"><p sid="S_GUESTNET_PASSWD"></p></div>
+
+				<div class="lc_middle">
+					<div class="lc_input_pw">
+						<input name="guest_pass" sid="C_GUEST_USERPW" type="password" minlength="32" maxlength="63" style="ime-mode:disabled">
+					</div>
+				</div>
+				<div class="lc_right" sid="MANUAL_DNS">
+					<div class="lc_manual_check lc_fullwidth ui-alt-icon guestcheck">
+						<input name="check_dns" sid="C_GUEST_CHECK" id="dns_dynamic_check" type="checkbox" value="1">
+						<label for="dns_dynamic_check"><p sid="S_VIEW_PASSWD"></p></label>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="lc_row" sid="ROW_SSID_GUEST2G">
+				<div class="lc_left"><p sid="S_NETWORK_NAMEGUEST2G"></p></div>
+
+				<div class="lc_middle">
+					<div class="lc_input_user">
+						<input name="guest_ssid" sid="S_GUEST_2GSSID" type="text" maxlength="32" style="ime-mode:disabled" disabled>
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row lc_desc" sid="ROW_SSID2G_DESC">
+				<div class="lc_left">
+				</div>
+				<div class="lc_middle">
+					<div class="lc_input_user">
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row" sid="C_IP_ADDRESS">
+				<div class="lc_left"><p sid="S_INTERNAL_IP"></p></div>
+				<div class="lc_middle">
+					<div id="dns1_field" sid="C_IP_INTERNAL" class="cc_input_ip ip">
+						<div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lc_row" sid="C_SM_MASK">
+				<div class="lc_left"><p sid="S_SUBNET"></p></div>
+				<div class="lc_middle">
+					<div id="dns2_field" sid="C_SM_MASK" class="cc_input_ip ip">
+						<div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lc_row" sid="C_GATEWAY">
+				<div class="lc_left"><p sid="S_GATEWAY"></p></div>
+				<div class="lc_middle">
+					<div id="dns2_field" sid="C_GATEWAY" class="cc_input_ip ip">
+						<div class="lc_inputbox_ip"><input sid="VALUE0" type="number" pattern="[0-9]*" min = "1" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE1" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE2" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+						<div class="hyphen"><p>.</p></div>
+						<div class="lc_inputbox_ip"><input sid="VALUE3" type="number" pattern="[0-9]*" min = "0" max = "255" maxlength = "3"></div>
+					</div>
+				</div>
+			</div>
+			<div class="lc_row lc_desc" sid="ROW_SSID2G_DESC">
+				<div class="lc_left">
+				</div>
+				<div class="lc_middle">
+					<div class="lc_input_user">
+					</div>
+				</div>
+				<div class="lc_right">
+				</div>
+			</div>
+
+			<div class="lc_row" sid="ROW_DENSITY_CONFIG">
+				<div class="lc_left">
+					<div class="lc_title"><p sid="S_DENSITY_CONFIG_TITLE"></p></div>
+				</div>
+				<div class="lc_middle">
+					<div id="" class="mode">
+						<input name="density" id="density_on" sid="S_DENSITY_MODE" type="radio" value="1">
+						<label for="density_on"><p sid="S_DENSITY_CONFIG_ON"></p></label>
+					</div>
+
+					<div id="" class="mode">
+						<input name="density" id="density_off" sid="S_DENSITY_MODE" type="radio" value="0">
+						<label for="density_off"><p sid="S_DENSITY_CONFIG_OFF"></p></label>
+					</div>
+				</div>
+			</div>
+			<div class="lc_row" sid="ROW_RSSI">
+				<div class="lc_left">
+					<p sid="S_DENSITY_TEXT1"></p>
+				</div>
+				<div class="lc_last">
+					<div class="ui-alt-icon ui-nodisc-icon lc_select">
+						<select sid="S_RSSI_LEVEL" type="select"></select>
+					</div>
+					<div class="number">
+						<input type="number" sid="S_RSSI_STRENGTH">
+					</div>
+					<p sid="S_DENSITY_TEXT2"></p>
+				</div>
+			</div>
+
+			<div class="lc_row" sid="ROW_STEERINGLEVEL">
+				<div class="lc_left">
+					<div class="lc_title"><p sid="S_STEERING_LEVEL"></p></div>
+				</div>
+				<div class="lc_middle">
+					<div class="ui-alt-icon ui-nodisc-icon lc_content">
+						<select name="steering_level" sid="N_STEERING_LEVEL" type="select" id="select_option">
+						</select>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="lc_row lc_submit">
+				<div class="lc_content"><input class="custom_css_button lc_apply_button" sid="S_BUTTON_SUBMIT" type="button" data-role="none"></div>
+			</div>
+
+
+
+		</div><!--field-->
+	</form>
+	<ul class="listview ui-listview" data-role="listview">
+		<li class="submenulist" sid="ROW_MESH_TOOL">
+			<a href="/easymesh/" data-icon="false" target="_blank">
+				<div class="submenu_icon1"><img src="/common/images/easymesh_logo.png"></div>
+				<div class="line_title submenu_title"><p sid="S_TOOL_START"></p></div>
+			</a>
+		</li>
+		<li class="config-line" sid="ROW_CONFIG">
+			<form method="post" id="iux_file_form" enctype="multipart/form-data">
+				<div class="config-item">
+					<button type="button" class="custom_css_button lc_filebutton" sid="EASYMESH_BACKUP" data-role="none">
+						
+						<span sid="S_BACKUP_STRING"></span>
+					</button>
+				</div>
+				<div class="config-item">
+					<button type="button" class="custom_css_button lc_filebutton" sid="EASYMESH_RESTORE" data-role="none">
+						
+						<span sid="S_RESTORE_STRING"></span>
+					</button>
+				</div>
+				<div class="config-item">
+					<div class="lc_customfile_line">
+						<div class="ui-state-disabled lc_fileselector">
+							<input type="text" autocomplete="off" autocorrect = "off" autocapitalize = "off" spellcheck = "false" sid="S_CONFIG_SELECT" data-role="none" disabled>
+						</div>
+						<button type="button" class="lc_searchbtn" data-role="none"><img src="/common/images/search.png"></button>
+						<input type="file" name="config_file" sid="C_CONFIG_RESTORE" class="lc_customfile" data-role="none" accept=".cfg" required>
+					</div>
+				</div>
+			</form>
+		</li>
+	</ul>
+
+
+</div>
+<div id="footer" data-tap-toggle="false" data-position="fixed" class="footer" data-role="footer"></div>
+</div>

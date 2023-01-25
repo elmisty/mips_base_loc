@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+	<style type="text/css">
+		#sd-file-total-info {
+			margin-left: 40px;
+		}
+		#sd_file_list .checkbox{
+    		margin-left: 12px;
+    		bottom:auto;
+		}
+		#sd-tips{
+			font-weight: bold;
+			margin-left: 40px;
+			float:left;
+		}
+		.a-filelist{
+			float:inherit;
+		}
+		.a-filelist:hover{
+			text-decoration: none;
+		}
+		.span-filelist{
+			color:#0CF;
+			font-size:14px;
+		}
+		.span-filelist:hover{
+			color:#999;
+		}
+	</style>
+	<title>SD</title>
+</head>
+<body>
+	<!--SD-->
+	<div class="content-right-cell" id="content-sd">	
+			<div>
+				<p i18n="legend-sd" class="lang-text fieldset-title legend-p"></p>
+			</div>		
+			<fieldset class="m-fieldset" id="sd-tips-cell" style="display: none">
+				<legend class="lang-text" i18n="legend-sd" style="display: none"></legend>
+				<p class="lang-text" i18n="tipsNeed" id="sd-tips"></p>
+			</fieldset>
+			<fieldset class="m-fieldset sd-main-cell f-hide" id="sd-list" style="display: none">
+				<legend class="lang-text" i18n="legend-sd" style="display: none"></legend>
+				<div class="m-option1">
+					<span class="lang-text" i18n="sdPath">Path:</span>
+					<span id="sd-path-info">/</span>
+					<button class="input-button lang-text" id="sd-back" value="Back" i18n="Back" ></button>
+				</div>
+				<div class="tpTableHolder" id="sd_file_list">
+					<table class="tpTableHead">
+						<tbody>
+							<tr>
+								<!-- <td style="width:40px">
+									<input type="checkbox" name="sd_choose_all" id="sd_choose_all" tabindex="1">
+								</td> -->
+								<td class="lang-text" i18n="FileType" style="width:60px">Type</td>
+								<td class="filename lang-text" i18n="FileName" style="width:320px">Name</td>
+								<td class="lang-text" i18n="Size" style="width:100px">Size</td>
+								<td class="lang-text" i18n="NumberOfFile" style="width:100px">Total Items</td>
+								<td class="td-rightest lang-text" i18n="Date">Date</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="tpTableContentHolder">
+						<table id="tpTableContent" class="tpTableContent"></table>
+					</div>
+					<div class="sd-file-list-mask" style="display: none;">
+						<img src="images/loading.gif" >
+					</div>
+				</div>
+				<div style="float:left;width:1920px">
+					<p id="sd-file-total-info">
+					</p>
+				</div>
+				<!-- <div class="m-botton-list">
+					<button class="input-button lang-text" id="sd-delete" value="Delete" i18n="delete" style="margin-left:40px"></button>
+					<button class="input-button lang-text" id="sd-format" value="Format SD Card" i18n="FormatSDCard"></button>
+				</div> -->
+			</fieldset>
+	</div>
+<script type="text/javascript">
+	common.langChange();
+	common.widgetEnable();
+	SD.init();
+	//$("#index-img-loading").hide();
+</script>
+</body>
+</html>

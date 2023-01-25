@@ -1,0 +1,10 @@
+Package: kmod-shortcut-fe
+Version: 3.3.8+g2eeabf3-1
+Depends: kernel (=3.3.8-1-c7416cfa16dc3a16ccc3103c55a65435)
+Source: package/shortcut-fe
+SourceFile: shortcut-fe-g2eeabf3.tar.gz
+SourceURL: http://svn.zyxel.com.tw/svn/TPDC/WiFi_Router/openwrt/dl
+Section: kernel
+Architecture: ar71xx
+Installed-Size: 10757
+Description:  Kernel driver for SFE

@@ -1,0 +1,4 @@
+syslog          514/udp
+syslog-conn     601/tcp                 # Reliable Syslog Service
+syslog-conn     601/udp                 # Reliable Syslog Service
+syslog-tls      6514/tcp                # Syslog over TLS

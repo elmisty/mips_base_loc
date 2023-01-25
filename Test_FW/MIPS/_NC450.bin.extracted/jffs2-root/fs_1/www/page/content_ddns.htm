@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>DDNS</title>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-ddns">
+			<fieldset class="m-fieldset" id="ddns-field">
+				<legend class="lang-text" i18n="legend-ddns"><!-- DDNS --></legend>
+				<!--<div class="f-vm-box">-->
+					<!--<div class="f-vm-ctn">-->
+						<ul class="content-usr-list">
+							<li class="li-model5">
+								<span class="lang-text" i18n="serviceProvider"><!-- Service Provider: --></span>
+								<select id="ddns-type" style="width: 200px;">
+									<option value="0">No-IP (www.noip.com)</option>
+									<option value="1">DynDNS (www.dyn.com)</option>
+									<option value="2">Comexe (www.comexe.cn)</option>
+								</select>
+								<a href="www.noip.com" target='_blank' id="ddns-select-regist-title">
+									<span class="lang-text" i18n="gotoRegister"><!-- Goto register... --></span>
+								</a>
+							</li>
+						</ul>
+						<div id="ddns-noip-cell" class="ddns-type-cell">
+							<ul>
+								<li class="li-model3">
+									<span class="lang-text" i18n="username"><!-- Username: --></span>
+									<input type="text" class="input-text" id="ddns-noip-username">
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="passwd"><!-- Password: --></span>
+									<input type="password" class="input-text" id="ddns-noip-passwd">
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="domainName"><!-- Domain Name: --></span>
+									<input type="text" class="input-text" id="ddns-noip-domain">
+								</li>
+								<li class="li-model1">
+									<span class="lang-text" i18n="connectionStatus" ><!-- Connection Status: --></span>
+									<span id="ddns-noip-connectstate"></span>
+								</li>
+								<li class="f-clear-l m-button-list">
+									<input type="button" class="input-button lang-value" id="ddns-noip-logout" value="Logout" i18n="logout" />
+									<input type="button" class="input-button lang-value" id="ddns-noip-login" value="Login" i18n="login" />
+								</li>
+							</ul>
+						</div>
+						<div id="ddns-dyndns-cell" class="ddns-type-cell" style="display:none;">
+							<ul>
+								<li class="li-model3">
+									<span class="lang-text" i18n="username" ><!-- Username: --></span>
+									<input type="text" class="input-text" id="ddns-dyndns-username">
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="passwd" ><!-- Password: --></span>
+									<input type="password" class="input-text" id="ddns-dyndns-passwd">
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="domainName" ><!-- Domain Name: --></span>
+									<input type="text" class="input-text" id="ddns-dyndns-domain">
+								</li>
+								<li class="li-model1">
+									<span class="lang-text" i18n="connectionStatus" ><!-- Connection Status: --></span>
+									<span id="ddns-dyndns-connectstate"></span>
+								</li>
+								<li class="f-clear-l m-button-list">
+									<input type="button" class="input-button lang-value" id="ddns-dyndns-logout" value="Logout" i18n="logout" />
+									<input type="button" class="input-button lang-value" id="ddns-dyndns-login" value="Login" i18n="login" />
+								</li>	
+							</ul>
+						</div>
+						<div id="ddns-comexe-cell" class="ddns-type-cell" style="display:none;">
+							<ul>
+								<li class="li-model3">
+									<span class="lang-text" i18n="username"><!-- Username: --></span>
+									<input type="text" class="input-text" id="ddns-comexe-username">
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="passwd" ><!-- Password: --></span>
+									<input type="password" class="input-text" id="ddns-comexe-passwd">
+								</li>
+								<li class="li-model3">
+									<span class="lang-text" i18n="domainName"><!-- Domain Name: --></span>
+									<input type="text" class="input-text" id="ddns-comexe-domain">
+								</li>
+								<li class="li-model1">
+									<span class="lang-text" i18n="connectionStatus" ><!-- Connection Status: --></span>
+									<span id="ddns-comexe-connectstate"></span>
+								</li>
+								<li class="f-clear-l m-button-list">
+									<input type="button" class="input-button lang-value" id="ddns-comexe-logout" value="Logout" i18n="logout" />
+									<input type="button" class="input-button lang-value" id="ddns-comexe-login" value="Login" i18n="login" />
+								</li>			
+							</ul>
+						</div>
+					<!--</div>-->
+				<!--</div>-->
+			</fieldset>
+			<div class="content-list-bottom">
+				<div class="button-list-right">
+					<input type="button" class="input-button ddns-save-button lang-value" id="ddns-noip-save" value="Save" i18n="save" />
+					<input type="button" class="input-button ddns-save-button lang-value" id="ddns-dyndns-save" style="display:none;" value="Save" i18n="save" />
+					<input type="button" class="input-button ddns-save-button lang-value" id="ddns-comexe-save" style="display:none;" value="Save" i18n="save" />
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		$("#index-img-loading").hide();
+	</script>
+	<script type="text/javascript" src="js/ddns.js?ver=ECC739"></script>
+</html>

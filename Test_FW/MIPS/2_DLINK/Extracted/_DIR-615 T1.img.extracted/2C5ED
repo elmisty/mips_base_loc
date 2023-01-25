@@ -1,0 +1,365 @@
+It is recommended strongly that you choose one of following options to enable security, and select WPA-PSK/WPA2-PSK AES encryption.@#$
+Pre-Shared Key value has illegal characters.Some special characters \\\'" are not allowd@#$
+You can configure the wireless parameters and security settings of router on this step@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f)@#$
+Invalid SSID. Some special characters \\\'" are not allowd@#$
+Pre-Shared Key value should be set at least 8 characters@#$
+Pre-Shared Key value should be less than 63 characters@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+(8-63 characters or 64 hex digits)@#$
+&nbsp&nbspEasy Setup - Wireless@#$
+Disable the wireless radio@#$
+WPA-PSK/WPA2-PSK AES@#$
+Hex(64 characters)@#$
+Wireless Security@#$
+Hardware version:@#$
+Firmware Version@#$
+Control Sideband@#$
+Disable Security@#$
+Wireless Router@#$
+Select Language@#$
+Pre-Shared Key@#$
+Channel Width@#$
+Auto 20/40M@#$
+Channel@#$
+ASCII@#$
+SSID@#$
+Mode@#$
+High@#$
+Back@#$
+Next@#$
+20M@#$
+Low@#$
+Key@#$
+Tips: Please click "Setup" on the Menu, and then click "Internet Setup" for detail settings if the router still can not access the internet.@#$
+Click the 'Finish' button to finish the Easy Setup@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+&nbsp&nbspEasy Setup@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Finish@#$
+Back@#$
+Saving the settings and taking effect@#$
+&nbsp;&nbsp;&nbsp;&nbsp;Product Page@#$
+Hardware version:@#$
+Firmware Version@#$
+Wireless Router@#$
+Select Language@#$
+Please wait@#$
+Wrong account or password, please enter the correct Internet account and password, such as forgetting to ask your network service provider.@#$
+The WAN port is not properly connected, please confirm the WAN port cable has been plugged in and the WAN port light is on.@#$
+The PPPOE server did not respond, please confirm whether the WAN port was connected to your ISP's network.@#$
+Pre-Shared Key value has illegal characters.Some special characters  \\\'" are not allowd.@#$
+msg + ' cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.'@#$
+'Invalid '+ msg+' value. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.'@#$
+msg + ' has an invalid IP address range in 1st digit. It should be 1-223.'@#$
+msg + ' has an invalid IP address range in 2nd digit. It should be 0-255.'@#$
+msg + ' has an invalid IP address range in 4th digit. It should be 1-254.'@#$
+Invalid Pre-Shared Key value. It should be in hex number (0-9 or a-f).@#$
+'Invalid '+ msg+' value. It should be the decimal number (0-9).'@#$
+has an invalid IP address range in 3rd digit. It should be 0-255@#$
+Invalid SSID. Some special characters  \\\'" are not allowd.@#$
+Pre-Shared Key value should be set at least 8 characters.@#$
+Pre-Shared Key value should be less than 63 characters.@#$
+WAN IP and LAN IP must be on different networks!@#$
+DNS IP and LAN IP must be on different networks!@#$
+Secondary DNS and Primary DNS must be different!@#$
+Username cannot be empty. Please try it again.@#$
+Password cannot be empty. Please try it again.@#$
+WAN and gateway must be on the same network!@#$
+DNS IP and WAN IP must be different!@#$
+Illegal characters in the username!@#$
+Illegal characters in the password!@#$
+WAN and gateway must be different!@#$
+(8-63 characters or 64 hex digits)@#$
+Valid username and password.@#$
+Invalid ip netmask address!@#$
+Advanced Network Settings@#$
+Hex (64 characters)@#$
+msg + ' invalid.'@#$
+Hardware version:@#$
+Firmware Version@#$
+Account Validate@#$
+Save and Connect@#$
+Wireless Router@#$
+Default Gateway@#$
+Select Language@#$
+Secondary DNS:@#$
+Wireless Setup@#$
+Pre-Shared Key@#$
+Secondary DNS@#$
+Product Page:@#$
+Connect type:@#$
+Primary DNS:@#$
+Primary DNS@#$
+Internet IP@#$
+Subnet Mask@#$
+IP Address@#$
+Gateway IP@#$
+(Optional)@#$
+WAN Setup@#$
+User Name@#$
+Internet@#$
+Password@#$
+NETWORK@#$
+Client@#$
+Router@#$
+LAN IP@#$
+Static@#$
+PPPoE@#$
+ASCII@#$
+SSID@#$
+Map@#$
+Key@#$
+This page is used to configure the parameters for Internet network which connects to the WAN port of your Access Point. Here you may change the access method to static IP, DHCP or PPPoE by click the item value of WAN Access type.@#$
+Do you really want to configure ac name?If ac name is different with the pppoe server,dial will fail@#$
+Please choose one IPv6 connection type except Link-Local Only, 6to4, 6rd, and IPv6 in IPv4 Tunnel@#$
+Optional. It should be consistent with the setting of PPPoE Server or empty@#$
+(Need to repair the connection of your PC if DNS configuration changed.)@#$
+When IPv6 connection type is Static, can't choose DS-Lite DHCPv6 mode@#$
+WAN IP and LAN IP must be on different networks@#$
+DNS IP and LAN IP must be on different networks@#$
+Illegal characters in the pppoe service name!@#$
+WAN and gateway must be on the same network@#$
+Illegal idle time value! It must be (0-9).@#$
+Illegal characters in the pppoe username!@#$
+Illegal characters in the pppoe password!@#$
+msg+'Invalid. should be xxx.xxx.xxx.xxx@#$
+not be null. should be xxx.xxx.xxx.xxx@#$
+msg+'Invalid. should be number(0-9)@#$
+msg+'Secound number should be 0-255@#$
+Illegal MTU value! It must be (0-9)@#$
+DNS IP and WAN IP must be different@#$
+msg+'First number should be 1-223@#$
+msg+'Third number should be 0-255@#$
+msg+'Fourth number should be1-254@#$
+WAN and gateway must be different@#$
+DNS 2 and DNS 1 must be different@#$
+DNS 3 and DNS 1 must be different@#$
+DNS 3 and DNS 2 must be different@#$
+Invalid host name characters@#$
+PPP username can't be empty@#$
+PPP password can't be empty@#$
+Invalid ip netmask address@#$
+Attain DNS Automatically@#$
+default gateway address@#$
+AFTR Name or Address@#$
+WAN Interface Setup@#$
+Invalid Idle time@#$
+Static IP Address@#$
+Invalid MTU size@#$
+Set DNS Manually@#$
+WAN Access Type@#$
+Default Gateway@#$
+Connection Type@#$
+DS-Lite DHCPv6@#$
+WAN Interface@#$
+Apply Changes@#$
+WAN port rate@#$
+msg+'Invalid@#$
+AP WAN Setup@#$
+Service Name@#$
+DNS Server 1@#$
+DNS Server 2@#$
+DNS Server 3@#$
+DS-Lite Mode@#$
+Subnet Mask@#$
+Default MAC@#$
+MAC from PC@#$
+IP Address@#$
+MAC manual@#$
+(Optional)@#$
+IP address@#$
+User Name@#$
+Host Name@#$
+Idle Time@#$
+MAC Clone@#$
+Password@#$
+MTU Size@#$
+AC Name@#$
+Manual@#$
+Reset@#$
+Use this section to configure the internal network settings of your router. If you change the LAN IPv6 Address here, you may need to adjust your PC's network settings to access the network again.@#$
+Use this section to configure your IPv6 Connection type. If you are unsure of your connection method, please contact your Internet Service Provider.@#$
+Use this section to setup IPv6 Autoconfiguration to assign IP addresses to the computers on your network@#$
+You should choose another IPv4 Internet Connection mode rather than 'DS-Lite' to access the Internet@#$
+Enter the IPv6 address information provided by your Internet Service Provider (ISP)@#$
+Obtain DNS server address automatically or enter a specific DNS server address@#$
+(Optional. It should be consistent with the setting of PPPoE Server or empty.)@#$
+Enter the IPv6 in IPv4 Tunnel information provided by your Tunnel Broker@#$
+Enter the information provided by your Internet Service Provider (ISP)@#$
+(6rd prefix length)+(32-(6rd mask length)) can't be larger than 64@#$
+V6inV4 remote ipv6 address can't be equal with local ipv6 address@#$
+Choose the mode to be used by the router to the IPv6 Internet@#$
+If IPv4 connection is not DHCP, can't set 6rd mode to DHCPv4@#$
+When DS-Lite is DHCPv6 mode, can't set IPv6 type to Static@#$
+Dhcp pool start value can't be larger than end value!\n@#$
+Ipv6 address can't be equal with gateway address@#$
+V6inV4 remote ipv6 address can't be empty@#$
+V6inV4 local ipv6 address can't be empty@#$
+Obtain DNS server address automatically@#$
+Address Autoconfiguration Settings@#$
+Invalid local ipv6 prefix length@#$
+Invalid dhcp pool start value!\n@#$
+Wan ipv6 address can't be empty@#$
+Wan ipv6 gateway can't be empty@#$
+Invalid dhcp pool end value!\n@#$
+Invalid dhcp lifetime value!\n@#$
+Invalid secondary dns address@#$
+Use the following DNS address@#$
+Router Advertisement Lifetime@#$
+Invalid 6rd ipv4 mask length@#$
+Invalid ra lifetime value!\n@#$
+IPv6 in IPv4 Tunnel Settings@#$
+PPP username can't be empty@#$
+PPP password can't be empty@#$
+Invalid remote ipv6 address@#$
+Invalid primary dns address@#$
+LAN IPv6 Link-Local Address@#$
+Invalid ipv6 prefix length@#$
+Invalid local ipv6 address@#$
+Primary dns can't be empty@#$
+Lan address can't be empty@#$
+6rd prefix can't be empty@#$
+Invalid 6rd prefix length@#$
+Wan IPv6 Address Settings@#$
+Lan IPv6 Address Settings@#$
+IPv6 Address Range(Start)@#$
+Invalid wan ipv6 address@#$
+Invalid wan ipv6 gateway@#$
+Enable Autoconfiguration@#$
+SLAAC + Stateless DHCPv6@#$
+IPv6 Address Range(End)@#$
+Invalid LAN IPv6 prefix@#$
+Autoconfiguration Type@#$
+My IPv6 Connection is@#$
+Secondary DNS Address@#$
+IPv6 Address Lifetime@#$
+IPv6 Connection Type@#$
+Subnet Prefix Length@#$
+Invalid lan address@#$
+IPv6 In IPv4 Tunnel@#$
+Remote IPv4 Address@#$
+Remote IPv6 Address@#$
+Primary DNS Address@#$
+Invalid 6rd prefix@#$
+Local IPv4 Address@#$
+Local IPv6 Address@#$
+Invalid Idle time@#$
+IPv6 DNS Settings@#$
+Invalid MTU size@#$
+6rd DHCPv4&nbsp;@#$
+LAN IPv6 Address@#$
+Stateful(DHCPv6)@#$
+Link-local only@#$
+Defautl Gateway@#$
+Connection Type@#$
+6rd IPv6 Prefix@#$
+Enable DHCP-PD@#$
+AP IPV6 Setup@#$
+6to4 Settings@#$
+Apply Changes@#$
+SLAAC/DHCPv6@#$
+IPv6 Address@#$
+Service Name@#$
+6to4 Address@#$
+6rd Settings@#$
+IPv4 Address@#$
+Static IPv6@#$
+Mask Length@#$
+6to4 Relay@#$
+>(minutes)@#$
+User Name@#$
+Idle Time@#$
+6rd Relay@#$
+Password@#$
+MTU Size@#$
+6rd Mode@#$
+AC Name@#$
+6 to 4@#$
+Manual@#$
+PPPoE@#$
+Reset@#$
+IPV6@#$
+6rd@#$
+This page is used to configure the VPN PPTP client. Here you can edit parameters for pptp.@#$
+Please enter pptp client username@#$
+Please enter pptp client password@#$
+Please enter pptp server address@#$
+Invalid value in server address@#$
+Invalid value in username@#$
+Invalid value in password@#$
+PPTP Configuration@#$
+PPTP Settings@#$
+Default GW:@#$
+PPTP Table@#$
+Username:@#$
+Password:@#$
+Interface@#$
+Enable:@#$
+Server:@#$
+Address@#$
+Gateway@#$
+Auth:@#$
+Apply@#$
+Reset@#$
+State@#$
+PPTP@#$
+auto@#$
+This page is used to configure the parameters for your l2tp access.@#$
+Invalid session name! It must be a string no longer than 7.@#$
+Invalid MTU value! You should set a value between 65-1500.@#$
+Cannot accept space character in User Name.@#$
+Invalid port number. It should be 1-65535.@#$
+Cannot accept space character in Password.@#$
+User name should not be blank!@#$
+LNS port should not be blank!@#$
+L2TP name should not be blank@#$
+LNS ip should not be blank!@#$
+User Name cannot be empty!@#$
+Password cannot be empty!@#$
+L2TP Configuration@#$
+Invalid User Name.@#$
+Invalid Idle Time.@#$
+Invalid Password.@#$
+Connection Type:@#$
+Authentication:@#$
+Idle Time(min):@#$
+Default Route:@#$
+L2TP Settings@#$
+Apply Changes@#$
+User Name:@#$
+L2TP Table@#$
+IP Address@#$
+LNS PORT:@#$
+Password:@#$
+Interface@#$
+Session:@#$
+LNS IP:@#$
+Gateway@#$
+Refresh@#$
+Status@#$
+Name:@#$
+NAPT:@#$
+Reset@#$
+MTU:@#$
+Name@#$
+A Demilitarized Zone is used to provide Internet services without sacrificing unauthorized access to its local private network. Typically, the DMZ host contains devices accessible to Internet traffic, such as Web (HTTP ) servers, FTP servers, SMTP (e-mail) servers and DNS servers.@#$
+DMZ Host IP address cannot be empty! It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address. It should be filled with 4 digit numbers as xxx.xxx.xxx.xxx.@#$
+Invalid IP address value. It should be the decimal number (0-9).@#$
+Invalid IP address range in 1st digit. It should be 1-223.@#$
+Invalid IP address range in 2nd digit. It should be 1-254.@#$
+Invalid IP address range in 3rd digit. It should be 1-254.@#$
+Invalid IP address range in 4th digit. It should be 1-254.@#$
+DMZ host IP must be in the same network with gateway.@#$
+DMA host IP should not be the same as gateway.@#$
+DMZ Host IP Address:@#$
+Invalid IP address.@#$
+DMZ Configuration@#$
+Apply Changes@#$
+Enable DMZ@#$
+DMZ Host@#$
+Reset@#$

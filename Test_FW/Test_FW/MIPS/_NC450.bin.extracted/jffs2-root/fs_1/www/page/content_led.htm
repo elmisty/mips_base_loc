@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/htm;charset=utf-8">
+		<title>LED</title>
+	</head>
+	<body>
+		<div class="content-right-cell" id="content-led">
+			<div>
+				<p i18n="legend-led" class="lang-text fieldset-title legend-p"></p>
+			</div>
+			<fieldset class="m-fieldset" id="led-field">
+				<legend class="lang-text" i18n="legend-led"  style="display: none"><!-- LED --></legend>
+				<ul class="content-model">
+					<li id="led_model-title" >
+						<span class="text-title lang-text" i18n="title-led" style="width:75px"><!-- LED: --></span>
+					</li>
+					<li class="li-model2">
+						<input type="radio" id="led_model-on" class="content-input-radio led-radio" name="led-radio-model" value="1"/>
+						<span class="lang-text" i18n="on" style="width: 60px"><!-- On --></span>
+					</li>
+					<li class="li-model2">
+						<input type="radio" id="led_model-off" class="content-input-radio led-radio" name="led-radio-model" value="0"/>
+						<span class="lang-text" i18n="off"><!-- Off --></span>
+					</li>
+				</ul>
+			</fieldset>
+			<div class="content-list-bottom">
+				<div class="button-list-right">
+					<input type="button" class="input-button lang-value" i18n="save" id="led-save" value="Save">
+				</div>				
+			</div>
+		</div>
+	</body>
+	
+	<script type="text/javascript">
+		common.langChange();
+		common.widgetEnable();
+		Led.Init();
+		$("#index-img-loading").hide();
+	</script>
+</html>

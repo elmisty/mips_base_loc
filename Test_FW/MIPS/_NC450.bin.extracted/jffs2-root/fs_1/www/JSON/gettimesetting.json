@@ -1,0 +1,11 @@
+{
+"datetime": "2015-6-5 23:53:48", 
+"timezone": "-2",
+"timezonestr": "GMT+12:00",
+"area": "asia/beijing",
+"sync2ntp":0, 
+"sync2dhcp":0,
+"sync2pc":0,
+"ntpserver": "time.nist.gov"
+}
+

@@ -1,0 +1,11 @@
+enable=1
+role=agent
+2g.0.enable=1
+2g.1.enable=1
+2g.2.enable=1
+5g.0.enable=1
+5g.1.enable=1
+5g.2.enable=1
+bh_type=0
+easymesh_log_to_stdout=1
+
