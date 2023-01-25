@@ -6,7 +6,6 @@ if __name__ == "__main__":
     argu_parser = ArgumentParser(description='Automatic base address finder for MIPS archtecture')
 
     argu_parser.add_argument('--target', '-t', required=True, help='Target Firmware Path')
-    argu_parser.add_argument('--matchsize', '-m', required=True, type=int, help='String size for searching base address')    
     argu_parser.add_argument('--windowsize', '-w', required=False, type=int, help='Window Size')
     argu_parser.add_argument('--ord', '-od', required=False, help='Byte Order')
 
@@ -16,9 +15,8 @@ if __name__ == "__main__":
     elif args.windowsize is None:
         args.windowsize = 4
 
-    print(args.target, args.matchsize)
     start = time.time()
-    do_find = PREVFINDMIPSBASE(imgpath=args.target, wnd_size=args.windowsize, match_size=args.matchsize, byte_order=args.ord)
+    do_find = PREVFINDMIPSBASE(imgpath=args.target, wnd_size=args.windowsize, byte_order=args.ord)
     #do_find = FINDMIPSBASE('./Test_FW/EXIST_GP/54B5_wr543gv2', wnd_size=4, match_size=5000, byte_order='big')
     #do_find = FINDMIPSBASE('./Test_FW/EXIST_GP/1310_n604r_kr_8_88', wnd_size=4, match_size=5000, byte_order='big')
     #do_find = FINDMIPSBASE('./Test_FW/EXIST_GP/25062_EW7303APn', wnd_size=4, match_size=8000, byte_order='big')

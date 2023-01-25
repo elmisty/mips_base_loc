@@ -7,10 +7,10 @@ from .FINDTOOLS import *
 from bitstring import BitArray, ConstBitStream
 
 class PREVFINDMIPSBASE:
-    def __init__(self, imgpath, wnd_size, match_size, byte_order):
+    def __init__(self, imgpath, wnd_size, byte_order):
         self.imgpath = imgpath
         self.wnd_size = wnd_size
-        self.match_size = match_size
+        self.match_size = 0
         self.byte_order = byte_order
 
         self.flag = 0
@@ -132,6 +132,10 @@ class PREVFINDMIPSBASE:
 
         idx = 0
         chk_sz = 0
+        
+        print("[#] Num of String : ", len(self.str_list))
+        self.match_size = int(len(self.str_list) / 500 * (getsize(self.imgpath) / 10000))
+        print("[#] Num of Matching : ", self.match_size)
 
         while True:
             if idx == self.match_size or chk_sz >= getsize(self.imgpath):
@@ -197,7 +201,7 @@ class PREVFINDMIPSBASE:
                     self.str_list.append(str_addr)
                 idx += 1
             chk_sz += 4
-        return start_addr, end_addr        
+        return start_addr, end_addr
 
     def do_analyze(self, mode='auto', gp_reg=0):
         self.set_raw_data()
